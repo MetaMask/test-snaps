@@ -15,6 +15,6 @@
       "./src/wallet.d.ts"
     ]
   },
-  "exclude": ["./src/**/*.test.ts"],
+  "exclude": ["./src/**/*.test.ts", "./build"],
   "include": ["./src/**/*.ts"]
 }
