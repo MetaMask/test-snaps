@@ -16,6 +16,7 @@
     "setup": "yarn install && yarn allow-scripts",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
     "build": "yarn workspaces run build",
+    "serve": "yarn workspaces run serve",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:misc": "prettier '**/*.json' '**/*.md' '**/*.yml' --single-quote --ignore-path .gitignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",

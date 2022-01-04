@@ -1,3 +1,4 @@
 {
-  "src": "build/index.js"
+  "src": "build/index.js",
+  "port": 8082
 }
