@@ -10,7 +10,7 @@
       "shasum": "3lEt0yUu080DwV78neROaAAIQWXukSkMnP4OBhOhBnE=",
       "location": {
         "npm": {
-          "filePath": "dist/bundle.js",
+          "filePath": "dist/index.js",
           "iconPath": "images/icon.svg",
           "packageName": "@metamask/test-snap-confirm",
           "registry": "https://registry.npmjs.org/"
