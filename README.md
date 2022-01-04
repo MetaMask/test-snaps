@@ -1,3 +1,3 @@
-# Monorepo Action Test
+# Test Snap Repo
 
-This is a dummy repo for testing GitHub Actions.
+This is a repo for snaps for testing.
