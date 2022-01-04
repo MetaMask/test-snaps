@@ -11,9 +11,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "ES2017",
-    "typeRoots": [
-      "./src/wallet.d.ts"
-    ]
+    "typeRoots": ["./src/wallet.d.ts"]
   },
   "exclude": ["./src/**/*.test.ts", "./build"],
   "include": ["./src/**/*.ts"]
