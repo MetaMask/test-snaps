@@ -2,7 +2,6 @@
 
 This is a repo for snaps for testing.
 
-
 ### Instructions
 
 1. Run `yarn build` to build all of the snaps
