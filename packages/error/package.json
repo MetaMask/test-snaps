@@ -15,7 +15,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsc --project .",
+    "build": "tsc --project . && mm-snap manifest --fix",
     "setup": "yarn install",
     "serve": "mm-snap serve",
     "clean": "rimraf dist/*",

@@ -1,39 +1,60 @@
 <!doctype html>
 <html>
   </head>
-    <title>Hello, Snaps!</title>
+    <title></title>
   </head>
   <body>
-    <h1>Hello, Snaps!</h1>
-    <details>
-      <summary>Instructions</summary>
-      <ul>
-        <li>First, click "Connect". Then, try out the other buttons!</li>
-        <li>Please note that:</li>
+    <h1>Test Snaps</h1>
+    <section>
+      <details>
+        <summary>Instructions</summary>
         <ul>
-          <li>
-            The <code>snap.manifest.json</code> and <code>package.json</code> must be located in located in the server root directory..
-          </li>
-          <li>
-            The Snap bundle must be hosted at the location specified by the <code>location</code> field of <code>snap.manifest.json</code>.
-          </li>
+          <li>First, click "Connect". Then, try out the other buttons!</li>
+          <li>Please note that:</li>
+          <ul>
+            <li>
+              The <code>snap.manifest.json</code> and <code>package.json</code> must be located in located in the server root directory..
+            </li>
+            <li>
+              The Snap bundle must be hosted at the location specified by the <code>location</code> field of <code>snap.manifest.json</code>.
+            </li>
+          </ul>
         </ul>
-      </ul>
-    </details>
-    <br/>
+      </details>
+      <br/>
 
-    <button class="connectHello">Connect Hello Snap</button>
-    <button class="sendHello">Send Hello to Hello Snap</button>
+      <button class="connectHello">Connect Hello Snap</button>
+      <button class="sendHello">Send Hello to Hello Snap</button>
+    </section>
+    <section>
+      <button class="connectError">Connect Error Snap</button>
+      <button class="sendError">Send Message to Error Snap</button>
+    </section>
   </body>
 
   <script>
     const snapId = `local:http://localhost:8082`;
+    const snapId2 = `local:http://localhost:8081`;
 
     const connectButton = document.querySelector('button.connectHello')
     const sendButton = document.querySelector('button.sendHello')
+    const connectErrorButton = document.querySelector('button.connectError')
+    const sendErrorButton = document.querySelector('button.sendError')
 
     connectButton.addEventListener('click', connect)
     sendButton.addEventListener('click', send)
+
+    connectErrorButton.addEventListener('click', connectError)
+    sendErrorButton.addEventListener('click', sendError)
+
+    async function connectError () {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [{
+          wallet_snap: { [snapId2]: {} },
+        }]
+      })
+    }
 
     // here we get permissions to interact with and install the snap
     async function connect () {
@@ -43,6 +64,21 @@
           wallet_snap: { [snapId]: {} },
         }]
       })
+    }
+
+    // here we call the error snap with any method
+    async function sendError () {
+      try {
+        const response = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [snapId2, {
+            method: 'test'
+          }]
+        })
+      } catch (err) {
+        console.error(err)
+        alert('Problem happened: ' + err.message || err)
+      }
     }
 
     // here we call the snap's "hello" method

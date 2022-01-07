@@ -12,7 +12,7 @@
       "npm": {
         "filePath": "dist/index.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@metamask/test-snap-confirm",
+        "packageName": "@metamask/test-snap-error",
         "registry": "https://registry.npmjs.org/"
       }
     }
