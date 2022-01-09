@@ -23,6 +23,8 @@ jobs:
       - uses: MetaMask/action-publish-release@v0.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn --frozen-lockfile
+      - run: yarn allow-scripts
       - uses: MetaMask/action-publish-gh-pages@v2
         with:
           directory: packages/site/
