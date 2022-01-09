@@ -23,8 +23,8 @@ jobs:
       - uses: MetaMask/action-publish-release@v0.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: MetaMask/action-publish-gh-pages@v1
+      - uses: MetaMask/action-publish-gh-pages@v2
         with:
-          source-directory: packages/site/
+          directory: packages/site/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
