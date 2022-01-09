@@ -6,11 +6,17 @@
   <body>
     <h1>Test Snaps</h1>
     <section>
+      <h1>Confirm Snap</h1>
       <br/>
-      <button class="connectHello">Connect Hello Snap</button>
-      <button class="sendHello">Send Hello to Hello Snap</button>
+      <button class="connectHello">Connect To Confirm Snap</button>
+      <input class="confirmPromptInput" placeholder="hello"/>
+      <input class="confirmDescription"/>
+      <input class="confirmTextAreaContent"/>
+      <button class="sendHello">Send Inputs to Hello Snap</button>
+      <span class="sendResults"></span>
     </section>
     <section>
+      <h1>Error Snap</h1>
       <button class="connectError">Connect Error Snap</button>
       <button class="sendError">Send Test to Error Snap</button>
     </section>
@@ -22,6 +28,7 @@
 
     const connectButton = document.querySelector('button.connectHello')
     const sendButton = document.querySelector('button.sendHello')
+    const sendResults = document.querySelector('.sendResults');
     const connectErrorButton = document.querySelector('button.connectError')
     const sendErrorButton = document.querySelector('button.sendError')
 
@@ -65,15 +72,20 @@
       }
     }
 
-    // here we call the snap's "hello" method
+    // here we call the snap's "confirm" method
     async function send () {
+      const promptInput = document.querySelector('.confirmPromptInput').value;
+      const description = document.querySelector('.confirmDescription').value;
+      const textAreaContent = document.querySelector('.confirmTextAreaContent').value;
       try {
         const response = await ethereum.request({
           method: 'wallet_invokeSnap',
           params: [snapId, {
-            method: 'hello'
+            method: 'confirm',
+            params: [promptInput, description, textAreaContent]
           }]
         })
+        sendResults.innerHTML = response;
       } catch (err) {
         console.error(err)
         alert('Problem happened: ' + err.message || err)
