@@ -10,5 +10,5 @@ wallet.registerRpcMessageHandler(async () => {
     throw new Error('random error inside');
     resolve(undefined);
   });
-  return 'foo';
+  return 'world';
 });
