@@ -7,6 +7,8 @@
     <h1>Test Snaps</h1>
     <section>
       <h1>Confirm Snap</h1>
+      <label>SnapId</label>
+      <input class="snapId">
       <br/>
       <button class="connectHello">Connect To Confirm Snap</button>
       <input class="confirmPromptInput" placeholder="hello"/>
@@ -17,18 +19,30 @@
     </section>
     <section>
       <h1>Error Snap</h1>
+      <label>SnapId</label>
+      <input class="snapId2">
       <button class="connectError">Connect Error Snap</button>
       <button class="sendError">Send Test to Error Snap</button>
     </section>
   </body>
 
   <script>
-    const snapId = `local:http://localhost:8082`;
-    const snapId2 = `local:http://localhost:8081`;
+    // confirm snap
+    const snapId = document.querySelector('.snapId');
+    snapId.value = 'local:http://localhost:8082';
 
     const connectButton = document.querySelector('button.connectHello')
     const sendButton = document.querySelector('button.sendHello')
+    const promptInput = document.querySelector('.confirmPromptInput');
+    const description = document.querySelector('.confirmDescription');
+    const textAreaContent = document.querySelector('.confirmTextAreaContent');
     const sendResults = document.querySelector('.sendResults');
+
+    promptInput.value = 'hello';
+
+    // error snap
+    const snapId2 = document.querySelector('.snapId2');
+    snapId2.value = 'local:http://localhost:8081';
     const connectErrorButton = document.querySelector('button.connectError')
     const sendErrorButton = document.querySelector('button.sendError')
 
@@ -38,11 +52,12 @@
     connectErrorButton.addEventListener('click', connectError)
     sendErrorButton.addEventListener('click', sendError)
 
+    // actions
     async function connectError () {
       await ethereum.request({
         method: 'wallet_enable',
         params: [{
-          wallet_snap: { [snapId2]: {} },
+          wallet_snap: { [snapId2.value]: {} },
         }]
       })
     }
@@ -52,7 +67,7 @@
       await ethereum.request({
         method: 'wallet_enable',
         params: [{
-          wallet_snap: { [snapId]: {} },
+          wallet_snap: { [snapId.value]: {} },
         }]
       })
     }
@@ -62,7 +77,7 @@
       try {
         const response = await ethereum.request({
           method: 'wallet_invokeSnap',
-          params: [snapId2, {
+          params: [snapId2.value, {
             method: 'test'
           }]
         })
@@ -74,15 +89,12 @@
 
     // here we call the snap's "confirm" method
     async function send () {
-      const promptInput = document.querySelector('.confirmPromptInput').value;
-      const description = document.querySelector('.confirmDescription').value;
-      const textAreaContent = document.querySelector('.confirmTextAreaContent').value;
       try {
         const response = await ethereum.request({
           method: 'wallet_invokeSnap',
-          params: [snapId, {
+          params: [snapId.value, {
             method: 'confirm',
-            params: [promptInput, description, textAreaContent]
+            params: [promptInput.value, description.value, textAreaContent.value]
           }]
         })
         sendResults.innerHTML = response;
