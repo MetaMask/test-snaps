@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2]
+### Uncategorized
+- Changed error package
+
 ## [0.0.1]
 ### Uncategorized
 - Fixed CHANGELOGs
@@ -15,5 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added icons
 - The beginning of time
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/MetaMask/test-snaps/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/MetaMask/test-snaps/releases/tag/v0.0.1
