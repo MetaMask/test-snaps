@@ -27,6 +27,6 @@ jobs:
       - run: yarn allow-scripts
       - uses: MetaMask/action-publish-gh-pages@v2
         with:
-          directory: packages/site/
+          source-directory: packages/site/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
