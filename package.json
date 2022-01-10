@@ -18,7 +18,7 @@
     "build": "yarn workspaces run build",
     "serve": "$(yarn static packages/site & yarn workspace @metamask/test-snap-confirm serve & yarn workspace @metamask/test-snap-error serve)",
     "lint:eslint": "eslint . --cache --ext js,ts",
-    "lint:misc": "prettier '**/*.json' '**/*.md' '**/*.yml' --single-quote --ignore-path .gitignore",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '!packages/*/CHANGELOG.md' '**/*.yml' --ignore-path .gitignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "test": "jest --passWithNoTests"
