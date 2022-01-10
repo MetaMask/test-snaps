@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist/"
   ],
