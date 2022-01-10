@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-confirm",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "MetaMask Confirm Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
