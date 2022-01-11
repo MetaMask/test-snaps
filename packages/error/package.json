@@ -17,7 +17,8 @@
   },
   "files": [
     "dist/",
-    "snap.manifest.json"
+    "snap.manifest.json",
+    "images/icon.svg"
   ],
   "scripts": {
     "build": "tsc --project . && mm-snap manifest --fix",
