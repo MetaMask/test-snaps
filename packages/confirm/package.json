@@ -13,7 +13,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "snap.manifest.json"
   ],
   "scripts": {
     "build": "tsc --project . && mm-snap build --eval false",
