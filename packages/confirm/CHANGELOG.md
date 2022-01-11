@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.5]
-### Added
+### Fixed
 - Fix publish files ([#10](https://github.com/MetaMask/test-snaps/pull/10))
-- Added access public to snap packages package json
+- Make npm package public
 
 ## [0.0.4]
 ### Uncategorized
