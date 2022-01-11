@@ -9,10 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.5]
 ### Uncategorized
 - Fix publish files ([#10](https://github.com/MetaMask/test-snaps/pull/10))
-- Update package scripts ([#9](https://github.com/MetaMask/test-snaps/pull/9))
-- Fix error snap shasum ([#8](https://github.com/MetaMask/test-snaps/pull/8))
-- fix versions
-- Added registry to snaps packages publishConfig
 - Added access public to snap packages package json
 
 ## [0.0.4]
