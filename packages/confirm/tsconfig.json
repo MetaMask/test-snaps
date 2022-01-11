@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "esModuleInterop": true,
-    "inlineSources": true,
+    "inlineSources": false,
     "lib": ["ES2020"],
     "module": "ES6",
     "moduleResolution": "Node",
