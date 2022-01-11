@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5]
+### Fixed
+- Fix publish files ([#10](https://github.com/MetaMask/test-snaps/pull/10))
+- Make npm package public
+
 ## [0.0.4]
 ### Uncategorized
 - Fixed linting
@@ -26,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed outDir of typescript to `build`
 - The beginning of time
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.4...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.5...HEAD
+[0.0.5]: https://github.com/MetaMask/test-snaps/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/MetaMask/test-snaps/compare/v0.0.1...v0.0.4
 [0.0.1]: https://github.com/MetaMask/test-snaps/releases/tag/v0.0.1
