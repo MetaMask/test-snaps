@@ -2,13 +2,13 @@
   "compilerOptions": {
     "declaration": true,
     "esModuleInterop": true,
-    "inlineSources": true,
+    "inlineSources": false,
     "lib": ["ES2020"],
     "module": "ES6",
     "moduleResolution": "Node",
     "outDir": "build",
     "rootDir": "src",
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "target": "ES2017",
     "typeRoots": ["./src/wallet.d.ts"]
