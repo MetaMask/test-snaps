@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.6]
-### Uncategorized
+### Fixed
 - Added images icon to package.json ([#12](https://github.com/MetaMask/test-snaps/pull/12))
-- Update Snap manifest versions
 
 ## [0.0.5]
 ### Fixed
