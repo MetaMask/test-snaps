@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.9]
+### Changed
+- No Changes
+
 ## [0.0.8]
 ### Changed
 - No Changes
@@ -34,7 +38,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.8...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.9...HEAD
+[0.0.9]: https://github.com/MetaMask/test-snaps/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/MetaMask/test-snaps/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/MetaMask/test-snaps/compare/v0.0.4...v0.0.7
 [0.0.4]: https://github.com/MetaMask/test-snaps/compare/v0.0.3...v0.0.4

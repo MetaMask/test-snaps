@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.9]
+### Fixed
+- workflow for release again
+
 ## [0.0.8]
 ### Fixed
 - workflow for release
@@ -43,7 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed outDir of typescript to `build`
 - The beginning of time
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.8...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.0.9...HEAD
+[0.0.9]: https://github.com/MetaMask/test-snaps/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/MetaMask/test-snaps/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/MetaMask/test-snaps/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/MetaMask/test-snaps/compare/v0.0.5...v0.0.6
