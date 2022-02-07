@@ -18,9 +18,7 @@
     }
   },
   "initialPermissions": {
-    "snap_confirm": {
-      "endowments:WebSocket": {}
-    }
+    "snap_confirm": {}
   },
   "manifestVersion": "0.1"
 }
