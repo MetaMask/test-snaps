@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snaps-site",
-  "version": "0.0.4",
+  "version": "0.0.9",
   "description": "",
   "scripts": {
     "build": "echo 'build snaps site'"
