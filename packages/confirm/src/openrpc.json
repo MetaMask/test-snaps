@@ -1,0 +1,66 @@
+{
+  "openrpc": "1.2.4",
+  "info": {
+    "title": "Confirm Snap",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "confirm",
+      "description": "a method pops up a metamask confirm window",
+      "params": [
+        {
+          "name": "prompt",
+          "required": true,
+          "description": "Confirm window main title",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "description": "Text description for the confirm",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "textAreaContent",
+          "description": "Main content area with a max height and scrollable",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "confirmResult",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "examples": [
+        {
+          "name": "helloWorldExample",
+          "params": [
+            {
+              "name": "prompt",
+              "value": "hello"
+            },
+            {
+              "name": "description",
+              "value": "hello description"
+            },
+            {
+              "name": "textAreaContent",
+              "value": "very long content area"
+            }
+          ],
+          "result": {
+            "name": "world",
+            "value": true
+          }
+        }
+      ]
+    }
+  ]
+}

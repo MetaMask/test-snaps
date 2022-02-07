@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "08tiFMJV0aJN8yfprsC5/n5s7H9wOtNon4edbUMllqE=",
+    "shasum": "OdPrx1FzU/KEsCXunL5eCD9vw2gtGrN3VFGqrzHLM8c=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -18,7 +18,9 @@
     }
   },
   "initialPermissions": {
-    "snap_confirm": {}
+    "snap_confirm": {
+      "endowments:WebSocket": {}
+    }
   },
   "manifestVersion": "0.1"
 }
