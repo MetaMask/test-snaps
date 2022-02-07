@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.8]
-### Uncategorized
-- 0.0.7 ([#15](https://github.com/MetaMask/test-snaps/pull/15))
+### Fixed
+- workflow for release
 
 ## [0.0.7]
 ### Added
