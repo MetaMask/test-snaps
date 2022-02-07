@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.7]
-### Uncategorized
-- Added OpenRPC doc for confirm test snap ([#14](https://github.com/MetaMask/test-snaps/pull/14))
+### Added
+- OpenRPC doc for confirm test snap ([#14](https://github.com/MetaMask/test-snaps/pull/14))
 
 ## [0.0.6]
 ### Fixed
