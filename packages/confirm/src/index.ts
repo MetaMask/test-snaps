@@ -1,6 +1,10 @@
+import openrpcDocument from './openrpc.json';
+
 // eslint-disable-next-line import/unambiguous
 wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   switch (requestObject.method) {
+    case 'rpc.discover':
+      return openrpcDocument;
     case 'confirm':
       return wallet.request({
         method: 'snap_confirm',

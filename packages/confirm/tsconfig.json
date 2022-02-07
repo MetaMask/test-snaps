@@ -11,6 +11,7 @@
     "sourceMap": false,
     "strict": true,
     "target": "ES2017",
+    "resolveJsonModule": true,
     "typeRoots": ["./src/wallet.d.ts"]
   },
   "exclude": ["./src/**/*.test.ts", "./build"],
