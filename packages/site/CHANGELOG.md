@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.7]
-### Uncategorized
-- Add ascii fox
+### Added
+- ascii fox
 
 ## [0.0.4]
 ### Uncategorized
