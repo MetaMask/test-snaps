@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "description": "An example Snap that signs messages using BLS.",
+  "proposedName": "bls-signer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/snaps-skunkworks.git"
+  },
+  "source": {
+    "shasum": "bOAsKgAmBVXWcRFdk6z5c6EZM9Gl55rl79PFhVi7UR4=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "bls-signer",
+        "registry": "https://registry.npmjs.org"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_confirm": {}
+  },
+  "manifestVersion": "0.1"
+}
