@@ -1,24 +1,60 @@
 {
-  "name": "bls-signer",
-  "version": "1.0.0",
-  "private": true,
-  "description": "An example Snap that signs messages using BLS.",
+  "name": "@metamask/test-snap-bip44",
+  "version": "0.0.9",
+  "description": "MetaMask BIP-44 Test Snap",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/snaps-skunkworks.git"
   },
   "license": "ISC",
-  "main": "src/index.js",
   "files": [
     "dist/",
+    "images/icon.svg",
     "snap.manifest.json"
   ],
   "scripts": {
-    "test": "echo 'Error: no test specified' && exit 1"
+    "build": "tsc --project . && mm-snap build --eval false",
+    "setup": "yarn install",
+    "serve": "mm-snap serve",
+    "clean": "rimraf dist/*",
+    "build:clean": "yarn clean && yarn build",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "lint:eslint": "eslint . --cache --ext js,ts",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' --single-quote --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "lint": "yarn lint:eslint && yarn lint:misc --check",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
+    "prepublishOnly": "yarn build && yarn lint && yarn test"
   },
   "dependencies": {
-    "eth-json-rpc-errors": "^1.1.0",
-    "noble-bls12-381": "^0.2.3"
+    "@metamask/key-tree": "^3.0.1",
+    "@noble/bls12-381": "^1.2.0",
+    "eth-rpc-errors": "^4.0.3"
+  },
+  "devDependencies": {
+    "@metamask/auto-changelog": "^2.5.0",
+    "@metamask/eslint-config": "^6.0.0",
+    "@metamask/eslint-config-jest": "^6.0.0",
+    "@metamask/eslint-config-nodejs": "^6.0.0",
+    "@metamask/eslint-config-typescript": "^6.0.0",
+    "@metamask/snaps-cli": "^0.10.7",
+    "@types/jest": "^26.0.13",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.4.2",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.2.4"
   },
   "engines": {
     "node": ">=14.0.0"

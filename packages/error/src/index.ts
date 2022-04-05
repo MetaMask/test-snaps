@@ -1,3 +1,5 @@
+/// <reference path="../../../types/wallet.d.ts" />
+
 /* eslint-disable import/unambiguous */
 wallet.registerRpcMessageHandler(async () => {
   // eslint-disable-next-line no-new

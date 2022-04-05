@@ -1,8 +1,8 @@
 export {};
 
-interface JSONRPCRequest {
+interface JsonRpcRequest {
   method: string;
-  params: any[];
+  params?: unknown[];
 }
 
 type FMethodCallback = (
@@ -11,7 +11,7 @@ type FMethodCallback = (
 ) => Promise<any>;
 
 interface Wallet {
-  request: (request: JSONRPCRequest) => Promise<unknown>;
+  request: (request: JsonRpcRequest) => Promise<unknown>;
   registerRpcMessageHandler: (fn: FMethodCallback) => void;
 }
 

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "inlineSources": false,
+    "lib": ["ES2020"],
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "sourceMap": false,
+    "strict": true,
+    "target": "ES2017",
+    "resolveJsonModule": true,
+    "typeRoots": ["./types/wallet.d.ts"]
+  }
+}
