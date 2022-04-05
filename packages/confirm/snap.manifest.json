@@ -1,5 +1,5 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.9",
   "proposedName": "MetaMask Confirm Test Snap",
   "description": "An MetaMask Test Snap that uses the snap_confirm permission",
   "repository": {
