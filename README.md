@@ -1,13 +1,14 @@
 # Test Snap Repo
 
-This is a repo for snaps for testing.
+A monorepo for Snaps used for QA and end-to-end tests, with an accompanying GitHub pages website.
+Like [MetaMask/test-dapp](https://github.com/MetaMask/test-dapp), but for Snaps.
 
 ## Usage
 
 1. Run `yarn build` to build all snaps and the website
-2. Run `yarn serve` to serve the snaps and the index page
+2. Run `yarn serve` to serve the snaps and the website
 
-Go to http://localhost:8080 and see the test app.
+Go to http://localhost:8080 to see the test app.
 
 ## Contributing
 
