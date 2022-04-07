@@ -66,6 +66,7 @@
       <h1>Error Snap</h1>
       <label>SnapId</label>
       <input class="snapId2">
+      <br/>
       <button class="connectError">Connect Error Snap</button>
       <button class="sendError">Send Test to Error Snap</button>
       <span class="errorResult"></span>
@@ -75,13 +76,18 @@
       <h1>BIP-44 Snap</h1>
       <label>SnapId</label>
       <input class="snapId3">
+      <br/>
       <button class="connectBip44">Connect BIP-44 Snap</button>
       <button class="sendBip44">Send Test to BIP-44 Snap</button>
       <br/>
       <span class="bip44Result"></span>
       <br/>
       <!-- TODO: Add button and inputs for "signMessage" here-->
+      <input class="bip44SignMessage" placeholder="message"/>
+      <button class="sendBip44MessageButton">Sign Message with BIP-44 Snap</button>
+      <span class="bip44SignMessageResult"></span>
     </section>
+
   </body>
 
   <script>
@@ -176,8 +182,13 @@
     const sendBip44Button = document.querySelector('button.sendBip44')
     const bip44Result = document.querySelector('span.bip44Result')
 
+    const bip44SignMessage = document.querySelector('.bip44SignMessage')
+    const sendBip44MessageButton = document.querySelector('button.sendBip44MessageButton')
+    const bip44SignMessageResult = document.querySelector('.bip44SignMessageResult')
+
     connectBip44Button.addEventListener('click', connectBip44)
     sendBip44Button.addEventListener('click', sendBip44)
+    sendBip44MessageButton.addEventListener('click', sendBip44Message)
 
     async function connectBip44 () {
       await ethereum.request({
@@ -197,6 +208,22 @@
           }]
         })
         bip44Result.innerHTML = `Public key: ${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err)
+        alert('Problem happened: ' + err.message || err)
+      }
+    }
+
+    async function sendBip44Message () {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [snapId3.value, {
+            method: 'signMessage',
+            params: [bip44SignMessage.value]
+          }]
+        })
+        bip44SignMessageResult.innerHTML = `message: ${JSON.stringify(result)}`;
       } catch (err) {
         console.error(err)
         alert('Problem happened: ' + err.message || err)
