@@ -1,13 +1,13 @@
 {
-  "name": "@metamask/test-snaps-site",
+  "name": "website",
   "version": "0.0.9",
   "description": "",
   "private": true,
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "node scripts/build.js prod",
+    "build": "node scripts/build.js dev",
     "build:clean": "yarn clean && yarn build",
-    "build:dev": "node scripts/build.js dev"
+    "build:prod": "node scripts/build.js prod"
   },
   "devDependencies": {
     "@metamask/eslint-config": "^6.0.0",
