@@ -16,12 +16,18 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
     await initialize();
   }
 
-  function nobleOutputToHexString(nobleOutput: Uint8Array) {
+  /**
+   * Converts ugly output from @noble/bls12-381 to readable hex.
+   *
+   * @param nobleOutput - an array from sign()
+   * @returns hex string string
+   */
+  function nobleOutputToHexString(nobleOutput: Uint8Array): string {
     return `0x${Object.values(nobleOutput)
       .map((num) => {
-      return num.toString(16);
-    })
-    .join('')}`;
+        return num.toString(16);
+      })
+      .join('')}`;
   }
 
   switch (requestObject.method) {
