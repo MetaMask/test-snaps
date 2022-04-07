@@ -6,6 +6,7 @@ import {
   deriveBIP44AddressKey,
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
+import { promises } from 'fs';
 
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
@@ -15,9 +16,15 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
     await initialize();
   }
 
+  function nobleOutputToHexString(nobleOutput:Uint8Array) {
+    return `0x${Object.values(nobleOutput).map(num => {
+      return num.toString(16);
+    }).join('')}`;
+  }
+
   switch (requestObject.method) {
     case 'getAccount':
-      return getPublicKey(PRIVATE_KEY);
+      return nobleOutputToHexString(getPublicKey(PRIVATE_KEY));
 
     case 'signMessage': {
       const pubKey = getPublicKey(PRIVATE_KEY);
@@ -41,8 +48,9 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       if (!approved) {
         throw ethErrors.provider.userRejectedRequest();
       }
-
-      return await sign(encoder.encode(data), PRIVATE_KEY);
+      
+      const newLocal = await sign(encoder.encode(data), PRIVATE_KEY)
+      return nobleOutputToHexString(newLocal);
     }
 
     default:
