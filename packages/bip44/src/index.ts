@@ -8,6 +8,7 @@ import {
 } from '@metamask/key-tree';
 
 let PRIVATE_KEY: Uint8Array;
+let encoder: TextEncoder;
 
 wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   if (!PRIVATE_KEY) {
@@ -22,6 +23,12 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       const pubKey = getPublicKey(PRIVATE_KEY);
       const data = requestObject.params[0];
 
+      if (!data || typeof data !== 'string') {
+        throw ethErrors.rpc.invalidParams({
+          message: `Invalid signature data: "${data}".`,
+        })
+      }
+
       const approved = await wallet.request({
         method: 'snap_confirm',
         params: [
@@ -35,7 +42,7 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
         throw ethErrors.provider.userRejectedRequest();
       }
 
-      return await sign(requestObject.params[0], PRIVATE_KEY);
+      return await sign(encoder.encode(data), PRIVATE_KEY);
     }
 
     default:
@@ -50,6 +57,8 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
  * derived from the received `coin_type` entropy.
  */
 async function initialize() {
+  encoder = new TextEncoder();
+
   const coinTypeNode = (await wallet.request({
     method: 'snap_getBip44Entropy_1',
   })) as JsonBIP44CoinTypeNode;
