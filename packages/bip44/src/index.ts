@@ -1,12 +1,12 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
+import { promises } from 'fs';
 import { ethErrors } from 'eth-rpc-errors';
 import { getPublicKey, sign } from '@noble/bls12-381';
 import {
   deriveBIP44AddressKey,
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
-import { promises } from 'fs';
 
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
@@ -16,10 +16,12 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
     await initialize();
   }
 
-  function nobleOutputToHexString(nobleOutput:Uint8Array) {
-    return `0x${Object.values(nobleOutput).map(num => {
+  function nobleOutputToHexString(nobleOutput: Uint8Array) {
+    return `0x${Object.values(nobleOutput)
+      .map((num) => {
       return num.toString(16);
-    }).join('')}`;
+    })
+    .join('')}`;
   }
 
   switch (requestObject.method) {
@@ -33,7 +35,7 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       if (!data || typeof data !== 'string') {
         throw ethErrors.rpc.invalidParams({
           message: `Invalid signature data: "${data}".`,
-        })
+        });
       }
 
       const approved = await wallet.request({
@@ -48,8 +50,7 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       if (!approved) {
         throw ethErrors.provider.userRejectedRequest();
       }
-      
-      const newLocal = await sign(encoder.encode(data), PRIVATE_KEY)
+      const newLocal = await sign(encoder.encode(data), PRIVATE_KEY);
       return nobleOutputToHexString(newLocal);
     }
 
