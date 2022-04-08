@@ -19,8 +19,8 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   /**
    * Converts ugly output from @noble/bls12-381 to readable hex.
    *
-   * @param nobleOutput - an array from sign()
-   * @returns hex string string
+   * @param nobleOutput - An array from sign().
+   * @returns Hex string.
    */
   function nobleOutputToHexString(nobleOutput: Uint8Array): string {
     return `0x${Object.values(nobleOutput)
