@@ -1,6 +1,5 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
-import { promises } from 'fs';
 import { ethErrors } from 'eth-rpc-errors';
 import { getPublicKey, sign } from '@noble/bls12-381';
 import {
