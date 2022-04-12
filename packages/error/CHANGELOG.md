@@ -6,14 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1]
+- No Changes
+
 ## [0.1.0]
 ### Added
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 - website build script ([#22](https://github.com/MetaMask/test-snaps/pull/22))
-### Fixed
-- various monorepo-related issues ([#18](https://github.com/MetaMask/test-snaps/pull/18))
+
 ### Changed
 - Bump Node to 14, bump snaps-cli ([#21](https://github.com/MetaMask/test-snaps/pull/21))
+
+### Fixed
+- various monorepo-related issues ([#18](https://github.com/MetaMask/test-snaps/pull/18))
 
 ## [0.0.9]
 ### Changed
@@ -58,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added icons
 - The beginning of time
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/MetaMask/test-snaps/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MetaMask/test-snaps/compare/v0.0.9...v0.1.0
 [0.0.9]: https://github.com/MetaMask/test-snaps/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/MetaMask/test-snaps/compare/v0.0.7...v0.0.8
