@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "tsc --project . && mm-snap build --eval false",
+    "build:dev": "yarn build",
     "setup": "yarn install",
     "serve": "mm-snap serve",
     "clean": "rimraf dist/*",

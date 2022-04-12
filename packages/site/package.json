@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "node scripts/build.js dev",
+    "build": "node scripts/build.js prod",
     "build:clean": "yarn clean && yarn build",
-    "build:prod": "node scripts/build.js prod"
+    "build:dev": "node scripts/build.js dev"
   },
   "devDependencies": {
     "@metamask/eslint-config": "^6.0.0",
