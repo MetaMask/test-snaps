@@ -7,6 +7,10 @@ module.exports = {
     {
       files: ['*.ts'],
       extends: ['@metamask/eslint-config-typescript'],
+      rules: {
+        '@typescript-eslint/triple-slash-reference': 'off',
+        'spaced-comment': ['error', 'always', { markers: ['/'] }],
+      },
     },
 
     {

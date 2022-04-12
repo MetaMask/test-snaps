@@ -52,46 +52,96 @@
     <section>
       <h1>Confirm Snap</h1>
       <label>SnapId</label>
-      <input class="snapId">
+      <input class="snapId1">
       <br/>
       <button class="connectHello">Connect To Confirm Snap</button>
       <input class="confirmPromptInput" placeholder="hello"/>
       <input class="confirmDescription"/>
       <input class="confirmTextAreaContent"/>
-      <button class="sendHello">Send Inputs to Hello Snap</button>
-      <span class="sendResults"></span>
+      <button class="sendConfirmButton">Send Inputs to Hello Snap</button>
+      <span class="confirmResult"></span>
     </section>
+
     <section>
       <h1>Error Snap</h1>
       <label>SnapId</label>
       <input class="snapId2">
+      <br/>
       <button class="connectError">Connect Error Snap</button>
       <button class="sendError">Send Test to Error Snap</button>
+      <span class="errorResult"></span>
     </section>
+
+    <section>
+      <h1>BIP-44 Snap</h1>
+      <label>SnapId</label>
+      <input class="snapId3">
+      <br/>
+      <button class="connectBip44">Connect BIP-44 Snap</button>
+      <button class="sendBip44">Send Test to BIP-44 Snap</button>
+      <br/>
+      <span class="bip44Result"></span>
+      <br/>
+      <input class="bip44SignMessage" placeholder="message"/>
+      <button class="sendBip44MessageButton">Sign Message with BIP-44 Snap</button>
+      <span class="bip44SignMessageResult"></span>
+    </section>
+
   </body>
 
   <script>
-    // confirm snap
-    const snapId = document.querySelector('.snapId');
-    snapId.value = 'local:http://localhost:8082';
+    /**
+     * Confirm Snap
+     */
+    const snapId1 = document.querySelector('.snapId1');
+    snapId1.value = 'local:http://localhost:8081';
 
-    const connectButton = document.querySelector('button.connectHello')
-    const sendButton = document.querySelector('button.sendHello')
+    const connectConfirmButton = document.querySelector('button.connectHello')
+    const sendConfirmButton = document.querySelector('button.sendConfirmButton')
     const promptInput = document.querySelector('.confirmPromptInput');
     const description = document.querySelector('.confirmDescription');
     const textAreaContent = document.querySelector('.confirmTextAreaContent');
-    const sendResults = document.querySelector('.sendResults');
+    const confirmResult = document.querySelector('.confirmResult');
 
+    connectConfirmButton.addEventListener('click', connectConfirm)
+    sendConfirmButton.addEventListener('click', sendConfirm)
     promptInput.value = 'hello';
 
-    // error snap
+    // here we get permissions to interact with and install the snap
+    async function connectConfirm () {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [{
+          wallet_snap: { [snapId1.value]: {} },
+        }]
+      })
+    }
+
+    // here we call the snap's "confirm" method
+    async function sendConfirm () {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [snapId1.value, {
+            method: 'confirm',
+            params: [promptInput.value, description.value, textAreaContent.value]
+          }]
+        })
+        confirmResult.innerHTML = result;
+      } catch (err) {
+        console.error(err)
+        alert('Problem happened: ' + err.message || err)
+      }
+    }
+
+    /**
+     * Error snap
+     */
     const snapId2 = document.querySelector('.snapId2');
-    snapId2.value = 'local:http://localhost:8081';
+    snapId2.value = 'local:http://localhost:8082';
     const connectErrorButton = document.querySelector('button.connectError')
     const sendErrorButton = document.querySelector('button.sendError')
-
-    connectButton.addEventListener('click', connect)
-    sendButton.addEventListener('click', send)
+    const errorResult = document.querySelector('span.errorResult')
 
     connectErrorButton.addEventListener('click', connectError)
     sendErrorButton.addEventListener('click', sendError)
@@ -106,42 +156,73 @@
       })
     }
 
-    // here we get permissions to interact with and install the snap
-    async function connect () {
-      await ethereum.request({
-        method: 'wallet_enable',
-        params: [{
-          wallet_snap: { [snapId.value]: {} },
-        }]
-      })
-    }
-
     // here we call the error snap with any method
     async function sendError () {
       try {
-        const response = await ethereum.request({
+        await ethereum.request({
           method: 'wallet_invokeSnap',
           params: [snapId2.value, {
             method: 'test'
           }]
         })
+        errorResult.innerHTML = 'Erroring request sent'
       } catch (err) {
         console.error(err)
         alert('Problem happened: ' + err.message || err)
       }
     }
 
-    // here we call the snap's "confirm" method
-    async function send () {
+    /**
+     * BIP-44 snap
+     */
+    const snapId3 = document.querySelector('.snapId3');
+    snapId3.value = 'local:http://localhost:8083';
+    const connectBip44Button = document.querySelector('button.connectBip44')
+    const sendBip44Button = document.querySelector('button.sendBip44')
+    const bip44Result = document.querySelector('span.bip44Result')
+
+    const bip44SignMessage = document.querySelector('.bip44SignMessage')
+    const sendBip44MessageButton = document.querySelector('button.sendBip44MessageButton')
+    const bip44SignMessageResult = document.querySelector('.bip44SignMessageResult')
+
+    connectBip44Button.addEventListener('click', connectBip44)
+    sendBip44Button.addEventListener('click', sendBip44)
+    sendBip44MessageButton.addEventListener('click', sendBip44Message)
+
+    async function connectBip44 () {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [{
+          wallet_snap: { [snapId3.value]: {} },
+        }]
+      })
+    }
+
+    async function sendBip44 () {
       try {
-        const response = await ethereum.request({
+        const result = await ethereum.request({
           method: 'wallet_invokeSnap',
-          params: [snapId.value, {
-            method: 'confirm',
-            params: [promptInput.value, description.value, textAreaContent.value]
+          params: [snapId3.value, {
+            method: 'getAccount',
           }]
         })
-        sendResults.innerHTML = response;
+        bip44Result.innerHTML = `Public key: ${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err)
+        alert('Problem happened: ' + err.message || err)
+      }
+    }
+
+    async function sendBip44Message () {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [snapId3.value, {
+            method: 'signMessage',
+            params: [bip44SignMessage.value]
+          }]
+        })
+        bip44SignMessageResult.innerHTML = `message: ${JSON.stringify(result)}`;
       } catch (err) {
         console.error(err)
         alert('Problem happened: ' + err.message || err)

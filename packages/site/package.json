@@ -1,5 +1,5 @@
 {
-  "name": "@metamask/test-snaps-site",
+  "name": "website",
   "version": "0.0.9",
   "description": "",
   "private": true,
