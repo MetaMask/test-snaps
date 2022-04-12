@@ -12,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
+  "homepage": "https://metamask.github.io/test-snaps/",
   "scripts": {
     "setup": "yarn install && yarn allow-scripts",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
