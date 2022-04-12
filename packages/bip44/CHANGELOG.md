@@ -6,14 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.1]
-- No Changes
-
 ## [0.1.0]
 ### Added
 - Changelog ([#24](https://github.com/MetaMask/test-snaps/pull/24))
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/MetaMask/test-snaps/compare/v0.1.0...v0.1.1
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/MetaMask/test-snaps/releases/tag/v0.1.0
