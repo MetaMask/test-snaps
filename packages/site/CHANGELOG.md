@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.1.0]
-### Uncategorized
-- Create BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
-- Add website build script ([#22](https://github.com/MetaMask/test-snaps/pull/22))
+### Added
+- BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
+- website build script ([#22](https://github.com/MetaMask/test-snaps/pull/22))
+### Fixed
 - Fix various monorepo-related issues ([#18](https://github.com/MetaMask/test-snaps/pull/18))
 
 ## [0.0.9]
