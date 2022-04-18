@@ -8,6 +8,10 @@
     "type": "git",
     "url": "https://github.com/MetaMask/snaps-skunkworks.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "ISC",
   "files": [
     "dist/",
