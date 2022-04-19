@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       base-branch:
-        description: "The base branch for git operations and the pull request."
-        default: "main"
+        description: 'The base branch for git operations and the pull request.'
+        default: 'main'
         required: true
       release-type:
         description: 'A SemVer version diff, i.e. major, minor, patch, prerelease etc. Mutually exclusive with "release-version".'
@@ -41,3 +41,6 @@ jobs:
         with:
           release-type: ${{ github.event.inputs.release-type }}
           release-version: ${{ github.event.inputs.release-version }}
+      - run: yarn --frozen-lockfile
+      - run: yarn allow-scripts
+      - run: yarn build
