@@ -31,12 +31,10 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       });
       return true;
     case 'retrieveTestData':
-      //    return state;
-      const persistedData = await wallet.request({
+      return await wallet.request({
         method: 'snap_manageState',
         params: ['get'],
       });
-      return persistedData;
     case 'clearTestData':
       await wallet.request({
         method: 'snap_manageState',
