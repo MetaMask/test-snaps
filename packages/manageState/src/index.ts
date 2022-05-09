@@ -31,12 +31,18 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       });
       return true;
     case 'retrieveTestData':
-      return state;
+      //    return state;
+      const persistedData = await wallet.request({
+        method: 'snap_manageState',
+        params: ['get'],
+      });
+      return persistedData;
     case 'clearTestData':
       await wallet.request({
         method: 'snap_manageState',
         params: ['clear'],
       });
+      return true;
 
     default:
       throw new Error('Method not found.');

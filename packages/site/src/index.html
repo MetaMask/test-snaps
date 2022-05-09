@@ -351,7 +351,7 @@
             },
           ],
         });
-        retrieveManageStateResult.innerHTML = result;
+        retrieveManageStateResult.innerHTML = `${JSON.stringify(result)}`;
       } catch (err) {
         console.error(err);
         alert('Problem happened: ' + err.message || err);
