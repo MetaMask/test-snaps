@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0]
+### Uncategorized
+- Fix monorepo workflows and package scripts ([#32](https://github.com/MetaMask/test-snaps/pull/32))
+- Fix BIP-44 snap publishConfig ([#31](https://github.com/MetaMask/test-snaps/pull/31))
+- Fix manifest versions ([#30](https://github.com/MetaMask/test-snaps/pull/30))
+
 ## [0.1.3]
 ### Changed
 - No Changes
@@ -23,7 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog ([#24](https://github.com/MetaMask/test-snaps/pull/24))
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/MetaMask/test-snaps/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/MetaMask/test-snaps/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/MetaMask/test-snaps/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/MetaMask/test-snaps/compare/v0.1.0...v0.1.1
