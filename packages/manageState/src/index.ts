@@ -1,5 +1,6 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
+// eslint-disable-next-line import/unambiguous
 wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   let state = (await wallet.request({
     method: 'snap_manageState',
