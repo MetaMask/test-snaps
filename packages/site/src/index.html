@@ -88,6 +88,25 @@
       </button>
       <span class="bip44SignMessageResult"></span>
     </section>
+
+    <section>
+      <h1>manageState Snap</h1>
+      <label>SnapId</label>
+      <input class="snapId4" />
+      <br />
+      <button class="connectManageState">Connect manageState Snap</button>
+      <input class="dataManageState" placeholder="data" />
+      <button class="sendManageState">Send data to manageState Snap</button>
+      <span class="sendManageStateResult"></span>
+      <br />
+      <button class="retrieveManageState">
+        Get data from manageState Snap
+      </button>
+      <span class="retrieveManageStateResult"></span>
+      <br />
+      <button class="clearManageState">Clear data of manageState Snap</button>
+      <span class="clearManageStateResult"></span>
+    </section>
   </body>
 
   <script>
@@ -252,6 +271,105 @@
           ],
         });
         bip44SignMessageResult.innerHTML = `message: ${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * manageState snap
+     */
+    const snapId4 = document.querySelector('.snapId4');
+    snapId4.value = 'local:http://localhost:8084';
+    const connectManageStateButton = document.querySelector(
+      'button.connectManageState',
+    );
+    const sendManageStateButton = document.querySelector(
+      'button.sendManageState',
+    );
+    const retrieveManageStateButton = document.querySelector(
+      'button.retrieveManageState',
+    );
+    const clearManageStateButton = document.querySelector(
+      'button.clearManageState',
+    );
+    const dataManageStateInput = document.querySelector('.dataManageState');
+    const sendManageStateResult = document.querySelector(
+      '.sendManageStateResult',
+    );
+    const retrieveManageStateResult = document.querySelector(
+      '.retrieveManageStateResult',
+    );
+    const clearManageStateResult = document.querySelector(
+      '.clearManageStateResult',
+    );
+
+    connectManageStateButton.addEventListener('click', connectManageState);
+    sendManageStateButton.addEventListener('click', sendManageState);
+    retrieveManageStateButton.addEventListener('click', retrieveManageState);
+    clearManageStateButton.addEventListener('click', clearManageState);
+
+    async function connectManageState() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId4.value]: {} },
+          },
+        ],
+      });
+    }
+
+    async function sendManageState() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId4.value,
+            {
+              method: 'storeTestData',
+              params: [dataManageStateInput.value],
+            },
+          ],
+        });
+        sendManageStateResult.innerHTML = 'true';
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    async function retrieveManageState() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId4.value,
+            {
+              method: 'retrieveTestData',
+            },
+          ],
+        });
+        retrieveManageStateResult.innerHTML = `${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    async function clearManageState() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId4.value,
+            {
+              method: 'clearTestData',
+            },
+          ],
+        });
+        clearManageStateResult.innerHTML = 'true';
       } catch (err) {
         console.error(err);
         alert('Problem happened: ' + err.message || err);
