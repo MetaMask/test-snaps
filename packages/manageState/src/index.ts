@@ -1,9 +1,5 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
-// bs comment out 050622
-// import openrpcDocument from './openrpc.json';
-
-// eslint-disable-next-line import/unambiguous
 wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   let state = (await wallet.request({
     method: 'snap_manageState',
@@ -20,9 +16,6 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   }
 
   switch (requestObject.method) {
-    //  bs comment out 050622
-    //  case 'rpc.discover':
-    //    return openrpcDocument;
     case 'storeTestData':
       state.testState.push(requestObject.params[0]);
       await wallet.request({
