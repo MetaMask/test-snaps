@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3",
+  "version": "0.2.0",
   "proposedName": "MetaMask manageState Test Snap",
   "description": "An MetaMask Test Snap that uses the manageState permission",
   "repository": {
