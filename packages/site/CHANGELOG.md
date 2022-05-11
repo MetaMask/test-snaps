@@ -7,17 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.2.0]
-### Uncategorized
-- create manageState test-snap and interface ([#33](https://github.com/MetaMask/test-snaps/pull/33))
-- Fix monorepo workflows and package scripts ([#32](https://github.com/MetaMask/test-snaps/pull/32))
+### Changed
+- No changes this release.
 
 ## [0.1.3]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.1.2]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.1.1]
 ### Fixed
@@ -33,11 +32,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.9]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.0.8]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.0.7]
 ### Added

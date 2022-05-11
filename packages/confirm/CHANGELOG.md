@@ -7,21 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.2.0]
-### Uncategorized
-- Fix monorepo workflows and package scripts ([#32](https://github.com/MetaMask/test-snaps/pull/32))
-- Fix manifest versions ([#30](https://github.com/MetaMask/test-snaps/pull/30))
+### Fixed
+- Fix snap manifest version ([#30](https://github.com/MetaMask/test-snaps/pull/30))
 
 ## [0.1.3]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.1.2]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.1.1]
 ### Changed
-- No Changes
+- No changes this release.
 
 ## [0.1.0]
 ### Added
