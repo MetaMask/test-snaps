@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0]
 ### Changed
-- Bump `@metamask/key-tree` to `4.0.0` ([#35](https://github.com/MetaMask/test-snaps/pull/35))
+- **BREAKING:** Bump `@metamask/key-tree` to `4.0.0` ([#35](https://github.com/MetaMask/test-snaps/pull/35))
 
 ## [0.2.0]
 ### Fixed
