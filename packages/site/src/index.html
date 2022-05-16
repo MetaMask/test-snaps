@@ -110,7 +110,11 @@
   </body>
 
   <script>
-    const version = document.location.href.includes('https://metamask.github.io/test-snaps') ? document.location.pathname.split('/')[2] : undefined;
+    const version = document.location.href.includes(
+      'https://metamask.github.io/test-snaps',
+    )
+      ? document.location.pathname.split('/')[2]
+      : undefined;
     /**
      * Confirm Snap
      */
