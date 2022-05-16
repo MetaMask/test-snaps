@@ -36,7 +36,7 @@
     "publish": "../../scripts/publish-package.sh"
   },
   "dependencies": {
-    "@metamask/key-tree": "^3.0.1",
+    "@metamask/key-tree": "^4.0.0",
     "@noble/bls12-381": "^1.2.0",
     "eth-rpc-errors": "^4.0.3"
   },
