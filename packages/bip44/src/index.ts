@@ -77,9 +77,13 @@ async function initialize() {
     method: 'snap_getBip44Entropy_1',
   })) as JsonBIP44CoinTypeNode;
 
-  PRIVATE_KEY = (await deriveBIP44AddressKey(coinTypeNode, {
-    account: 0,
-    change: 0,
-    address_index: 0,
-  })).privateKeyBuffer!;
+  PRIVATE_KEY =
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    (
+      await deriveBIP44AddressKey(coinTypeNode, {
+        account: 0,
+        change: 0,
+        address_index: 0,
+      })
+    ).privateKeyBuffer!;
 }
