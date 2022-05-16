@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.3.0]
-### Uncategorized
-- Update `key-tree` in BIP44 snap ([#35](https://github.com/MetaMask/test-snaps/pull/35))
+### Changed
+- Bump `key-tree` to `4.0.0` ([#35](https://github.com/MetaMask/test-snaps/pull/35))
 
 ## [0.2.0]
 ### Fixed
