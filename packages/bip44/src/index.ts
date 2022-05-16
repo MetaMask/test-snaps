@@ -77,9 +77,9 @@ async function initialize() {
     method: 'snap_getBip44Entropy_1',
   })) as JsonBIP44CoinTypeNode;
 
-  PRIVATE_KEY = deriveBIP44AddressKey(coinTypeNode, {
+  PRIVATE_KEY = (await deriveBIP44AddressKey(coinTypeNode, {
     account: 0,
     change: 0,
     address_index: 0,
-  }).slice(0, 32);
+  })).privateKeyBuffer!;
 }
