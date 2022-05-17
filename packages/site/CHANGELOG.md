@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0]
 ### Changed
-- No changes this release.
+- Request specific versions for snaps in production ([#37](https://github.com/MetaMask/test-snaps/pull/37))
+  - When the site is deployed to GitHub pages at a path ending in its SemVer version, connecting to a snap will request the version corresponding to the URL.
+  - For example, if the URL is `metamask.github.io/test-snaps/0.3.0`, version `0.3.0` will be requested.
+  - This change will be backported to previous GitHub pages releases of this package.
 
 ## [0.2.0]
 ### Changed
