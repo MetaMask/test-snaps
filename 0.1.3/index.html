@@ -90,6 +90,11 @@
   </body>
 
   <script>
+    const version = document.location.href.includes(
+      'https://metamask.github.io/test-snaps',
+    )
+      ? document.location.pathname.split('/')[2]
+      : undefined;
     /**
      * Confirm Snap
      */
@@ -112,7 +117,7 @@
       await ethereum.request({
         method: 'wallet_enable',
         params: [{
-          wallet_snap: { [snapId1.value]: {} },
+          wallet_snap: { [snapId1.value]: { version } },
         }]
       })
     }
@@ -151,7 +156,7 @@
       await ethereum.request({
         method: 'wallet_enable',
         params: [{
-          wallet_snap: { [snapId2.value]: {} },
+          wallet_snap: { [snapId2.value]: { version } },
         }]
       })
     }
@@ -193,7 +198,7 @@
       await ethereum.request({
         method: 'wallet_enable',
         params: [{
-          wallet_snap: { [snapId3.value]: {} },
+          wallet_snap: { [snapId3.value]: { version } },
         }]
       })
     }
