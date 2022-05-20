@@ -1,12 +1,34 @@
 body {
-  font: 15px/1.333 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
+  font-family: 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 100%;
+  padding: 5px 10px;
+}
+#logo-container {
+  display: inline-flex;
+  flex-direction: column;
 }
 .testSnapsLogo {
   font: 40px 'EuclidCircularB-Bold', Arial, Helvetica, sans-serif;
+}
+.testSnapsName {
+  font: 20px 'EuclidCircularB-Bold', Arial, Helvetica, sans-serif;
+}
+.testSnapsReg {
+  font: 16px 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
 }
 .fox {
   width: 360px;
   display: block;
   line-height: 0.625em;
   color: #8b45b6;
+}
+.btn-wide {
+  width: 100%;
 }
