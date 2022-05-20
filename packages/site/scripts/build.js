@@ -6,6 +6,10 @@ const FileNames = {
   icon: 'icon.svg',
   style: 'style.css',
   index: 'index.html',
+  script: 'test-snaps.js',
+  image: 'snaps-ascii-to-logo.gif',
+  font1: 'EuclidCircularB-Bold.woff',
+  font2: 'EuclidCircularB-Regular.woff',
 };
 
 const rootPath = path.resolve(__dirname, '../');
@@ -34,6 +38,10 @@ async function main(mode) {
   await mkdirp(distPath);
   await copyToDist(FileNames.icon);
   await copyToDist(FileNames.style);
+  await copyToDist(FileNames.script);
+  await copyToDist(FileNames.image);
+  await copyToDist(FileNames.font1);
+  await copyToDist(FileNames.font2);
 
   if (mode === 'dev') {
     await copyToDist(FileNames.index);

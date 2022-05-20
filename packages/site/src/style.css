@@ -1,9 +1,12 @@
 body {
-  font-family: monospace;
+  font: 15px/1.333 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
+}
+.testSnapsLogo {
+  font: 40px 'EuclidCircularB-Bold', Arial, Helvetica, sans-serif;
 }
 .fox {
-   width: 360px;
-   display: block;
-   line-height: .625em;
-   color: #8b45b6;
+  width: 360px;
+  display: block;
+  line-height: 0.625em;
+  color: #8b45b6;
 }
