@@ -33,7 +33,7 @@
   <body>
     <main class="container-fluid">
       <!-- Header -->
-      <div class="container">
+      <div class="container headercenter">
         <div class="row justify-content-center">
           <div class="col">
             <h1 class="testSnapsLogo">Test Snaps</h1>
@@ -42,19 +42,22 @@
         </div>
       </div>
       <br />
-      
-      <!-- Confirm Snap Interface -->
-      <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-        <div class="card testSnapsReg">         
+
+      <div class="row">
+        <!-- Confirm Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="card testSnapsReg shadow">
             <div class="card-header">
-               <h1 class="testSnapsName">Confirm Snap</h1>
+              <h1 class="testSnapsName">Confirm Snap</h1>
             </div>
             <div class="card-body">
               <label>SnapId</label>
               <input class="snapId1" />
               <br />
               <br />
-              <button class="connectHello btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="connectHello btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Connect To Confirm Snap
               </button>
               <br />
@@ -64,10 +67,15 @@
               <input class="confirmDescription" placeholder="description" />
               <br />
               <br />
-              <input class="confirmTextAreaContent" placeholder="content area" />
+              <input
+                class="confirmTextAreaContent"
+                placeholder="content area"
+              />
               <br />
               <br />
-              <button class="sendConfirmButton btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="sendConfirmButton btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Send Inputs to Hello Snap
               </button>
               <p class="info-text alert alert-secondary">
@@ -76,24 +84,27 @@
             </div>
           </div>
         </div>
-      </div>
-      <br />
+        <br />
 
-      <!-- Error Snap Interface -->
-      <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-        <div class="card testSnapsReg">         
+        <!-- Error Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="card testSnapsReg shadow">
             <div class="card-header">
-               <h1 class="testSnapsName">Error Snap</h1>
+              <h1 class="testSnapsName">Error Snap</h1>
             </div>
             <div class="card-body">
               <label>SnapId</label>
               <input class="snapId2" />
               <br />
               <br />
-              <button class="connectError btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="connectError btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Connect Error Snap
               </button>
-              <button class="sendError btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="sendError btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Send Test to Error Snap
               </button>
               <p class="info-text alert alert-secondary">
@@ -102,24 +113,30 @@
             </div>
           </div>
         </div>
+        <br />
       </div>
       <br />
 
-      <!-- BIP-44 Snap Interface -->
-      <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-        <div class="card testSnapsReg">         
+      <div class="row">
+        <!-- BIP-44 Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="card testSnapsReg shadow">
             <div class="card-header">
-               <h1 class="testSnapsName">BIP-44 Snap</h1>
+              <h1 class="testSnapsName">BIP-44 Snap</h1>
             </div>
             <div class="card-body">
               <label>SnapId</label>
               <input class="snapId3" />
               <br />
               <br />
-              <button class="connectBip44 btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="connectBip44 btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Connect BIP-44 Snap
               </button>
-              <button class="sendBip44 btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="sendBip44 btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Send Test to BIP-44 Snap
               </button>
               <p class="info-text alert alert-secondary">
@@ -129,7 +146,9 @@
               <input class="bip44SignMessage" placeholder="message" />
               <br />
               <br />
-              <button class="sendBip44MessageButton btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="sendBip44MessageButton btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Sign Message with BIP-44 Snap
               </button>
               <br />
@@ -139,12 +158,11 @@
             </div>
           </div>
         </div>
-      </div>
-      <br />      
+        <br />
 
-      <!-- manageState Snap Interface -->
-        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-          <div class="card testSnapsReg">
+        <!-- manageState Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="card testSnapsReg shadow">
             <div class="card-header">
               <h1 class="testSnapsName">manageState Snap</h1>
             </div>
@@ -153,34 +171,48 @@
               <input class="snapId4" />
               <br />
               <br />
-              <button class="connectManageState btn btn-primary btn-med btn-block mb-3 btn-wide">Connect manageState Snap</button>
+              <button
+                class="connectManageState btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect manageState Snap
+              </button>
               <br />
               <input class="dataManageState" placeholder="data" />
               <br />
               <br />
-              <button class="sendManageState btn btn-primary btn-med btn-block mb-3 btn-wide">Send data to manageState Snap</button>
+              <button
+                class="sendManageState btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send data to manageState Snap
+              </button>
               <br />
               <p class="info-text alert alert-secondary">
-              <span class="sendManageStateResult"></span>
+                <span class="sendManageStateResult"></span>
               </p>
-              <button class="retrieveManageState btn btn-primary btn-med btn-block mb-3 btn-wide">
+              <button
+                class="retrieveManageState btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
                 Get data from manageState Snap
               </button>
               <br />
               <p class="info-text alert alert-secondary">
-                <span class="retrieveManageStateResult"></span> 
+                <span class="retrieveManageStateResult"></span>
               </p>
-              <button class="clearManageState btn btn-primary btn-med btn-block mb-3 btn-wide">Clear data of manageState Snap</button>
+              <button
+                class="clearManageState btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Clear data of manageState Snap
+              </button>
               <p class="info-text alert alert-secondary">
                 <span class="clearManageStateResult"></span>
               </p>
             </div>
           </div>
         </div>
-        <br />        
+      </div>
+      <br />
     </main>
   </body>
-
 
   <!-- All interface connection logic below -->
   <script>

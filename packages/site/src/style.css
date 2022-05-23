@@ -1,7 +1,7 @@
 body {
   font-family: 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
 }
-header {
+.headercenter {
   display: flex;
   justify-content: center;
   align-items: center;
