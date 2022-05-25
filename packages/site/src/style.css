@@ -1,5 +1,15 @@
+@font-face {
+  font-family: 'EuclidCircularB-Regular';
+  src: url('EuclidCircularB-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EuclidCircularB-Bold';
+  src: url('EuclidCircularB-Bold.woff') format('woff');
+}
+
 body {
-  font-family: 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
+  font-family: EuclidCircularB-Regular, sans-serif;
 }
 .headercenter {
   display: flex;
@@ -15,13 +25,13 @@ input {
   flex-direction: column;
 }
 .testSnapsLogo {
-  font: 40px 'EuclidCircularB-Bold', Arial, Helvetica, sans-serif;
+  font: 40px EuclidCircularB-Bold, sans-serif;
 }
 .testSnapsName {
-  font: 20px 'EuclidCircularB-Bold', Arial, Helvetica, sans-serif;
+  font: 20px EuclidCircularB-Bold, sans-serif;
 }
 .testSnapsReg {
-  font: 16px 'EuclidCircularB-Regular', Arial, Helvetica, sans-serif;
+  font: 16px EuclidCircularB-Regular, sans-serif;
 }
 .fox {
   width: 360px;
