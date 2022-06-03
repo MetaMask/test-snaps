@@ -107,6 +107,18 @@
       <button class="clearManageState">Clear data of manageState Snap</button>
       <span class="clearManageStateResult"></span>
     </section>
+
+    <section>
+      <h1>Notification Snap</h1>
+      <label>SnapId</label>
+      <input class="snapId5" />
+      <br />
+      <button class="connectNotification">Connect Notification Snap</button>
+      <br />
+      <button class="sendInAppNotification">Send InApp Notification</button>
+      <br />
+      <button class="sendNativeNotification">Send Native Notification</button>
+    </section>
   </body>
 
   <script>
@@ -375,6 +387,58 @@
           ],
         });
         clearManageStateResult.innerHTML = 'true';
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * Notification Snap
+     */
+    const snapId5 = document.querySelector('.snapId5');
+    snapId5.value = 'local:http://localhost:8085';
+
+    const connectNotificationButton = document.querySelector(
+      'button.connectNotification',
+    );
+    const sendInAppNotificationButton = document.querySelector(
+      'button.sendInAppNotification',
+    );
+    const sendNativeNotificationButton = document.querySelector(
+      'button.sendNativeNotification',
+    );
+
+    connectNotificationButton.addEventListener('click', connectNotification);
+    sendInAppNotificationButton.addEventListener('click', () =>
+      sendNotification('inApp'),
+    );
+    sendNativeNotificationButton.addEventListener('click', () =>
+      sendNotification('native'),
+    );
+
+    async function connectNotification() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId5.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    async function sendNotification(method) {
+      try {
+        await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId5,
+            {
+              method: method,
+            },
+          ],
+        });
       } catch (err) {
         console.error(err);
         alert('Problem happened: ' + err.message || err);
