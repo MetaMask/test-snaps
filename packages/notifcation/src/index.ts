@@ -19,7 +19,7 @@ wallet.registerRpcMessageHandler(async (originString, requestObject) => {
         params: [
           {
             type: 'native',
-            message: `TEST NATIVE NOTIFICATION`,
+            message: `Hello, ${originString}!`,
           },
         ],
       });
