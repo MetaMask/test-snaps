@@ -127,6 +127,7 @@
     )
       ? document.location.pathname.split('/')[2]
       : undefined;
+
     /**
      * Confirm Snap
      */
@@ -433,7 +434,7 @@
         await ethereum.request({
           method: 'wallet_invokeSnap',
           params: [
-            snapId5,
+            snapId5.value,
             {
               method: method,
             },

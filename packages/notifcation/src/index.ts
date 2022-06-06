@@ -9,7 +9,7 @@ wallet.registerRpcMessageHandler(async (originString, requestObject) => {
         params: [
           {
             type: 'inApp',
-            message: `Hello, ${originString}!`,
+            message: `TEST INAPP NOTIFICATION`,
           },
         ],
       });
@@ -19,7 +19,7 @@ wallet.registerRpcMessageHandler(async (originString, requestObject) => {
         params: [
           {
             type: 'native',
-            message: `Hello, ${originString}!`,
+            message: `TEST NATIVE NOTIFICATION`,
           },
         ],
       });
