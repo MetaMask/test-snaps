@@ -10,7 +10,7 @@ import {
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
 
-wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
+module.exports.onMessage = async (_originString, requestObject) => {
   if (!PRIVATE_KEY) {
     await initialize();
   }
@@ -64,7 +64,7 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
         data: { method: requestObject.method },
       });
   }
-});
+};
 
 /**
  * Calls `snap_getBip44Entropy_1` and sets {@link PRIVATE_KEY} to an address key

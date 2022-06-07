@@ -3,7 +3,7 @@
 import openrpcDocument from './openrpc.json';
 
 // eslint-disable-next-line import/unambiguous
-wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
+module.exports.onMessage = async (_originString, requestObject) => {
   switch (requestObject.method) {
     case 'rpc.discover':
       return openrpcDocument;
@@ -21,4 +21,4 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
     default:
       throw new Error('Method not found.');
   }
-});
+};
