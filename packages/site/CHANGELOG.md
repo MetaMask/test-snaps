@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.0]
-### Uncategorized
-- Add notifications snap to tests ([#41](https://github.com/MetaMask/test-snaps/pull/41))
+### Added
+- Add notifications snap ([#41](https://github.com/MetaMask/test-snaps/pull/41))
 
 ## [0.3.0]
 ### Changed
