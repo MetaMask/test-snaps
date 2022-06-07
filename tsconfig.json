@@ -9,7 +9,7 @@
     "sourceMap": false,
     "strict": true,
     "target": "ES2017",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
-  "files": ["./node_modules/@metamask/snap-types/global.d.ts"],
+  "files": ["./node_modules/@metamask/snap-types/global.d.ts"]
 }
