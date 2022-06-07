@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0]
+
 ## [0.3.0]
 ### Changed
 - **BREAKING:** Bump `@metamask/key-tree` to `4.0.0` ([#35](https://github.com/MetaMask/test-snaps/pull/35))
@@ -31,7 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog ([#24](https://github.com/MetaMask/test-snaps/pull/24))
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/MetaMask/test-snaps/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/MetaMask/test-snaps/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/MetaMask/test-snaps/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/MetaMask/test-snaps/compare/v0.1.2...v0.1.3
