@@ -1,5 +1,3 @@
-/// <reference path="../../../types/wallet.d.ts" />
-
 import openrpcDocument from './openrpc.json';
 
 // eslint-disable-next-line import/unambiguous
