@@ -1,7 +1,7 @@
 {
-  "name": "@metamask/test-snap-confirm",
+  "name": "@metamask/test-snap-notification",
   "version": "0.4.0",
-  "description": "MetaMask Confirm Test Snap",
+  "description": "MetaMask notification Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
