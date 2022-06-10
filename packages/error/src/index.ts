@@ -1,7 +1,7 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
 /* eslint-disable import/unambiguous */
-module.exports.onMessage = async () => {
+export const onRpcMessage = async () => {
   // eslint-disable-next-line no-new
   new Promise((resolve, _reject) => {
     let num = 0;

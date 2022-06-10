@@ -3,8 +3,8 @@
 import openrpcDocument from './openrpc.json';
 
 // eslint-disable-next-line import/unambiguous
-module.exports.onMessage = async (_originString, requestObject) => {
-  switch (requestObject.method) {
+export const onRpcMessage = async ({ request }) => {
+  switch (request.method) {
     case 'rpc.discover':
       return openrpcDocument;
     case 'confirm':
@@ -12,9 +12,9 @@ module.exports.onMessage = async (_originString, requestObject) => {
         method: 'snap_confirm',
         params: [
           {
-            prompt: requestObject.params[0] || 'Hello',
-            description: requestObject.params[1],
-            textAreaContent: requestObject.params[2],
+            prompt: request.params[0] || 'Hello',
+            description: request.params[1],
+            textAreaContent: request.params[2],
           },
         ],
       });

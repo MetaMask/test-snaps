@@ -10,7 +10,7 @@ import {
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
 
-module.exports.onMessage = async (_originString, requestObject) => {
+export const onRpcMessage = async ({ request }) => {
   if (!PRIVATE_KEY) {
     await initialize();
   }
@@ -29,13 +29,13 @@ module.exports.onMessage = async (_originString, requestObject) => {
       .join('')}`;
   }
 
-  switch (requestObject.method) {
+  switch (request.method) {
     case 'getAccount':
       return nobleOutputToHexString(getPublicKey(PRIVATE_KEY));
 
     case 'signMessage': {
       const pubKey = getPublicKey(PRIVATE_KEY);
-      const data = requestObject.params[0];
+      const data = request.params[0];
 
       if (!data || typeof data !== 'string') {
         throw ethErrors.rpc.invalidParams({
@@ -61,7 +61,7 @@ module.exports.onMessage = async (_originString, requestObject) => {
 
     default:
       throw ethErrors.rpc.methodNotFound({
-        data: { method: requestObject.method },
+        data: { method: request.method },
       });
   }
 };

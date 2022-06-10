@@ -1,7 +1,7 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
 // eslint-disable-next-line import/unambiguous
-module.exports.onMessage = async (_originString, requestObject) => {
+export const onRpcMessage = async ({ request }) => {
   let state = (await wallet.request({
     method: 'snap_manageState',
     params: ['get'],
@@ -16,9 +16,9 @@ module.exports.onMessage = async (_originString, requestObject) => {
     });
   }
 
-  switch (requestObject.method) {
+  switch (request.method) {
     case 'storeTestData':
-      state.testState.push(requestObject.params[0]);
+      state.testState.push(request.params[0]);
       await wallet.request({
         method: 'snap_manageState',
         params: ['update', state],

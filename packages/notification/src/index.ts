@@ -1,8 +1,8 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
 // eslint-disable-next-line import/unambiguous
-wallet.registerRpcMessageHandler(async (originString, requestObject) => {
-  switch (requestObject.method) {
+export const onRpcMessage = async ({ origin, request }) => {
+  switch (request.method) {
     case 'inApp':
       return wallet.request({
         method: 'snap_notify',
@@ -19,11 +19,11 @@ wallet.registerRpcMessageHandler(async (originString, requestObject) => {
         params: [
           {
             type: 'native',
-            message: `Hello, ${originString}!`,
+            message: `Hello, ${origin}!`,
           },
         ],
       });
     default:
       throw new Error('Method not found.');
   }
-});
+};
