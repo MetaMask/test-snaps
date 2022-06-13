@@ -3,7 +3,7 @@
 import openrpcDocument from './openrpc.json';
 
 // eslint-disable-next-line import/unambiguous
-export const onRpcMessage = async ({ request }) => {
+export const onRpcRequest = async ({ request }) => {
   switch (request.method) {
     case 'rpc.discover':
       return openrpcDocument;

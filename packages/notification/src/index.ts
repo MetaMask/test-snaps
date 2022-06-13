@@ -1,7 +1,7 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
 // eslint-disable-next-line import/unambiguous
-export const onRpcMessage = async ({ origin, request }) => {
+export const onRpcRequest = async ({ origin, request }) => {
   switch (request.method) {
     case 'inApp':
       return wallet.request({

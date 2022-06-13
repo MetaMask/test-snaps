@@ -10,7 +10,7 @@ import {
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
 
-export const onRpcMessage = async ({ request }) => {
+export const onRpcRequest = async ({ request }) => {
   if (!PRIVATE_KEY) {
     await initialize();
   }

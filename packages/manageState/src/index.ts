@@ -1,7 +1,7 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
 // eslint-disable-next-line import/unambiguous
-export const onRpcMessage = async ({ request }) => {
+export const onRpcRequest = async ({ request }) => {
   let state = (await wallet.request({
     method: 'snap_manageState',
     params: ['get'],
