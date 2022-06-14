@@ -1,7 +1,10 @@
 /// <reference path="../../../types/wallet.d.ts" />
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 
-// eslint-disable-next-line import/unambiguous
-export const onRpcRequest = async ({ origin, request }) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({
+  origin,
+  request,
+}) => {
   switch (request.method) {
     case 'inApp':
       return wallet.request({

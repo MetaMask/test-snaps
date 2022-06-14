@@ -10,6 +10,7 @@
     "strict": true,
     "target": "ES2017",
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "typeRoots": ["./types/wallet.d.ts"]
   }
 }

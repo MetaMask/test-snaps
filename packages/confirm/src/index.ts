@@ -1,9 +1,10 @@
 /// <reference path="../../../types/wallet.d.ts" />
 
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 import openrpcDocument from './openrpc.json';
 
-// eslint-disable-next-line import/unambiguous
-export const onRpcRequest = async ({ request }) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
+  const params = request.params as string[];
   switch (request.method) {
     case 'rpc.discover':
       return openrpcDocument;
@@ -12,9 +13,9 @@ export const onRpcRequest = async ({ request }) => {
         method: 'snap_confirm',
         params: [
           {
-            prompt: request.params[0] || 'Hello',
-            description: request.params[1],
-            textAreaContent: request.params[2],
+            prompt: params[0] || 'Hello',
+            description: params[1],
+            textAreaContent: params[2],
           },
         ],
       });

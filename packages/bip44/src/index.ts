@@ -6,11 +6,12 @@ import {
   deriveBIP44AddressKey,
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
 
-export const onRpcRequest = async ({ request }) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   if (!PRIVATE_KEY) {
     await initialize();
   }
@@ -35,7 +36,7 @@ export const onRpcRequest = async ({ request }) => {
 
     case 'signMessage': {
       const pubKey = getPublicKey(PRIVATE_KEY);
-      const data = request.params[0];
+      const data = (request.params as string[])[0];
 
       if (!data || typeof data !== 'string') {
         throw ethErrors.rpc.invalidParams({

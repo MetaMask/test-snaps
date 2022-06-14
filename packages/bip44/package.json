@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@metamask/key-tree": "^4.0.0",
+    "@metamask/snap-types": "^0.16.0",
     "@noble/bls12-381": "^1.2.0",
     "eth-rpc-errors": "^4.0.3"
   },
