@@ -1,4 +1,3 @@
-/// <reference path="../../../types/wallet.d.ts" />
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 
 export const onRpcRequest: OnRpcRequestHandler = async ({

@@ -1,5 +1,3 @@
-/// <reference path="../../../types/wallet.d.ts" />
-
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 import openrpcDocument from './openrpc.json';
 

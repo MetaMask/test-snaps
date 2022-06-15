@@ -7,10 +7,10 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "KCpJQr2+FWUQgQiqHgR16AUOoV6anJVnkorDcGCT5m8=",
+    "shasum": "booYtQWNMsDIkvd4UenfueLkMgrVP2HiViDkYuLzhRM=",
     "location": {
       "npm": {
-        "filePath": "dist/index.js",
+        "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
         "packageName": "@metamask/test-snap-error",
         "registry": "https://registry.npmjs.org/"

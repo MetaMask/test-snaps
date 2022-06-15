@@ -1,7 +1,7 @@
 module.exports = {
   cliOptions: {
     port: 8084,
-    src: 'build/index.js',
+    src: './src/index.ts',
     transpilationMode: 'localOnly',
   },
 };
