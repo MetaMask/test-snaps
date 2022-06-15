@@ -10,7 +10,7 @@
     "strict": true,
     "target": "ES2017",
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "files": ["./node_modules/@metamask/snap-types/global.d.ts"]
 }
