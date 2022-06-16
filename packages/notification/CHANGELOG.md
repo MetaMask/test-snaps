@@ -6,9 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+### Uncategorized
+- BREAKING: Update test snaps to CommonJS syntax ([#44](https://github.com/MetaMask/test-snaps/pull/44))
+- Fix notification folder typo ([#47](https://github.com/MetaMask/test-snaps/pull/47))
+
 ## [0.4.0]
 ### Added
 - Initial release ([#41](https://github.com/MetaMask/test-snaps/pull/41))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/MetaMask/test-snaps/releases/tag/v0.4.0
