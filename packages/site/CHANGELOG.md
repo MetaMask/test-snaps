@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+### Changed
+- No changes this release.
+
 ## [0.4.0]
 ### Added
 - Add notifications snap ([#41](https://github.com/MetaMask/test-snaps/pull/41))
@@ -73,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/MetaMask/test-snaps/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/MetaMask/test-snaps/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/MetaMask/test-snaps/compare/v0.1.3...v0.2.0

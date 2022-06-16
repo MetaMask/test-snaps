@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+### Changed
+- **BREAKING:** Update test snaps to export `onRpcRequest` via CommonJS syntax ([#44](https://github.com/MetaMask/test-snaps/pull/44))
+
 ## [0.4.0]
 ### Changed
 - No changes this release.
@@ -18,7 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release ([#33](https://github.com/MetaMask/test-snaps/pull/33))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/MetaMask/test-snaps/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/MetaMask/test-snaps/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/MetaMask/test-snaps/releases/tag/v0.2.0
