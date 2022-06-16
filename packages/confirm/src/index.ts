@@ -1,10 +1,9 @@
-/// <reference path="../../../types/wallet.d.ts" />
-
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 import openrpcDocument from './openrpc.json';
 
-// eslint-disable-next-line import/unambiguous
-wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
-  switch (requestObject.method) {
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
+  const params = request.params as string[];
+  switch (request.method) {
     case 'rpc.discover':
       return openrpcDocument;
     case 'confirm':
@@ -12,13 +11,13 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
         method: 'snap_confirm',
         params: [
           {
-            prompt: requestObject.params[0] || 'Hello',
-            description: requestObject.params[1],
-            textAreaContent: requestObject.params[2],
+            prompt: params[0] || 'Hello',
+            description: params[1],
+            textAreaContent: params[2],
           },
         ],
       });
     default:
       throw new Error('Method not found.');
   }
-});
+};

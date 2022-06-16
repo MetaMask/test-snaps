@@ -1,16 +1,15 @@
-/// <reference path="../../../types/wallet.d.ts" />
-
 import { ethErrors } from 'eth-rpc-errors';
 import { getPublicKey, sign } from '@noble/bls12-381';
 import {
   deriveBIP44AddressKey,
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 
 let PRIVATE_KEY: Uint8Array;
 let encoder: TextEncoder;
 
-wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   if (!PRIVATE_KEY) {
     await initialize();
   }
@@ -29,13 +28,13 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
       .join('')}`;
   }
 
-  switch (requestObject.method) {
+  switch (request.method) {
     case 'getAccount':
       return nobleOutputToHexString(getPublicKey(PRIVATE_KEY));
 
     case 'signMessage': {
       const pubKey = getPublicKey(PRIVATE_KEY);
-      const data = requestObject.params[0];
+      const data = (request.params as string[])[0];
 
       if (!data || typeof data !== 'string') {
         throw ethErrors.rpc.invalidParams({
@@ -61,10 +60,10 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
 
     default:
       throw ethErrors.rpc.methodNotFound({
-        data: { method: requestObject.method },
+        data: { method: request.method },
       });
   }
-});
+};
 
 /**
  * Calls `snap_getBip44Entropy_1` and sets {@link PRIVATE_KEY} to an address key

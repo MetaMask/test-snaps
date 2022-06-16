@@ -1,7 +1,6 @@
-/// <reference path="../../../types/wallet.d.ts" />
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 
-// eslint-disable-next-line import/unambiguous
-wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   let state = (await wallet.request({
     method: 'snap_manageState',
     params: ['get'],
@@ -16,9 +15,9 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
     });
   }
 
-  switch (requestObject.method) {
+  switch (request.method) {
     case 'storeTestData':
-      state.testState.push(requestObject.params[0]);
+      state.testState.push((request.params as string[])[0]);
       await wallet.request({
         method: 'snap_manageState',
         params: ['update', state],
@@ -39,4 +38,4 @@ wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
     default:
       throw new Error('Method not found.');
   }
-});
+};

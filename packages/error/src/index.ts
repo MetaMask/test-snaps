@@ -1,7 +1,6 @@
-/// <reference path="../../../types/wallet.d.ts" />
+import { OnRpcRequestHandler } from '@metamask/snap-types';
 
-/* eslint-disable import/unambiguous */
-wallet.registerRpcMessageHandler(async () => {
+export const onRpcRequest: OnRpcRequestHandler = async () => {
   // eslint-disable-next-line no-new
   new Promise((resolve, _reject) => {
     let num = 0;
@@ -13,4 +12,4 @@ wallet.registerRpcMessageHandler(async () => {
     resolve(undefined);
   });
   return 'foo';
-});
+};
