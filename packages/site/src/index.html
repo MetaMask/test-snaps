@@ -3,124 +3,244 @@
   <head>
     <title>Test Snaps</title>
     <link rel="icon" type="image/svg" href="./icon.svg" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link href="style.css" rel="stylesheet" type="text/css" media="all" />
   </head>
+
   <body>
-    <code class="fox">
-      MMm*mmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmm*mMM
-      MM*./***mMMMMMMMMMMMMMMMMMMMMMMMMMMm***/.*MM
-      MM/...///*mMMMMMMMMMMMMMMMMMMMMMMm*///.../MM
-      Mm.....//../*mMMMMMMMMMMMMMMMMm*/..//.....mM
-      M*....../*....*mMMMMMMMMMMMMm*....*/......*M
-      M/........*.....*//////////*...../......../M
-      m..........*/...//........//.../*..........m
-      M/..........//.../......../...//........../M
-      M/.........../*/./.......//./*/.........../M
-      M*.............////......////.............*M
-      Mm...............**......**...............mM
-      Mm/...............*/..../*.............../mM
-      MM/............../*/..../*/............../MM
-      Mm..............//./...././/..............mM
-      MM*............*/../..../../*............*MM
-      MM/........../*..../..../....*/........../MM
-      MMm.........//...../..../.....//.........mMM
-      MMm......//**....../..../......**//......mMM
-      MMM/..////.*......./..../......././///../MMM
-      MMMm*//..../......./..../......./....//*mMMM
-      MMMm......*////////*....*////////*......mMMM
-      MMM*......*////////*....*////////*......*MMM
-      MMM/....../*......./..../.......*/....../MMM
-      MMm........**/./m*./..../.**/..**........mMM
-      MM*........//*mMMM///..///mMMm*//........*MM
-      MM/........././*mM*//..//*Mm*/./........./MM
-      Mm..........//.../**/../**/...//..........mM
-      M*...........*..../*/../*/..../...........*M
-      M*///////////*/.../m/../m/.../*///////////*M
-      M*.........../*/...m/../m.../*/...........*M
-      Mm.........../..//.*....*./*../...........mM
-      MM/........../...//******//.../........../MM
-      MM*........../....*MMMMMM*..../..........*MM
-      MMm........../....*MMMMMM*..../..........mMM
-      MMm/........//....*MMMMMM*....//......../mMM
-      MMM/....../*mm*...*mmmmmm*...*mm*/....../MMM
-      MMM*../*mmMMMMMm///......//*mMMMMMmm*/..*MMM
-      MMMm*mMMMMMMMMMMm**......**mMMMMMMMMMMm*mMMM
-      MMMMMMMMMMMMMMMMMm/....../mMMMMMMMMMMMMMMMMM
-      MMMMMMMMMMMMMMMMMMmmmmmmmmMMMMMMMMMMMMMMMMMM
-    </code>
-    <h1>Test Snaps</h1>
-    <section>
-      <h1>Confirm Snap</h1>
-      <label>SnapId</label>
-      <input class="snapId1" />
+    <main class="container-fluid">
+      <!-- Header -->
+      <div class="container headercenter">
+        <div class="row justify-content-center">
+          <div class="col align-items-center">
+            <h1 class="testSnapsLogo">Test Snaps</h1>
+            <img src="snaps-ascii-to-logo.gif" width="200" alt="" />
+          </div>
+        </div>
+      </div>
       <br />
-      <button class="connectHello">Connect To Confirm Snap</button>
-      <input class="confirmPromptInput" placeholder="hello" />
-      <input class="confirmDescription" />
-      <input class="confirmTextAreaContent" />
-      <button class="sendConfirmButton">Send Inputs to Hello Snap</button>
-      <span class="confirmResult"></span>
-    </section>
+      <!-- Row 1 -->
+      <div class="row justify-content-center">
+        <!-- Confirm Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Confirm Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId1" />
+              <br />
+              <br />
+              <button
+                id="connectHello"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect To Confirm Snap
+              </button>
+              <br />
+              <input id="confirmPromptInput" placeholder="hello" />
+              <br />
+              <br />
+              <input id="confirmDescription" placeholder="description" />
+              <br />
+              <br />
+              <input id="confirmTextAreaContent" placeholder="content area" />
+              <br />
+              <br />
+              <button
+                id="sendConfirmButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Inputs to Hello Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="confirmResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <section>
-      <h1>Error Snap</h1>
-      <label>SnapId</label>
-      <input class="snapId2" />
-      <br />
-      <button class="connectError">Connect Error Snap</button>
-      <button class="sendError">Send Test to Error Snap</button>
-      <span class="errorResult"></span>
-    </section>
+        <!-- Error Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Error Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId2" />
+              <br />
+              <br />
+              <button
+                id="connectError"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect Error Snap
+              </button>
+              <button
+                id="sendError"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Test to Error Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="errorResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <section>
-      <h1>BIP-44 Snap</h1>
-      <label>SnapId</label>
-      <input class="snapId3" />
-      <br />
-      <button class="connectBip44">Connect BIP-44 Snap</button>
-      <button class="sendBip44">Send Test to BIP-44 Snap</button>
-      <br />
-      <span class="bip44Result"></span>
-      <br />
-      <input class="bip44SignMessage" placeholder="message" />
-      <button class="sendBip44MessageButton">
-        Sign Message with BIP-44 Snap
-      </button>
-      <span class="bip44SignMessageResult"></span>
-    </section>
+      <!-- Row 2 -->
+      <div class="row justify-content-center">
+        <!-- BIP-44 Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">BIP-44 Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId3" />
+              <br />
+              <br />
+              <button
+                id="connectBip44"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect BIP-44 Snap
+              </button>
+              <button
+                id="sendBip44"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Test to BIP-44 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip44Result"></span>
+              </p>
+              <br />
+              <input id="bip44SignMessage" placeholder="message" />
+              <br />
+              <br />
+              <button
+                id="sendBip44MessageButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Sign Message with BIP-44 Snap
+              </button>
+              <br />
+              <p class="info-text alert alert-secondary">
+                <span id="bip44SignMessageResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <section>
-      <h1>manageState Snap</h1>
-      <label>SnapId</label>
-      <input class="snapId4" />
-      <br />
-      <button class="connectManageState">Connect manageState Snap</button>
-      <input class="dataManageState" placeholder="data" />
-      <button class="sendManageState">Send data to manageState Snap</button>
-      <span class="sendManageStateResult"></span>
-      <br />
-      <button class="retrieveManageState">
-        Get data from manageState Snap
-      </button>
-      <span class="retrieveManageStateResult"></span>
-      <br />
-      <button class="clearManageState">Clear data of manageState Snap</button>
-      <span class="clearManageStateResult"></span>
-    </section>
+        <!-- manageState Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">manageState Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId4" />
+              <br />
+              <br />
+              <button
+                id="connectManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect manageState Snap
+              </button>
+              <br />
+              <input id="dataManageState" placeholder="data" />
+              <br />
+              <br />
+              <button
+                id="sendManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send data to manageState Snap
+              </button>
+              <br />
+              <p class="info-text alert alert-secondary">
+                <span id="sendManageStateResult"></span>
+              </p>
+              <button
+                id="retrieveManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Get data from manageState Snap
+              </button>
+              <br />
+              <p class="info-text alert alert-secondary">
+                <span id="retrieveManageStateResult"></span>
+              </p>
+              <button
+                id="clearManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Clear data of manageState Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="clearManageStateResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <section>
-      <h1>Notification Snap</h1>
-      <label>SnapId</label>
-      <input class="snapId5" />
-      <br />
-      <button class="connectNotification">Connect Notification Snap</button>
-      <br />
-      <button class="sendInAppNotification">Send InApp Notification</button>
-      <br />
-      <button class="sendNativeNotification">Send Native Notification</button>
-    </section>
+      <!-- Row 3 -->
+      <div class="row justify-content-center">
+        <!-- Notification Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Notification Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId5" />
+              <br />
+              <br />
+              <button
+                id="connectNotification"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect Notification Snap
+              </button>
+              <button
+                id="sendInAppNotification"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send InApp Test to Notification Snap
+              </button>
+              <br />
+              <button
+                id="sendNativeNotification"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Native Test to Notification Snap
+              </button>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 
+  <!-- All interface connection logic below -->
   <script>
     const version = document.location.href.includes(
       'https://metamask.github.io/test-snaps',
@@ -131,17 +251,15 @@
     /**
      * Confirm Snap
      */
-    const snapId1 = document.querySelector('.snapId1');
+    const snapId1 = document.querySelector('#snapId1');
     snapId1.value = 'local:http://localhost:8081';
 
-    const connectConfirmButton = document.querySelector('button.connectHello');
-    const sendConfirmButton = document.querySelector(
-      'button.sendConfirmButton',
-    );
-    const promptInput = document.querySelector('.confirmPromptInput');
-    const description = document.querySelector('.confirmDescription');
-    const textAreaContent = document.querySelector('.confirmTextAreaContent');
-    const confirmResult = document.querySelector('.confirmResult');
+    const connectConfirmButton = document.querySelector('#connectHello');
+    const sendConfirmButton = document.querySelector('#sendConfirmButton');
+    const promptInput = document.querySelector('#confirmPromptInput');
+    const description = document.querySelector('#confirmDescription');
+    const textAreaContent = document.querySelector('#confirmTextAreaContent');
+    const confirmResult = document.querySelector('#confirmResult');
 
     connectConfirmButton.addEventListener('click', connectConfirm);
     sendConfirmButton.addEventListener('click', sendConfirm);
@@ -186,11 +304,11 @@
     /**
      * Error snap
      */
-    const snapId2 = document.querySelector('.snapId2');
+    const snapId2 = document.querySelector('#snapId2');
     snapId2.value = 'local:http://localhost:8082';
-    const connectErrorButton = document.querySelector('button.connectError');
-    const sendErrorButton = document.querySelector('button.sendError');
-    const errorResult = document.querySelector('span.errorResult');
+    const connectErrorButton = document.querySelector('#connectError');
+    const sendErrorButton = document.querySelector('#sendError');
+    const errorResult = document.querySelector('#errorResult');
 
     connectErrorButton.addEventListener('click', connectError);
     sendErrorButton.addEventListener('click', sendError);
@@ -229,18 +347,18 @@
     /**
      * BIP-44 snap
      */
-    const snapId3 = document.querySelector('.snapId3');
+    const snapId3 = document.querySelector('#snapId3');
     snapId3.value = 'local:http://localhost:8083';
-    const connectBip44Button = document.querySelector('button.connectBip44');
-    const sendBip44Button = document.querySelector('button.sendBip44');
-    const bip44Result = document.querySelector('span.bip44Result');
+    const connectBip44Button = document.querySelector('#connectBip44');
+    const sendBip44Button = document.querySelector('#sendBip44');
+    const bip44Result = document.querySelector('#bip44Result');
 
-    const bip44SignMessage = document.querySelector('.bip44SignMessage');
+    const bip44SignMessage = document.querySelector('#bip44SignMessage');
     const sendBip44MessageButton = document.querySelector(
-      'button.sendBip44MessageButton',
+      '#sendBip44MessageButton',
     );
     const bip44SignMessageResult = document.querySelector(
-      '.bip44SignMessageResult',
+      '#bip44SignMessageResult',
     );
 
     connectBip44Button.addEventListener('click', connectBip44);
@@ -298,29 +416,25 @@
     /**
      * manageState snap
      */
-    const snapId4 = document.querySelector('.snapId4');
+    const snapId4 = document.querySelector('#snapId4');
     snapId4.value = 'local:http://localhost:8084';
     const connectManageStateButton = document.querySelector(
-      'button.connectManageState',
+      '#connectManageState',
     );
-    const sendManageStateButton = document.querySelector(
-      'button.sendManageState',
-    );
+    const sendManageStateButton = document.querySelector('#sendManageState');
     const retrieveManageStateButton = document.querySelector(
-      'button.retrieveManageState',
+      '#retrieveManageState',
     );
-    const clearManageStateButton = document.querySelector(
-      'button.clearManageState',
-    );
-    const dataManageStateInput = document.querySelector('.dataManageState');
+    const clearManageStateButton = document.querySelector('#clearManageState');
+    const dataManageStateInput = document.querySelector('#dataManageState');
     const sendManageStateResult = document.querySelector(
-      '.sendManageStateResult',
+      '#sendManageStateResult',
     );
     const retrieveManageStateResult = document.querySelector(
-      '.retrieveManageStateResult',
+      '#retrieveManageStateResult',
     );
     const clearManageStateResult = document.querySelector(
-      '.clearManageStateResult',
+      '#clearManageStateResult',
     );
 
     connectManageStateButton.addEventListener('click', connectManageState);
@@ -397,17 +511,17 @@
     /**
      * Notification Snap
      */
-    const snapId5 = document.querySelector('.snapId5');
+    const snapId5 = document.querySelector('#snapId5');
     snapId5.value = 'local:http://localhost:8085';
 
     const connectNotificationButton = document.querySelector(
-      'button.connectNotification',
+      '#connectNotification',
     );
     const sendInAppNotificationButton = document.querySelector(
-      'button.sendInAppNotification',
+      '#sendInAppNotification',
     );
     const sendNativeNotificationButton = document.querySelector(
-      'button.sendNativeNotification',
+      '#sendNativeNotification',
     );
 
     connectNotificationButton.addEventListener('click', connectNotification);
