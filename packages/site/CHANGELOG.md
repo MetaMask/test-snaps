@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [2.0.0]
-### Uncategorized
-- Attempt at redesigning the test-snaps interface page ([#40](https://github.com/MetaMask/test-snaps/pull/40))
-- Bump dev dependencies ([#49](https://github.com/MetaMask/test-snaps/pull/49))
+### Changed
+- Test-snaps page redesign to include 2-column format and material design with bootstrap
+- Refactor of attributes once in class into id (e2e breaking)
+- Included PRs:
+  - Attempt at redesigning the test-snaps interface page ([#40](https://github.com/MetaMask/test-snaps/pull/40))
 
 ## [1.0.0]
 ### Changed
