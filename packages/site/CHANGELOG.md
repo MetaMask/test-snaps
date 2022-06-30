@@ -8,10 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0]
 ### Changed
-- Test-snaps page redesign to include 2-column format and material design with bootstrap
-- Refactor of attributes once in class into id (e2e breaking)
-- Included PRs:
-  - Attempt at redesigning the test-snaps interface page ([#40](https://github.com/MetaMask/test-snaps/pull/40))
+- **BREAKING:** Redesign website ([#40](https://github.com/MetaMask/test-snaps/pull/40))
+  - The website now uses a 2-column format with some prettifying CSS. Class and ID values have changed, which is breaking for E2E tests that use this website.
 
 ## [1.0.0]
 ### Changed
