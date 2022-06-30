@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0]
+### Changed
+- **BREAKING:** Redesign website ([#40](https://github.com/MetaMask/test-snaps/pull/40))
+  - The website now uses a 2-column format with some prettifying CSS. Class and ID values have changed, which is breaking for E2E tests that use this website.
+
 ## [1.0.0]
 ### Changed
 - No changes this release.
@@ -77,7 +82,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/MetaMask/test-snaps/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/MetaMask/test-snaps/compare/v0.2.0...v0.3.0
