@@ -17,7 +17,7 @@
     "setup": "yarn install && yarn allow-scripts",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
     "publish:all": "./scripts/publish-all.sh",
-    "build": "yarn workspaces run build",
+    "build": "yarn workspaces foreach -pv run build",
     "build:dev": "yarn workspaces run build:dev",
     "build:clean": "yarn clean && yarn build",
     "clean": "yarn workspaces run clean",
