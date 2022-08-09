@@ -21,7 +21,7 @@
     "build:dev": "yarn workspaces run build:dev",
     "build:clean": "yarn clean && yarn build",
     "clean": "yarn workspaces run clean",
-    "serve": "$(yarn static packages/site/dist & yarn workspace @metamask/test-snap-confirm serve & yarn workspace @metamask/test-snap-error serve & yarn workspace @metamask/test-snap-bip44 serve & yarn workspace @metamask/test-snap-managestate serve & yarn workspace @metamask/test-snap-notification serve)",
+    "serve": "echo Servers Starting.. && $(yarn static packages/site/dist & yarn workspace @metamask/test-snap-confirm serve & yarn workspace @metamask/test-snap-error serve & yarn workspace @metamask/test-snap-bip44 serve & yarn workspace @metamask/test-snap-managestate serve & yarn workspace @metamask/test-snap-notification serve)",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
