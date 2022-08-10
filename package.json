@@ -2,9 +2,6 @@
   "name": "root",
   "private": true,
   "version": "2.0.0",
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "workspaces": [
     "packages/*"
   ],
@@ -14,19 +11,19 @@
   },
   "homepage": "https://metamask.github.io/test-snaps/",
   "scripts": {
-    "setup": "yarn install && yarn allow-scripts",
+    "setup": "yarn install",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
     "publish:all": "./scripts/publish-all.sh",
-    "build": "yarn workspaces foreach -pv run build",
-    "build:dev": "yarn workspaces run build:dev",
+    "build": "yarn workspaces foreach --parallel --verbose run build",
+    "build:dev": "yarn workspaces foreach --parallel --verbose run build:dev",
     "build:clean": "yarn clean && yarn build",
-    "clean": "yarn workspaces run clean",
-    "serve": "echo Servers Starting.. && $(yarn static packages/site/dist & yarn workspace @metamask/test-snap-confirm serve & yarn workspace @metamask/test-snap-error serve & yarn workspace @metamask/test-snap-bip44 serve & yarn workspace @metamask/test-snap-managestate serve & yarn workspace @metamask/test-snap-notification serve)",
+    "clean": "yarn workspaces foreach --parallel --verbose run clean",
+    "serve": "echo 'Servers starting...' && $(yarn static packages/site/dist & yarn workspace @metamask/test-snap-confirm serve & yarn workspace @metamask/test-snap-error serve & yarn workspace @metamask/test-snap-bip44 serve & yarn workspace @metamask/test-snap-managestate serve & yarn workspace @metamask/test-snap-notification serve)",
     "lint:eslint": "eslint . --cache --ext js,ts",
-    "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '!**/CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
-    "lint:changelogs": "yarn workspaces run lint:changelog",
+    "lint:changelogs": "yarn workspaces foreach --parallel --verbose run lint:changelog",
     "test": "jest --passWithNoTests"
   },
   "devDependencies": {
@@ -52,10 +49,13 @@
     "ts-node": "^9.0.0",
     "typescript": "^4.4.0"
   },
+  "packageManager": "yarn@3.2.1",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "lavamoat": {
     "allowScripts": {
       "@lavamoat/preinstall-always-fail": false
     }
-  },
-  "packageManager": "yarn@3.2.2"
+  }
 }
