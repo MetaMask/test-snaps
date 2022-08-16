@@ -236,7 +236,43 @@
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- BIP-32 Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">BIP-32 Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId6" />
+              <br />
+              <br />
+              <button
+                id="connectBip32"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect BIP-32 Snap
+              </button>
+              <label>Derivation path</label>
+              <input id="bip32DerivationPath" value="m/44'/60'/0'/0/0" />
+              <label>Curve</label>
+              <select id="bip32Curve">
+                <option>secp256k1</option>
+                <option>ed25519</option>
+              </select>
+              <button
+                id="sendBip32"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32Result"></span>
+              </p>
+            </div>
+          </div>
+        </div>
     </main>
   </body>
 
@@ -554,6 +590,53 @@
             },
           ],
         });
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * BIP-32 snap
+     */
+    const snapId6 = document.querySelector('#snapId6');
+    snapId6.value = 'local:http://localhost:8086';
+    const connectBip32Button = document.querySelector('#connectBip32');
+    const bip32DerivationPath = document.querySelector('#bip32DerivationPath');
+    const bip32Curve = document.querySelector('#bip32Curve');
+    const sendBip32Button = document.querySelector('#sendBip32');
+    const bip32Result = document.querySelector('#bip32Result');
+
+    connectBip32Button.addEventListener('click', connectBip32);
+    sendBip32Button.addEventListener('click', sendBip32);
+
+    async function connectBip32() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId6.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    async function sendBip32() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId6.value,
+            {
+              method: 'getAccount',
+              params: {
+                path: bip32DerivationPath.value,
+                curve: bip32Curve.value,
+              },
+            },
+          ],
+        });
+        bip32Result.innerHTML = `Private key: ${JSON.stringify(result)}`;
       } catch (err) {
         console.error(err);
         alert('Problem happened: ' + err.message || err);

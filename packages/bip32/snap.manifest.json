@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "description": "An example Snap that derives keys using BIP-32.",
+  "proposedName": "@metamask/test-snap-bip32",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "KI3MUjzwDT7KjHTWPSiFj2wz8N7LI2K3igets0AwsiA=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "@metamask/test-snap-bip32",
+        "registry": "https://registry.npmjs.org"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_getBip32Entropy": {
+      "caveats": [
+        {
+          "type": "permittedDerivationPaths",
+          "value": [
+            {
+              "path": "m/44'/60'/0'",
+              "curve": "secp256k1"
+            },
+            {
+              "path": "m/44'/60'/0'",
+              "curve": "ed25519"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "manifestVersion": "0.1"
+}
