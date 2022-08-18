@@ -260,24 +260,28 @@
               >
                 Send Secp256k1 Test to BIP-32 Snap
               </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32Secp256k1Result"></span>
+              </p>
               <button
                 id="sendBip32Ed25519"
                 class="btn btn-primary btn-med btn-block mb-3 btn-wide"
               >
                 Send Ed25519 Test to BIP-32 Snap
               </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32Ed25519Result"></span>
+              </p>
               <button
                 id="sendBip32Invalid"
                 class="btn btn-primary btn-med btn-block mb-3 btn-wide"
               >
                 Send Invalid Test to BIP-32 Snap
               </button>
-              <p class="info-text alert alert-secondary">
-                <span id="bip32Result"></span>
-              </p>
             </div>
           </div>
         </div>
+      </div>
     </main>
   </body>
 
@@ -610,12 +614,13 @@
     const sendBip32Secp256k1Button = document.querySelector('#sendBip32Secp256k1');
     const sendBip32Ed25519Button = document.querySelector('#sendBip32Ed25519');
     const sendBip32InvalidButton = document.querySelector('#sendBip32Invalid');
-    const bip32Result = document.querySelector('#bip32Result');
+    const bip32Secp256k1Result = document.querySelector('#bip32Secp256k1Result');
+    const bip32Ed25519Result = document.querySelector('#bip32Ed25519Result');
 
     connectBip32Button.addEventListener('click', connectBip32);
-    sendBip32Secp256k1Button.addEventListener('click', sendBip32Factory({ path: ['m', "44'", "0'"], curve: 'secp256k1' }));
-    sendBip32Ed25519Button.addEventListener('click', sendBip32Factory({ path: ['m', "44'", "0'"], curve: 'ed25519' }));
-    sendBip32InvalidButton.addEventListener('click', sendBip32Factory({ path: ['m', "44'", "123'"], curve: 'secp256k1' }));
+    sendBip32Secp256k1Button.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "0'"], curve: 'secp256k1' }));
+    sendBip32Ed25519Button.addEventListener('click', sendBip32Factory(bip32Ed25519Result, { path: ['m', "44'", "0'"], curve: 'ed25519' }));
+    sendBip32InvalidButton.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "123'"], curve: 'secp256k1' }));
 
     async function connectBip32() {
       await ethereum.request({
@@ -628,7 +633,7 @@
       });
     }
 
-    function sendBip32Factory({ path, curve }) {
+    function sendBip32Factory(target, { path, curve }) {
       return async function sendBip32() {
         try {
           const result = await ethereum.request({
@@ -641,7 +646,7 @@
               },
             ],
           });
-          bip32Result.innerHTML = `Private key: ${JSON.stringify(result)}`;
+          target.innerHTML = `Private key: ${JSON.stringify(result)}`;
         } catch (err) {
           console.error(err);
           alert('Problem happened: ' + err.message || err);
