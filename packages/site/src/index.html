@@ -281,6 +281,39 @@
             </div>
           </div>
         </div>
+
+        <!-- WASM Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">WASM Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId7" />
+              <br />
+              <br />
+              <button
+                id="connectWasm"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect WASM Snap
+              </button>
+              <input id="wasmInput" type="number" value="4" />
+              <br />
+              <br />
+              <button
+                id="sendWasmRequest"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send request to WASM Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="wasmResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
@@ -611,16 +644,38 @@
     const snapId6 = document.querySelector('#snapId6');
     snapId6.value = 'local:http://localhost:8086';
     const connectBip32Button = document.querySelector('#connectBip32');
-    const sendBip32Secp256k1Button = document.querySelector('#sendBip32Secp256k1');
+    const sendBip32Secp256k1Button = document.querySelector(
+      '#sendBip32Secp256k1',
+    );
     const sendBip32Ed25519Button = document.querySelector('#sendBip32Ed25519');
     const sendBip32InvalidButton = document.querySelector('#sendBip32Invalid');
-    const bip32Secp256k1Result = document.querySelector('#bip32Secp256k1Result');
+    const bip32Secp256k1Result = document.querySelector(
+      '#bip32Secp256k1Result',
+    );
     const bip32Ed25519Result = document.querySelector('#bip32Ed25519Result');
 
     connectBip32Button.addEventListener('click', connectBip32);
-    sendBip32Secp256k1Button.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "0'"], curve: 'secp256k1' }));
-    sendBip32Ed25519Button.addEventListener('click', sendBip32Factory(bip32Ed25519Result, { path: ['m', "44'", "0'"], curve: 'ed25519' }));
-    sendBip32InvalidButton.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "123'"], curve: 'secp256k1' }));
+    sendBip32Secp256k1Button.addEventListener(
+      'click',
+      sendBip32Factory(bip32Secp256k1Result, {
+        path: ['m', "44'", "0'"],
+        curve: 'secp256k1',
+      }),
+    );
+    sendBip32Ed25519Button.addEventListener(
+      'click',
+      sendBip32Factory(bip32Ed25519Result, {
+        path: ['m', "44'", "0'"],
+        curve: 'ed25519',
+      }),
+    );
+    sendBip32InvalidButton.addEventListener(
+      'click',
+      sendBip32Factory(bip32Secp256k1Result, {
+        path: ['m', "44'", "123'"],
+        curve: 'secp256k1',
+      }),
+    );
 
     async function connectBip32() {
       await ethereum.request({
@@ -651,6 +706,49 @@
           console.error(err);
           alert('Problem happened: ' + err.message || err);
         }
+      };
+    }
+
+    /**
+     * WASM snap
+     */
+    const snapId7 = document.querySelector('#snapId7');
+    snapId7.value = 'local:http://localhost:8087';
+    const connectWasmButton = document.querySelector('#connectWasm');
+    const sendWasmRequestButton = document.querySelector('#sendWasmRequest');
+    const wasmInput = document.querySelector('#wasmInput');
+    const wasmResult = document.querySelector('#wasmResult');
+
+    connectWasmButton.addEventListener('click', connectWasm);
+    sendWasmRequestButton.addEventListener('click', sendWasmRequest);
+
+    async function connectWasm() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId7.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    async function sendWasmRequest() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId7.value,
+            {
+              method: 'fib',
+              params: [parseInt(wasmInput.value, 10)],
+            },
+          ],
+        });
+        wasmResult.innerHTML = `${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
       }
     }
   </script>

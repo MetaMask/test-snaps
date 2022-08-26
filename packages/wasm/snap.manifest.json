@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "description": "An example Snap that demonstrates how to use WebAssembly.",
+  "proposedName": "@metamask/test-snap-wasm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "S5mBihVWuqpoqcmTD/DtTRJJGUNvk+096YJIu+o+xxY=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "@metamask/test-snap-wasm",
+        "registry": "https://registry.npmjs.org"
+      }
+    }
+  },
+  "initialPermissions": {},
+  "manifestVersion": "0.1"
+}
