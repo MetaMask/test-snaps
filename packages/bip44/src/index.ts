@@ -74,7 +74,9 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         params: [
           {
             prompt: 'BLS signature request',
-            textAreaContent: `Do you want to BLS sign ${data} with ${pubKey}?`,
+            textAreaContent: `Do you want to BLS sign ${data} with ${nobleOutputToHexString(
+              pubKey,
+            )}?`,
           },
         ],
       });
