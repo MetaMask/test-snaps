@@ -6,8 +6,6 @@ import {
 } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 
-let encoder: TextEncoder;
-
 interface GetAccountParams {
   coinType: number;
   [key: string]: unknown;
@@ -83,7 +81,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       if (!approved) {
         throw ethErrors.provider.userRejectedRequest();
       }
-      const newLocal = await sign(encoder.encode(data), privateKey);
+      const newLocal = await sign(new TextEncoder().encode(data), privateKey);
       return nobleOutputToHexString(newLocal);
     }
 
