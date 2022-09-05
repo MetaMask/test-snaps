@@ -32,6 +32,9 @@ interface SnapKeyring {
   exportAccount?(accountId: string): Promise<Json>;
 }
 
+const POLYGON_CHAIN_ID = 966;
+const POLYGON_CHAIN_ID_CAIP10 = `eip155:${POLYGON_CHAIN_ID}`;
+
 async function assertPromptUser(prompt: string, textAreaContent?: string) {
   const approved = await wallet.request({
     method: 'snap_confirm',
@@ -52,7 +55,7 @@ async function getWallet() {
   const coinTypeNode = (await wallet.request({
     method: 'snap_getBip44Entropy',
     params: {
-      coinType: 966,
+      coinType: POLYGON_CHAIN_ID,
     },
   })) as JsonBIP44CoinTypeNode;
   const deriver = await getBIP44AddressKeyDeriver(coinTypeNode);
@@ -64,7 +67,9 @@ async function getWallet() {
 class Keyring implements SnapKeyring {
   async getAccounts(): Promise<string[]> {
     const wallet = await getWallet();
-    return [wallet.address];
+    return [wallet.address].map(
+      (address) => `${POLYGON_CHAIN_ID_CAIP10}:${address}`,
+    );
   }
 
   on(
@@ -86,7 +91,7 @@ class Keyring implements SnapKeyring {
     origin: string;
     request: any;
   }) {
-    if (chainId !== 'eip155:966') {
+    if (chainId !== POLYGON_CHAIN_ID_CAIP10) {
       throw ethErrors.rpc.methodNotFound();
     }
     const wallet = await getWallet();
@@ -96,11 +101,15 @@ class Keyring implements SnapKeyring {
           'Do you want to sign this transaction?',
           JSON.stringify(request.params),
         );
-        return wallet.signTransaction(request.params);
+        return wallet.signTransaction({
+          ...request.params,
+          chainId: POLYGON_CHAIN_ID,
+        });
       }
 
       case 'eth_accounts': {
         // TODO: Decide whether to prompt for this
+        // TODO: Decide whether this should return CAIP10 addresses
         return this.getAccounts();
       }
       default:
