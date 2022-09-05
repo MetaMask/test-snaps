@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "proposedName": "MetaMask Keyring Test Snap",
+  "description": "A MetaMask Test Snap that uses the snap_keyring permission",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "lMJfh3wfBqYrv+5zBaTidQ66ZP5hg6gPqcHJ6V/WQCA=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "@metamask/test-snap-keyring",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_confirm": {},
+    "snap_getBip44Entropy": [
+      {
+        "coinType": 966
+      }
+    ],
+    "snap_keyring": {
+      "namespaces": {
+        "eip155": {
+          "methods": [
+            "eth_signTransaction",
+            "eth_accounts"
+          ],
+          "events": [],
+          "chains": [
+            {
+              "id": "eip155:966",
+              "name": "Polygon (Mainnet)"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "manifestVersion": "0.1"
+}
