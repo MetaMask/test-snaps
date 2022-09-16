@@ -282,6 +282,43 @@
           </div>
         </div>
       </div>
+      
+      <!-- Row 4 -->
+      <div class="row justify-content-center">
+      <!-- Update Snap Interface -->
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+        <div class="card testSnapsReg shadow">
+          <div class="card-header">
+            <h1 class="testSnapsName">Update Snap</h1>
+          </div>
+          <div class="card-body">
+            <label>SnapId</label>
+            <input id="snapId7" />
+            <br />
+            <br />
+            <button
+              id="connectUpdateOld"
+              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+            >
+              Connect Old Version Snap
+            </button>
+            <button
+              id="connectUpdateNew"
+              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+            >
+              Connect New Version Snap
+            </button>
+            <br />
+            <button
+              id="sendUpdateHello"
+              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+            >
+              Send Test to Updated Snap
+            </button>
+            <br />
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 
@@ -653,5 +690,72 @@
         }
       }
     }
+
+    /**
+    * Update Snap
+    */
+    const snapId7 = document.querySelector('#snapId7');
+    snapId7.value = 'npm:@metamask/test-snap-confirm';
+
+    const connectUpdateOldButton = document.querySelector('#connectUpdateOld');
+    const connectUpdateNewButton = document.querySelector('#connectUpdateNew');
+    const sendUpdateHelloButton = document.querySelector('#sendUpdateHello');
+
+    connectUpdateOldButton.addEventListener('click', connectUpdateOld);
+    connectUpdateNewButton.addEventListener('click', connectUpdateNew);
+    sendUpdateHelloButton.addEventListener('click', sendUpdateHello);
+
+    async function connectUpdateOld() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: {
+              [`npm:@metamask/test-snap-confirm`]: {
+                version: '1.0.0',
+              },
+            },
+          },
+        ],
+      });
+    }
+
+    async function connectUpdateNew() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: {
+              [`npm:@metamask/test-snap-confirm`]: {
+                version: '2.0.0',
+              },
+            },
+          },
+        ],
+      });
+    }
+
+    async function sendUpdateHello(method) {
+      try {
+        await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            `npm:@metamask/test-snap-confirm`,
+            {
+              method: 'confirm',
+              params: [
+                promptInput.value,
+                description.value,
+                textAreaContent.value,
+              ],
+            },
+          ],
+        });
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
   </script>
 </html>
