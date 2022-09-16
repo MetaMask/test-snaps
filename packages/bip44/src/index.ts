@@ -6,14 +6,36 @@ import {
 } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 
-let PRIVATE_KEY: Uint8Array;
-let encoder: TextEncoder;
+interface GetAccountParams {
+  coinType: number;
+  [key: string]: unknown;
+}
+
+/**
+ * Get a private key for the specified coin type.
+ *
+ * @param coinType - The coin type to get the private key for.
+ * @returns The private key as Uint8Array.
+ */
+const getPrivateKey = async (coinType = 1) => {
+  const coinTypeNode = (await wallet.request({
+    method: 'snap_getBip44Entropy',
+    params: {
+      coinType,
+    },
+  })) as JsonBIP44CoinTypeNode;
+
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (
+    await deriveBIP44AddressKey(coinTypeNode, {
+      account: 0,
+      change: 0,
+      address_index: 0,
+    })
+  ).privateKeyBuffer!;
+};
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
-  if (!PRIVATE_KEY) {
-    await initialize();
-  }
-
   /**
    * Converts ugly output from @noble/bls12-381 to readable hex.
    *
@@ -29,11 +51,16 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   }
 
   switch (request.method) {
-    case 'getAccount':
-      return nobleOutputToHexString(getPublicKey(PRIVATE_KEY));
+    case 'getAccount': {
+      const params = request.params as GetAccountParams;
+      return nobleOutputToHexString(
+        getPublicKey(await getPrivateKey(params?.coinType)),
+      );
+    }
 
     case 'signMessage': {
-      const pubKey = getPublicKey(PRIVATE_KEY);
+      const privateKey = await getPrivateKey();
+      const pubKey = getPublicKey(privateKey);
       const data = (request.params as string[])[0];
 
       if (!data || typeof data !== 'string') {
@@ -47,14 +74,16 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         params: [
           {
             prompt: 'BLS signature request',
-            textAreaContent: `Do you want to BLS sign ${data} with ${pubKey}?`,
+            textAreaContent: `Do you want to BLS sign ${data} with ${nobleOutputToHexString(
+              pubKey,
+            )}?`,
           },
         ],
       });
       if (!approved) {
         throw ethErrors.provider.userRejectedRequest();
       }
-      const newLocal = await sign(encoder.encode(data), PRIVATE_KEY);
+      const newLocal = await sign(new TextEncoder().encode(data), privateKey);
       return nobleOutputToHexString(newLocal);
     }
 
@@ -64,25 +93,3 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       });
   }
 };
-
-/**
- * Calls `snap_getBip44Entropy_1` and sets {@link PRIVATE_KEY} to an address key
- * derived from the received `coin_type` entropy.
- */
-async function initialize() {
-  encoder = new TextEncoder();
-
-  const coinTypeNode = (await wallet.request({
-    method: 'snap_getBip44Entropy_1',
-  })) as JsonBIP44CoinTypeNode;
-
-  PRIVATE_KEY =
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    (
-      await deriveBIP44AddressKey(coinTypeNode, {
-        account: 0,
-        change: 0,
-        address_index: 0,
-      })
-    ).privateKeyBuffer!;
-}

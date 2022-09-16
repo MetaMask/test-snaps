@@ -127,6 +127,12 @@
               <p class="info-text alert alert-secondary">
                 <span id="bip44Result"></span>
               </p>
+              <button
+                id="sendInvalidBip44"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Invalid Test to BIP-44 Snap
+              </button>
               <br />
               <input id="bip44SignMessage" placeholder="message" />
               <br />
@@ -433,6 +439,7 @@
     snapId3.value = 'local:http://localhost:8083';
     const connectBip44Button = document.querySelector('#connectBip44');
     const sendBip44Button = document.querySelector('#sendBip44');
+    const sendBip44InvalidButton = document.querySelector('#sendInvalidBip44');
     const bip44Result = document.querySelector('#bip44Result');
 
     const bip44SignMessage = document.querySelector('#bip44SignMessage');
@@ -444,7 +451,8 @@
     );
 
     connectBip44Button.addEventListener('click', connectBip44);
-    sendBip44Button.addEventListener('click', sendBip44);
+    sendBip44Button.addEventListener('click', getSendBip44());
+    sendBip44InvalidButton.addEventListener('click', getSendBip44({ coinType: 3 }));
     sendBip44MessageButton.addEventListener('click', sendBip44Message);
 
     async function connectBip44() {
@@ -458,21 +466,24 @@
       });
     }
 
-    async function sendBip44() {
-      try {
-        const result = await ethereum.request({
-          method: 'wallet_invokeSnap',
-          params: [
-            snapId3.value,
-            {
-              method: 'getAccount',
-            },
-          ],
-        });
-        bip44Result.innerHTML = `Public key: ${JSON.stringify(result)}`;
-      } catch (err) {
-        console.error(err);
-        alert('Problem happened: ' + err.message || err);
+    function getSendBip44(params = undefined) {
+      return async function sendBip44() {
+        try {
+          const result = await ethereum.request({
+            method: 'wallet_invokeSnap',
+            params: [
+              snapId3.value,
+              {
+                method: 'getAccount',
+                params
+              },
+            ],
+          });
+          bip44Result.innerHTML = `Public key: ${JSON.stringify(result)}`;
+        } catch (err) {
+          console.error(err);
+          alert('Problem happened: ' + err.message || err);
+        }
       }
     }
 
