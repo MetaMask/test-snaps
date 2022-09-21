@@ -7,10 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [3.0.0]
-### Uncategorized
-- Update BIP-44 test snap and fix BIP-32 manifest ([#57](https://github.com/MetaMask/test-snaps/pull/57))
-- Migrate to Yarn 3 ([#55](https://github.com/MetaMask/test-snaps/pull/55))
-- Upgrade test-snaps to use Node v16 ([#53](https://github.com/MetaMask/test-snaps/pull/53))
+### Changed
+- **BREAKING**: Upgrade test-snaps to use Node v16 ([#53](https://github.com/MetaMask/test-snaps/pull/53))
+- **BREAKING:** Update BIP-44 test snap to use `snap_getBip44Entropy` ([#57](https://github.com/MetaMask/test-snaps/pull/57))
 
 ## [2.0.0]
 ### Changed

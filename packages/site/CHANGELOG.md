@@ -7,12 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [3.0.0]
-### Uncategorized
-- Add BIP-32 public key tests ([#64](https://github.com/MetaMask/test-snaps/pull/64))
-- fixed index.html for update test ([#62](https://github.com/MetaMask/test-snaps/pull/62))
-- Update BIP-44 test snap and fix BIP-32 manifest ([#57](https://github.com/MetaMask/test-snaps/pull/57))
-- Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56))
-- Upgrade test-snaps to use Node v16 ([#53](https://github.com/MetaMask/test-snaps/pull/53))
+### Added
+- Added tests for updating snaps ([#62](https://github.com/MetaMask/test-snaps/pull/62))
+- Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56), [#57](https://github.com/MetaMask/test-snaps/pull/57), [#64](https://github.com/MetaMask/test-snaps/pull/64))
+
+### Changed
+- **BREAKING**: Upgrade test-snaps to use Node v16 ([#53](https://github.com/MetaMask/test-snaps/pull/53))
+- **BREAKING:** Update BIP-44 test snap to use `snap_getBip44Entropy` ([#57](https://github.com/MetaMask/test-snaps/pull/57))
 
 ## [2.0.0]
 ### Changed
