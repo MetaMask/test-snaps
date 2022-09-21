@@ -279,6 +279,24 @@
                 <span id="bip32Ed25519Result"></span>
               </p>
               <button
+                id="sendBip32PublicKey"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Public Key Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32PublicKeyResult"></span>
+              </p>
+              <button
+                id="sendBip32CompressedPublicKey"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Compressed Public Key Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32CompressedPublicKeyResult"></span>
+              </p>
+              <button
                 id="sendBip32Invalid"
                 class="btn btn-primary btn-med btn-block mb-3 btn-wide"
               >
@@ -288,7 +306,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Row 4 -->
       <div class="row justify-content-center">
       <!-- Update Snap Interface -->
@@ -661,13 +679,19 @@
     const connectBip32Button = document.querySelector('#connectBip32');
     const sendBip32Secp256k1Button = document.querySelector('#sendBip32Secp256k1');
     const sendBip32Ed25519Button = document.querySelector('#sendBip32Ed25519');
+    const sendBip32PublicKeyButton = document.querySelector('#sendBip32PublicKey');
+    const sendBip32CompressedPublicKeyButton = document.querySelector('#sendBip32CompressedPublicKey');
     const sendBip32InvalidButton = document.querySelector('#sendBip32Invalid');
     const bip32Secp256k1Result = document.querySelector('#bip32Secp256k1Result');
     const bip32Ed25519Result = document.querySelector('#bip32Ed25519Result');
+    const bip32PublicKeyResult = document.querySelector('#bip32PublicKeyResult');
+    const bip32CompressedPublicKeyResult = document.querySelector('#bip32CompressedPublicKeyResult');
 
     connectBip32Button.addEventListener('click', connectBip32);
     sendBip32Secp256k1Button.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "0'"], curve: 'secp256k1' }));
     sendBip32Ed25519Button.addEventListener('click', sendBip32Factory(bip32Ed25519Result, { path: ['m', "44'", "0'"], curve: 'ed25519' }));
+    sendBip32PublicKeyButton.addEventListener('click', () => getBip32PublicKey(bip32PublicKeyResult));
+    sendBip32CompressedPublicKeyButton.addEventListener('click', () => getBip32PublicKey(bip32CompressedPublicKeyResult, true));
     sendBip32InvalidButton.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "123'"], curve: 'secp256k1' }));
 
     async function connectBip32() {
@@ -699,6 +723,25 @@
           console.error(err);
           alert('Problem happened: ' + err.message || err);
         }
+      }
+    }
+
+    async function getBip32PublicKey(target, compressed = false) {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId6.value,
+            {
+              method: 'getPublicKey',
+              params: { path: ['m', "44'", "0'"], curve: 'secp256k1', compressed },
+            },
+          ],
+        });
+        target.innerHTML = `Public key: ${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
       }
     }
 

@@ -19,10 +19,20 @@ const getPrivateKey = async (params: GetAccountParams): Promise<string> => {
   return node.privateKey as string;
 };
 
+const getPublicKey = async (params: GetAccountParams): Promise<string> => {
+  return (await wallet.request({
+    method: 'snap_getBip32PublicKey',
+    params,
+  })) as string;
+};
+
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
     case 'getAccount':
       return await getPrivateKey(request.params as GetAccountParams);
+
+    case 'getPublicKey':
+      return await getPublicKey(request.params as GetAccountParams);
 
     default:
       throw ethErrors.rpc.methodNotFound({
