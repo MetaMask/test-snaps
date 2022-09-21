@@ -6,4 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/
+## [3.0.0]
+### Added
+- Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56), [#57](https://github.com/MetaMask/test-snaps/pull/57), [#64](https://github.com/MetaMask/test-snaps/pull/64))
+
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/MetaMask/test-snaps/releases/tag/v3.0.0
