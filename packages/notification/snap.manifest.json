@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.0.1",
   "proposedName": "MetaMask Notification Test Snap",
   "description": "An MetaMask Test Snap that uses the notification permission",
   "repository": {
