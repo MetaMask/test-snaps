@@ -22,7 +22,7 @@
     "build": "mm-snap build --eval false",
     "build:dev": "yarn build",
     "build:clean": "yarn clean && yarn build",
-    "clean": "rimraf dist/*",
+    "clean": "rimraf 'dist/*'",
     "serve": "mm-snap serve",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
