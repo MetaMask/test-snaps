@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [3.0.1]
-### Uncategorized
-- Fix `clean` npm script in each package ([#67](https://github.com/MetaMask/test-snaps/pull/67))
+### Fixed
+- Fix `clean` npm script ([#67](https://github.com/MetaMask/test-snaps/pull/67))
+- Fix `publish:all` npm script ([#68](https://github.com/MetaMask/test-snaps/pull/68))
 
 ## [3.0.0]
 ### Added
