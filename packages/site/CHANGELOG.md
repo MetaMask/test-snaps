@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0]
+### Uncategorized
+- Add BIP-32 public key tests ([#64](https://github.com/MetaMask/test-snaps/pull/64))
+- fixed index.html for update test ([#62](https://github.com/MetaMask/test-snaps/pull/62))
+- Update BIP-44 test snap and fix BIP-32 manifest ([#57](https://github.com/MetaMask/test-snaps/pull/57))
+- Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56))
+- Upgrade test-snaps to use Node v16 ([#53](https://github.com/MetaMask/test-snaps/pull/53))
+
 ## [2.0.0]
 ### Changed
 - **BREAKING:** Redesign website ([#40](https://github.com/MetaMask/test-snaps/pull/40))
@@ -82,7 +90,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/MetaMask/test-snaps/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/MetaMask/test-snaps/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/MetaMask/test-snaps/compare/v0.3.0...v0.4.0
