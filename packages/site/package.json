@@ -12,7 +12,7 @@
     "build": "node scripts/build.js prod",
     "build:clean": "yarn clean && yarn build",
     "build:dev": "node scripts/build.js dev",
-    "clean": "rimraf dist/*",
+    "clean": "rimraf 'dist/*'",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --single-quote --ignore-path ../../.gitignore --no-error-on-unmatched-pattern",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
