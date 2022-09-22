@@ -24,7 +24,7 @@
         "coinType": 966
       }
     ],
-    "snap_keyring": {
+    "endowment:keyring": {
       "namespaces": {
         "eip155": {
           "methods": [
