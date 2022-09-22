@@ -28,6 +28,46 @@
       <br />
       <!-- Row 1 -->
       <div class="row justify-content-center">
+        <!-- Multi-Snap Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Multi-Snap Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapIdX" />
+              <br />
+              <br />
+              <button
+                id="connectHelloMulti"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect To Multi-Snap Snap
+              </button>
+              <br />
+              <input id="multiSnapPromptInput" placeholder="hello" />
+              <br />
+              <br />
+              <input id="multiSnapDescription" placeholder="description" />
+              <br />
+              <br />
+              <input id="multiSnapTextAreaContent" placeholder="content area" />
+              <br />
+              <br />
+              <button
+                id="sendMultiSnapButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Inputs to Multi-Snap Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="multiSnapResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Confirm Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -69,7 +109,7 @@
         </div>
 
         <!-- Error Snap Interface -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
             <div class="card-header">
               <h1 class="testSnapsName">Error Snap</h1>
@@ -97,7 +137,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Row 2 -->
       <div class="row justify-content-center">
@@ -355,6 +395,59 @@
       : undefined;
 
     /**
+     * Multi-Snap Snap
+     */
+    const snapIdX = document.querySelector('#snapIdX');
+    snapIdX.value = 'local:http://localhost:8089';
+
+    const connectMultiSnapButton = document.querySelector('#connectHelloMulti');
+    const sendMultiSnapButton = document.querySelector('#sendMultiSnapButton');
+    const promptInputMulti = document.querySelector('#multiSnapPromptInput');
+    const descriptionMulti = document.querySelector('#multiSnapDescription');
+    const textAreaContentMulti = document.querySelector('#multiSnapTextAreaContent');
+    const confirmResultMulti = document.querySelector('#multiSnapResult');
+
+    connectMultiSnapButton.addEventListener('click', connectMultiSnap);
+    sendMultiSnapButton.addEventListener('click', sendMultiSnap);
+    promptInputMulti.value = 'hello';
+
+    // here we get permissions to interact with and install the snap
+    async function connectMultiSnap() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapIdX.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    // here we call the snap's "confirm" method
+    async function sendMultiSnap() {
+      try {
+        const resultMulti = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapIdX.value,
+            {
+              method: 'confirm',
+              params: [
+                promptInputMulti.value,
+                descriptionMulti.value,
+                textAreaContentMulti.value,
+              ],
+            },
+          ],
+        });
+        confirmResultMulti.innerHTML = resultMulti;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
      * Confirm Snap
      */
     const snapId1 = document.querySelector('#snapId1');
@@ -407,48 +500,48 @@
       }
     }
 
-    /**
-     * Error snap
-     */
-    const snapId2 = document.querySelector('#snapId2');
-    snapId2.value = 'local:http://localhost:8082';
-    const connectErrorButton = document.querySelector('#connectError');
-    const sendErrorButton = document.querySelector('#sendError');
-    const errorResult = document.querySelector('#errorResult');
+    // /**
+    //  * Error snap
+    //  */
+    // const snapId2 = document.querySelector('#snapId2');
+    // snapId2.value = 'local:http://localhost:8082';
+    // const connectErrorButton = document.querySelector('#connectError');
+    // const sendErrorButton = document.querySelector('#sendError');
+    // const errorResult = document.querySelector('#errorResult');
 
-    connectErrorButton.addEventListener('click', connectError);
-    sendErrorButton.addEventListener('click', sendError);
+    // connectErrorButton.addEventListener('click', connectError);
+    // sendErrorButton.addEventListener('click', sendError);
 
-    // actions
-    async function connectError() {
-      await ethereum.request({
-        method: 'wallet_enable',
-        params: [
-          {
-            wallet_snap: { [snapId2.value]: { version } },
-          },
-        ],
-      });
-    }
+    // // actions
+    // async function connectError() {
+    //   await ethereum.request({
+    //     method: 'wallet_enable',
+    //     params: [
+    //       {
+    //         wallet_snap: { [snapId2.value]: { version } },
+    //       },
+    //     ],
+    //   });
+    // }
 
-    // here we call the error snap with any method
-    async function sendError() {
-      try {
-        await ethereum.request({
-          method: 'wallet_invokeSnap',
-          params: [
-            snapId2.value,
-            {
-              method: 'test',
-            },
-          ],
-        });
-        errorResult.innerHTML = 'Erroring request sent';
-      } catch (err) {
-        console.error(err);
-        alert('Problem happened: ' + err.message || err);
-      }
-    }
+    // // here we call the error snap with any method
+    // async function sendError() {
+    //   try {
+    //     await ethereum.request({
+    //       method: 'wallet_invokeSnap',
+    //       params: [
+    //         snapId2.value,
+    //         {
+    //           method: 'test',
+    //         },
+    //       ],
+    //     });
+    //     errorResult.innerHTML = 'Erroring request sent';
+    //   } catch (err) {
+    //     console.error(err);
+    //     alert('Problem happened: ' + err.message || err);
+    //   }
+    // }
 
     /**
      * BIP-44 snap
