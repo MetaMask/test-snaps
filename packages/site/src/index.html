@@ -242,6 +242,9 @@
             <button id="keyringHandshake" class="btn btn-primary btn-med btn-block mb-3 btn-wide">
               Keyring Handshake
             </button>
+            <button id="keyringSign" class="btn btn-primary btn-med btn-block mb-3 btn-wide">
+              Keyring Sign
+            </button>
           </div>
         </div>
       </div>
@@ -625,11 +628,12 @@
   snapId7.value = 'local:http://localhost:8087';
   const connectKeyringButton = document.querySelector('#connectKeyring');
   const keyringHandshakeButton = document.querySelector('#keyringHandshake');
+  const keyringSignButton = document.querySelector('#keyringSign');
 
   connectKeyringButton.addEventListener('click', connectKeyring);
   keyringHandshakeButton.addEventListener('click', keyringHandshake);
+  keyringSignButton.addEventListener('click', keyringSign);
 
-  
   async function connectKeyring() {
     await ethereum.request({
       method: 'wallet_enable',
@@ -642,7 +646,7 @@
   }
 
   async function keyringHandshake() {
-    await window.ethereum.request({
+    const result = await window.ethereum.request({
       method: 'wallet_multiChainRequestHack', params: {
         method: 'metamask_handshake', params: {
           requiredNamespaces: {
@@ -654,8 +658,32 @@
         }
       }
     });
+    console.log("Handshake", result);
   }
-  
+
+  async function keyringSign() {
+    const result = await window.ethereum.request({
+      method: 'wallet_multiChainRequestHack', params: {
+        method: 'caip_request', params: {
+          chainId: 'eip155:966', request: {
+            method: 'eth_signTransaction', params: {
+              chainId: 966,
+              data: '0x',
+              gas: '0x6270',
+              maxFeePerGas: '0xb2d05e00',
+              maxPriorityFeePerGas: '0xb2d05e00',
+              nonce: '0xb',
+              to: '0xc6D5a3c98EC9073B54FA0969957Bd582e8D874bf',
+              type: 2,
+              value: '0x38d7ea4c68000',
+            }
+          }
+        }
+      }
+    });
+    console.log("Sign", result);
+  }
+
 </script>
 
 </html>
