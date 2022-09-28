@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [3.0.2]
-### Uncategorized
-- Use root .prettierignore for all packages ([#71](https://github.com/MetaMask/test-snaps/pull/71))
+### Fixed
+- Use root `.prettierignore` for all packages ([#71](https://github.com/MetaMask/test-snaps/pull/71))
 
 ## [3.0.1]
 ### Fixed
