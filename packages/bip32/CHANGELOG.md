@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.2]
 ### Fixed
-- Use root `.prettierignore` for all packages ([#71](https://github.com/MetaMask/test-snaps/pull/71))
+- Fix linting issue causing deployment to fail ([#71](https://github.com/MetaMask/test-snaps/pull/71))
 
 ## [3.0.1]
 ### Fixed
