@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.2]
+### Changed
+- No changes this release.
+
 ## [3.0.1]
 ### Fixed
 - Fix `clean` npm script ([#67](https://github.com/MetaMask/test-snaps/pull/67))
@@ -35,7 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release ([#33](https://github.com/MetaMask/test-snaps/pull/33))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.0.1...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.0.2...HEAD
+[3.0.2]: https://github.com/MetaMask/test-snaps/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/MetaMask/test-snaps/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/MetaMask/test-snaps/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/MetaMask/test-snaps/compare/v1.0.0...v2.0.0
