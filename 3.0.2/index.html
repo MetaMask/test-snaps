@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Snaps</title>
+    <link rel="icon" type="image/svg" href="./icon.svg" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+  </head>
+
+  <body>
+    <main class="container-fluid">
+      <!-- Header -->
+      <div class="container headercenter">
+        <div class="row justify-content-center">
+          <div class="col align-items-center">
+            <h1 class="testSnapsLogo">Test Snaps</h1>
+            <img src="snaps-ascii-to-logo.gif" width="200" alt="" />
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- Row 1 -->
+      <div class="row justify-content-center">
+        <!-- Confirm Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Confirm Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId1" />
+              <br />
+              <br />
+              <button
+                id="connectHello"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect To Confirm Snap
+              </button>
+              <br />
+              <input id="confirmPromptInput" placeholder="hello" />
+              <br />
+              <br />
+              <input id="confirmDescription" placeholder="description" />
+              <br />
+              <br />
+              <input id="confirmTextAreaContent" placeholder="content area" />
+              <br />
+              <br />
+              <button
+                id="sendConfirmButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Inputs to Hello Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="confirmResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Error Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId2" />
+              <br />
+              <br />
+              <button
+                id="connectError"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect Error Snap
+              </button>
+              <button
+                id="sendError"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Test to Error Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="errorResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row justify-content-center">
+        <!-- BIP-44 Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">BIP-44 Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId3" />
+              <br />
+              <br />
+              <button
+                id="connectBip44"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect BIP-44 Snap
+              </button>
+              <button
+                id="sendBip44"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Test to BIP-44 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip44Result"></span>
+              </p>
+              <button
+                id="sendInvalidBip44"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Invalid Test to BIP-44 Snap
+              </button>
+              <br />
+              <input id="bip44SignMessage" placeholder="message" />
+              <br />
+              <br />
+              <button
+                id="sendBip44MessageButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Sign Message with BIP-44 Snap
+              </button>
+              <br />
+              <p class="info-text alert alert-secondary">
+                <span id="bip44SignMessageResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- manageState Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">manageState Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId4" />
+              <br />
+              <br />
+              <button
+                id="connectManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect manageState Snap
+              </button>
+              <br />
+              <input id="dataManageState" placeholder="data" />
+              <br />
+              <br />
+              <button
+                id="sendManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send data to manageState Snap
+              </button>
+              <br />
+              <p class="info-text alert alert-secondary">
+                <span id="sendManageStateResult"></span>
+              </p>
+              <button
+                id="retrieveManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Get data from manageState Snap
+              </button>
+              <br />
+              <p class="info-text alert alert-secondary">
+                <span id="retrieveManageStateResult"></span>
+              </p>
+              <button
+                id="clearManageState"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Clear data of manageState Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="clearManageStateResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row justify-content-center">
+        <!-- Notification Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Notification Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId5" />
+              <br />
+              <br />
+              <button
+                id="connectNotification"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect Notification Snap
+              </button>
+              <button
+                id="sendInAppNotification"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send InApp Test to Notification Snap
+              </button>
+              <br />
+              <button
+                id="sendNativeNotification"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Native Test to Notification Snap
+              </button>
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <!-- BIP-32 Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">BIP-32 Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId6" />
+              <br />
+              <br />
+              <button
+                id="connectBip32"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect BIP-32 Snap
+              </button>
+              <button
+                id="sendBip32Secp256k1"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Secp256k1 Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32Secp256k1Result"></span>
+              </p>
+              <button
+                id="sendBip32Ed25519"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Ed25519 Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32Ed25519Result"></span>
+              </p>
+              <button
+                id="sendBip32PublicKey"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Public Key Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32PublicKeyResult"></span>
+              </p>
+              <button
+                id="sendBip32CompressedPublicKey"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Compressed Public Key Test to BIP-32 Snap
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="bip32CompressedPublicKeyResult"></span>
+              </p>
+              <button
+                id="sendBip32Invalid"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Invalid Test to BIP-32 Snap
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="row justify-content-center">
+      <!-- Update Snap Interface -->
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+        <div class="card testSnapsReg shadow">
+          <div class="card-header">
+            <h1 class="testSnapsName">Update Snap</h1>
+          </div>
+          <div class="card-body">
+            <label>SnapId</label>
+            <input id="snapId7" />
+            <br />
+            <br />
+            <button
+              id="connectUpdateOld"
+              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+            >
+              Connect Old Version Snap
+            </button>
+            <button
+              id="connectUpdateNew"
+              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+            >
+              Connect New Version Snap
+            </button>
+            <br />
+            <button
+              id="sendUpdateHello"
+              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+            >
+              Send Test to Updated Snap
+            </button>
+            <br />
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <!-- All interface connection logic below -->
+  <script>
+    const version = document.location.href.includes(
+      'https://metamask.github.io/test-snaps',
+    )
+      ? document.location.pathname.split('/')[2]
+      : undefined;
+
+    /**
+     * Confirm Snap
+     */
+    const snapId1 = document.querySelector('#snapId1');
+    snapId1.value = 'npm:@metamask/test-snap-confirm';
+
+    const connectConfirmButton = document.querySelector('#connectHello');
+    const sendConfirmButton = document.querySelector('#sendConfirmButton');
+    const promptInput = document.querySelector('#confirmPromptInput');
+    const description = document.querySelector('#confirmDescription');
+    const textAreaContent = document.querySelector('#confirmTextAreaContent');
+    const confirmResult = document.querySelector('#confirmResult');
+
+    connectConfirmButton.addEventListener('click', connectConfirm);
+    sendConfirmButton.addEventListener('click', sendConfirm);
+    promptInput.value = 'hello';
+
+    // here we get permissions to interact with and install the snap
+    async function connectConfirm() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId1.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    // here we call the snap's "confirm" method
+    async function sendConfirm() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId1.value,
+            {
+              method: 'confirm',
+              params: [
+                promptInput.value,
+                description.value,
+                textAreaContent.value,
+              ],
+            },
+          ],
+        });
+        confirmResult.innerHTML = result;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * Error snap
+     */
+    const snapId2 = document.querySelector('#snapId2');
+    snapId2.value = 'npm:@metamask/test-snap-error';
+    const connectErrorButton = document.querySelector('#connectError');
+    const sendErrorButton = document.querySelector('#sendError');
+    const errorResult = document.querySelector('#errorResult');
+
+    connectErrorButton.addEventListener('click', connectError);
+    sendErrorButton.addEventListener('click', sendError);
+
+    // actions
+    async function connectError() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId2.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    // here we call the error snap with any method
+    async function sendError() {
+      try {
+        await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId2.value,
+            {
+              method: 'test',
+            },
+          ],
+        });
+        errorResult.innerHTML = 'Erroring request sent';
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * BIP-44 snap
+     */
+    const snapId3 = document.querySelector('#snapId3');
+    snapId3.value = 'npm:@metamask/test-snap-bip44';
+    const connectBip44Button = document.querySelector('#connectBip44');
+    const sendBip44Button = document.querySelector('#sendBip44');
+    const sendBip44InvalidButton = document.querySelector('#sendInvalidBip44');
+    const bip44Result = document.querySelector('#bip44Result');
+
+    const bip44SignMessage = document.querySelector('#bip44SignMessage');
+    const sendBip44MessageButton = document.querySelector(
+      '#sendBip44MessageButton',
+    );
+    const bip44SignMessageResult = document.querySelector(
+      '#bip44SignMessageResult',
+    );
+
+    connectBip44Button.addEventListener('click', connectBip44);
+    sendBip44Button.addEventListener('click', getSendBip44());
+    sendBip44InvalidButton.addEventListener('click', getSendBip44({ coinType: 3 }));
+    sendBip44MessageButton.addEventListener('click', sendBip44Message);
+
+    async function connectBip44() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId3.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    function getSendBip44(params = undefined) {
+      return async function sendBip44() {
+        try {
+          const result = await ethereum.request({
+            method: 'wallet_invokeSnap',
+            params: [
+              snapId3.value,
+              {
+                method: 'getAccount',
+                params
+              },
+            ],
+          });
+          bip44Result.innerHTML = `Public key: ${JSON.stringify(result)}`;
+        } catch (err) {
+          console.error(err);
+          alert('Problem happened: ' + err.message || err);
+        }
+      }
+    }
+
+    async function sendBip44Message() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId3.value,
+            {
+              method: 'signMessage',
+              params: [bip44SignMessage.value],
+            },
+          ],
+        });
+        bip44SignMessageResult.innerHTML = `message: ${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * manageState snap
+     */
+    const snapId4 = document.querySelector('#snapId4');
+    snapId4.value = 'npm:@metamask/test-snap-managestate';
+    const connectManageStateButton = document.querySelector(
+      '#connectManageState',
+    );
+    const sendManageStateButton = document.querySelector('#sendManageState');
+    const retrieveManageStateButton = document.querySelector(
+      '#retrieveManageState',
+    );
+    const clearManageStateButton = document.querySelector('#clearManageState');
+    const dataManageStateInput = document.querySelector('#dataManageState');
+    const sendManageStateResult = document.querySelector(
+      '#sendManageStateResult',
+    );
+    const retrieveManageStateResult = document.querySelector(
+      '#retrieveManageStateResult',
+    );
+    const clearManageStateResult = document.querySelector(
+      '#clearManageStateResult',
+    );
+
+    connectManageStateButton.addEventListener('click', connectManageState);
+    sendManageStateButton.addEventListener('click', sendManageState);
+    retrieveManageStateButton.addEventListener('click', retrieveManageState);
+    clearManageStateButton.addEventListener('click', clearManageState);
+
+    async function connectManageState() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId4.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    async function sendManageState() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId4.value,
+            {
+              method: 'storeTestData',
+              params: [dataManageStateInput.value],
+            },
+          ],
+        });
+        sendManageStateResult.innerHTML = 'true';
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    async function retrieveManageState() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId4.value,
+            {
+              method: 'retrieveTestData',
+            },
+          ],
+        });
+        retrieveManageStateResult.innerHTML = `${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    async function clearManageState() {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId4.value,
+            {
+              method: 'clearTestData',
+            },
+          ],
+        });
+        clearManageStateResult.innerHTML = 'true';
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * Notification Snap
+     */
+    const snapId5 = document.querySelector('#snapId5');
+    snapId5.value = 'npm:@metamask/test-snap-notification';
+
+    const connectNotificationButton = document.querySelector(
+      '#connectNotification',
+    );
+    const sendInAppNotificationButton = document.querySelector(
+      '#sendInAppNotification',
+    );
+    const sendNativeNotificationButton = document.querySelector(
+      '#sendNativeNotification',
+    );
+
+    connectNotificationButton.addEventListener('click', connectNotification);
+    sendInAppNotificationButton.addEventListener('click', () =>
+      sendNotification('inApp'),
+    );
+    sendNativeNotificationButton.addEventListener('click', () =>
+      sendNotification('native'),
+    );
+
+    async function connectNotification() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId5.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    async function sendNotification(method) {
+      try {
+        await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId5.value,
+            {
+              method: method,
+            },
+          ],
+        });
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+     * BIP-32 snap
+     */
+    const snapId6 = document.querySelector('#snapId6');
+    snapId6.value = 'npm:@metamask/test-snap-bip32';
+    const connectBip32Button = document.querySelector('#connectBip32');
+    const sendBip32Secp256k1Button = document.querySelector('#sendBip32Secp256k1');
+    const sendBip32Ed25519Button = document.querySelector('#sendBip32Ed25519');
+    const sendBip32PublicKeyButton = document.querySelector('#sendBip32PublicKey');
+    const sendBip32CompressedPublicKeyButton = document.querySelector('#sendBip32CompressedPublicKey');
+    const sendBip32InvalidButton = document.querySelector('#sendBip32Invalid');
+    const bip32Secp256k1Result = document.querySelector('#bip32Secp256k1Result');
+    const bip32Ed25519Result = document.querySelector('#bip32Ed25519Result');
+    const bip32PublicKeyResult = document.querySelector('#bip32PublicKeyResult');
+    const bip32CompressedPublicKeyResult = document.querySelector('#bip32CompressedPublicKeyResult');
+
+    connectBip32Button.addEventListener('click', connectBip32);
+    sendBip32Secp256k1Button.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "0'"], curve: 'secp256k1' }));
+    sendBip32Ed25519Button.addEventListener('click', sendBip32Factory(bip32Ed25519Result, { path: ['m', "44'", "0'"], curve: 'ed25519' }));
+    sendBip32PublicKeyButton.addEventListener('click', () => getBip32PublicKey(bip32PublicKeyResult));
+    sendBip32CompressedPublicKeyButton.addEventListener('click', () => getBip32PublicKey(bip32CompressedPublicKeyResult, true));
+    sendBip32InvalidButton.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "123'"], curve: 'secp256k1' }));
+
+    async function connectBip32() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: { [snapId6.value]: { version } },
+          },
+        ],
+      });
+    }
+
+    function sendBip32Factory(target, { path, curve }) {
+      return async function sendBip32() {
+        try {
+          const result = await ethereum.request({
+            method: 'wallet_invokeSnap',
+            params: [
+              snapId6.value,
+              {
+                method: 'getAccount',
+                params: { path, curve },
+              },
+            ],
+          });
+          target.innerHTML = `Private key: ${JSON.stringify(result)}`;
+        } catch (err) {
+          console.error(err);
+          alert('Problem happened: ' + err.message || err);
+        }
+      }
+    }
+
+    async function getBip32PublicKey(target, compressed = false) {
+      try {
+        const result = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            snapId6.value,
+            {
+              method: 'getPublicKey',
+              params: { path: ['m', "44'", "0'"], curve: 'secp256k1', compressed },
+            },
+          ],
+        });
+        target.innerHTML = `Public key: ${JSON.stringify(result)}`;
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+    /**
+    * Update Snap
+    */
+    const snapId7 = document.querySelector('#snapId7');
+    snapId7.value = 'npm:@metamask/test-snap-confirm';
+
+    const connectUpdateOldButton = document.querySelector('#connectUpdateOld');
+    const connectUpdateNewButton = document.querySelector('#connectUpdateNew');
+    const sendUpdateHelloButton = document.querySelector('#sendUpdateHello');
+
+    connectUpdateOldButton.addEventListener('click', connectUpdateOld);
+    connectUpdateNewButton.addEventListener('click', connectUpdateNew);
+    sendUpdateHelloButton.addEventListener('click', sendUpdateHello);
+
+    async function connectUpdateOld() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: {
+              [`npm:@metamask/test-snap-confirm`]: {
+                version: '1.0.0',
+              },
+            },
+          },
+        ],
+      });
+    }
+
+    async function connectUpdateNew() {
+      await ethereum.request({
+        method: 'wallet_enable',
+        params: [
+          {
+            wallet_snap: {
+              [`npm:@metamask/test-snap-confirm`]: {
+                version: '2.0.0',
+              },
+            },
+          },
+        ],
+      });
+    }
+
+    async function sendUpdateHello(method) {
+      try {
+        await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [
+            `npm:@metamask/test-snap-confirm`,
+            {
+              method: 'confirm',
+              params: [
+                promptInput.value,
+                description.value,
+                textAreaContent.value,
+              ],
+            },
+          ],
+        });
+      } catch (err) {
+        console.error(err);
+        alert('Problem happened: ' + err.message || err);
+      }
+    }
+
+  </script>
+</html>
