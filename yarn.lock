@@ -2596,6 +2596,7 @@ __metadata:
     "@metamask/key-tree": ^4.0.0
     "@metamask/snap-types": ^0.16.0
     "@metamask/snaps-cli": ^0.16.0
+    "@noble/ed25519": ^1.7.1
     "@types/jest": ^26.0.13
     "@typescript-eslint/eslint-plugin": ^5.19.0
     "@typescript-eslint/parser": ^5.19.0
@@ -2801,10 +2802,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/ed25519@npm:^1.6.0":
-  version: 1.6.1
-  resolution: "@noble/ed25519@npm:1.6.1"
-  checksum: 4bf9177549e8e93464cdc6740990973ca5d3447e68dd608aff3d7380b12d1007eb77e38b4806d74b580ba4eee7408f036331dc0387319fa49d64d4d62c648aaf
+"@noble/ed25519@npm:^1.6.0, @noble/ed25519@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "@noble/ed25519@npm:1.7.1"
+  checksum: b8e50306ac70f5cecc349111997e72e897b47a28d406b96cf95d0ebe7cbdefb8380d26117d7847d94102281db200aa3a494e520f9fc12e2f292e0762cb0fa333
   languageName: node
   linkType: hard
 

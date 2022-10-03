@@ -260,6 +260,9 @@
               >
                 Connect BIP-32 Snap
               </button>
+              <input id="bip32SignMessage" placeholder="message" />
+              <br />
+              <br />
               <button
                 id="sendBip32Secp256k1"
                 class="btn btn-primary btn-med btn-block mb-3 btn-wide"
@@ -677,6 +680,7 @@
     const snapId6 = document.querySelector('#snapId6');
     snapId6.value = 'local:http://localhost:8086';
     const connectBip32Button = document.querySelector('#connectBip32');
+    const bip32SignMessage = document.querySelector('#bip32SignMessage');
     const sendBip32Secp256k1Button = document.querySelector('#sendBip32Secp256k1');
     const sendBip32Ed25519Button = document.querySelector('#sendBip32Ed25519');
     const sendBip32PublicKeyButton = document.querySelector('#sendBip32PublicKey');
@@ -713,12 +717,12 @@
             params: [
               snapId6.value,
               {
-                method: 'getAccount',
-                params: { path, curve },
+                method: 'signMessage',
+                params: { path, curve, message: bip32SignMessage.value },
               },
             ],
           });
-          target.innerHTML = `Private key: ${JSON.stringify(result)}`;
+          target.innerHTML = `Signature: ${JSON.stringify(result)}`;
         } catch (err) {
           console.error(err);
           alert('Problem happened: ' + err.message || err);
