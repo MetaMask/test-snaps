@@ -2,6 +2,7 @@ import { ethErrors } from 'eth-rpc-errors';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 import { sign } from '@noble/ed25519';
+import { bytesToHex } from '@metamask/utils';
 
 interface GetAccountParams {
   path: string;
@@ -31,11 +32,6 @@ const getPublicKey = async (params: GetAccountParams): Promise<string> => {
     params,
   })) as string;
 };
-
-const toHex = (array: Uint8Array) =>
-  `0x${Object.values(array)
-    .map((num) => num.toString(16))
-    .join('')}`;
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
@@ -71,7 +67,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         new TextEncoder().encode(message),
         node.privateKey as string,
       );
-      return toHex(signed);
+      return bytesToHex(signed);
     }
 
     default:

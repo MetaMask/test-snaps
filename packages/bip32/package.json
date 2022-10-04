@@ -38,6 +38,7 @@
   "dependencies": {
     "@metamask/key-tree": "^4.0.0",
     "@metamask/snap-types": "^0.16.0",
+    "@metamask/utils": "^3.1.0",
     "@noble/ed25519": "^1.7.1",
     "eth-rpc-errors": "^4.0.3"
   },
