@@ -5,6 +5,7 @@ import {
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { bytesToHex } from '@metamask/utils';
 
 interface GetAccountParams {
   coinType: number;
@@ -36,26 +37,10 @@ const getPrivateKey = async (coinType = 1) => {
 };
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
-  /**
-   * Converts ugly output from @noble/bls12-381 to readable hex.
-   *
-   * @param nobleOutput - An array from sign().
-   * @returns Hex string.
-   */
-  function nobleOutputToHexString(nobleOutput: Uint8Array): string {
-    return `0x${Object.values(nobleOutput)
-      .map((num) => {
-        return num.toString(16);
-      })
-      .join('')}`;
-  }
-
   switch (request.method) {
     case 'getAccount': {
       const params = request.params as GetAccountParams;
-      return nobleOutputToHexString(
-        getPublicKey(await getPrivateKey(params?.coinType)),
-      );
+      return bytesToHex(getPublicKey(await getPrivateKey(params?.coinType)));
     }
 
     case 'signMessage': {
@@ -74,7 +59,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         params: [
           {
             prompt: 'BLS signature request',
-            textAreaContent: `Do you want to BLS sign ${data} with ${nobleOutputToHexString(
+            textAreaContent: `Do you want to BLS sign ${data} with ${bytesToHex(
               pubKey,
             )}?`,
           },
@@ -84,7 +69,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         throw ethErrors.provider.userRejectedRequest();
       }
       const newLocal = await sign(new TextEncoder().encode(data), privateKey);
-      return nobleOutputToHexString(newLocal);
+      return bytesToHex(newLocal);
     }
 
     default:
