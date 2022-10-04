@@ -1,7 +1,7 @@
 {
   "version": "3.0.2",
   "proposedName": "MetaMask Notification Test Snap",
-  "description": "An MetaMask Test Snap that uses the notification permission",
+  "description": "A MetaMask Test Snap that uses the notification permission",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
