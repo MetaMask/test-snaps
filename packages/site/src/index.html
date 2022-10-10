@@ -28,6 +28,25 @@
       <br />
       <!-- Row 1 -->
       <div class="row justify-content-center">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Installed Snaps</h1>
+            </div>
+            <div class="card-body">
+              <button
+                id="getInstalledSnapsButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Get Installed Snaps
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="getInstalledSnapsResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Confirm Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -356,6 +375,23 @@
     )
       ? document.location.pathname.split('/')[2]
       : undefined;
+
+    /**
+     * Installed Snaps
+     */
+
+    const getInstalledSnapsButton = document.querySelector('#getInstalledSnapsButton');
+    const getInstalledSnapsResult = document.querySelector('#getInstalledSnapsResult');
+
+    getInstalledSnapsButton.addEventListener('click', getInstalledSnaps);
+
+    async function getInstalledSnaps() {
+      const snaps = await ethereum.request({
+        method: 'wallet_getSnaps',
+        params: [],
+      });
+      getInstalledSnapsResult.innerHTML = Object.keys(snaps).join(", ");
+    }
 
     /**
      * Confirm Snap
