@@ -28,6 +28,26 @@
       <br />
       <!-- Row 1 -->
       <div class="row justify-content-center">
+        <!-- Installed Snaps -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Installed Snaps</h1>
+            </div>
+            <div class="card-body">
+              <button
+                id="getInstalledSnapsButton"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Get Installed Snaps
+              </button>
+              <p class="info-text alert alert-secondary">
+                <span id="getInstalledSnapsResult"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Confirm Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -67,7 +87,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Row 2 -->
+      <div class="row justify-content-center">
         <!-- Error Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -97,10 +120,7 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Row 2 -->
-      <div class="row justify-content-center">
         <!-- BIP-44 Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -150,7 +170,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Row 3 -->
+      <div class="row justify-content-center">
         <!-- manageState Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -204,10 +227,7 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Row 3 -->
-      <div class="row justify-content-center">
         <!-- Notification Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -242,7 +262,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Row 4 -->
+      <div class="row justify-content-center">
         <!-- BIP-32 Snap Interface -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
           <div class="card testSnapsReg shadow">
@@ -308,41 +331,38 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Row 4 -->
-      <div class="row justify-content-center">
-      <!-- Update Snap Interface -->
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
-        <div class="card testSnapsReg shadow">
-          <div class="card-header">
-            <h1 class="testSnapsName">Update Snap</h1>
-          </div>
-          <div class="card-body">
-            <label>SnapId</label>
-            <input id="snapId7" />
-            <br />
-            <br />
-            <button
-              id="connectUpdateOld"
-              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
-            >
-              Connect Old Version Snap
-            </button>
-            <button
-              id="connectUpdateNew"
-              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
-            >
-              Connect New Version Snap
-            </button>
-            <br />
-            <button
-              id="sendUpdateHello"
-              class="btn btn-primary btn-med btn-block mb-3 btn-wide"
-            >
-              Send Test to Updated Snap
-            </button>
-            <br />
+        <!-- Update Snap Interface -->
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+          <div class="card testSnapsReg shadow">
+            <div class="card-header">
+              <h1 class="testSnapsName">Update Snap</h1>
+            </div>
+            <div class="card-body">
+              <label>SnapId</label>
+              <input id="snapId7" />
+              <br />
+              <br />
+              <button
+                id="connectUpdateOld"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect Old Version Snap
+              </button>
+              <button
+                id="connectUpdateNew"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Connect New Version Snap
+              </button>
+              <br />
+              <button
+                id="sendUpdateHello"
+                class="btn btn-primary btn-med btn-block mb-3 btn-wide"
+              >
+                Send Test to Updated Snap
+              </button>
+              <br />
+            </div>
           </div>
         </div>
       </div>
@@ -356,6 +376,27 @@
     )
       ? document.location.pathname.split('/')[2]
       : undefined;
+
+    /**
+     * Installed Snaps
+     */
+
+    const getInstalledSnapsButton = document.querySelector(
+      '#getInstalledSnapsButton',
+    );
+    const getInstalledSnapsResult = document.querySelector(
+      '#getInstalledSnapsResult',
+    );
+
+    getInstalledSnapsButton.addEventListener('click', getInstalledSnaps);
+
+    async function getInstalledSnaps() {
+      const snaps = await ethereum.request({
+        method: 'wallet_getSnaps',
+        params: [],
+      });
+      getInstalledSnapsResult.innerHTML = Object.keys(snaps).join(', ');
+    }
 
     /**
      * Confirm Snap
@@ -473,7 +514,10 @@
 
     connectBip44Button.addEventListener('click', connectBip44);
     sendBip44Button.addEventListener('click', getSendBip44());
-    sendBip44InvalidButton.addEventListener('click', getSendBip44({ coinType: 3 }));
+    sendBip44InvalidButton.addEventListener(
+      'click',
+      getSendBip44({ coinType: 3 }),
+    );
     sendBip44MessageButton.addEventListener('click', sendBip44Message);
 
     async function connectBip44() {
@@ -496,7 +540,7 @@
               snapId3.value,
               {
                 method: 'getAccount',
-                params
+                params,
               },
             ],
           });
@@ -505,7 +549,7 @@
           console.error(err);
           alert('Problem happened: ' + err.message || err);
         }
-      }
+      };
     }
 
     async function sendBip44Message() {
@@ -681,22 +725,56 @@
     snapId6.value = 'local:http://localhost:8086';
     const connectBip32Button = document.querySelector('#connectBip32');
     const bip32SignMessage = document.querySelector('#bip32SignMessage');
-    const sendBip32Secp256k1Button = document.querySelector('#sendBip32Secp256k1');
+    const sendBip32Secp256k1Button = document.querySelector(
+      '#sendBip32Secp256k1',
+    );
     const sendBip32Ed25519Button = document.querySelector('#sendBip32Ed25519');
-    const sendBip32PublicKeyButton = document.querySelector('#sendBip32PublicKey');
-    const sendBip32CompressedPublicKeyButton = document.querySelector('#sendBip32CompressedPublicKey');
+    const sendBip32PublicKeyButton = document.querySelector(
+      '#sendBip32PublicKey',
+    );
+    const sendBip32CompressedPublicKeyButton = document.querySelector(
+      '#sendBip32CompressedPublicKey',
+    );
     const sendBip32InvalidButton = document.querySelector('#sendBip32Invalid');
-    const bip32Secp256k1Result = document.querySelector('#bip32Secp256k1Result');
+    const bip32Secp256k1Result = document.querySelector(
+      '#bip32Secp256k1Result',
+    );
     const bip32Ed25519Result = document.querySelector('#bip32Ed25519Result');
-    const bip32PublicKeyResult = document.querySelector('#bip32PublicKeyResult');
-    const bip32CompressedPublicKeyResult = document.querySelector('#bip32CompressedPublicKeyResult');
+    const bip32PublicKeyResult = document.querySelector(
+      '#bip32PublicKeyResult',
+    );
+    const bip32CompressedPublicKeyResult = document.querySelector(
+      '#bip32CompressedPublicKeyResult',
+    );
 
     connectBip32Button.addEventListener('click', connectBip32);
-    sendBip32Secp256k1Button.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "0'"], curve: 'secp256k1' }));
-    sendBip32Ed25519Button.addEventListener('click', sendBip32Factory(bip32Ed25519Result, { path: ['m', "44'", "0'"], curve: 'ed25519' }));
-    sendBip32PublicKeyButton.addEventListener('click', () => getBip32PublicKey(bip32PublicKeyResult));
-    sendBip32CompressedPublicKeyButton.addEventListener('click', () => getBip32PublicKey(bip32CompressedPublicKeyResult, true));
-    sendBip32InvalidButton.addEventListener('click', sendBip32Factory(bip32Secp256k1Result, { path: ['m', "44'", "123'"], curve: 'secp256k1' }));
+    sendBip32Secp256k1Button.addEventListener(
+      'click',
+      sendBip32Factory(bip32Secp256k1Result, {
+        path: ['m', "44'", "0'"],
+        curve: 'secp256k1',
+      }),
+    );
+    sendBip32Ed25519Button.addEventListener(
+      'click',
+      sendBip32Factory(bip32Ed25519Result, {
+        path: ['m', "44'", "0'"],
+        curve: 'ed25519',
+      }),
+    );
+    sendBip32PublicKeyButton.addEventListener('click', () =>
+      getBip32PublicKey(bip32PublicKeyResult),
+    );
+    sendBip32CompressedPublicKeyButton.addEventListener('click', () =>
+      getBip32PublicKey(bip32CompressedPublicKeyResult, true),
+    );
+    sendBip32InvalidButton.addEventListener(
+      'click',
+      sendBip32Factory(bip32Secp256k1Result, {
+        path: ['m', "44'", "123'"],
+        curve: 'secp256k1',
+      }),
+    );
 
     async function connectBip32() {
       await ethereum.request({
@@ -727,7 +805,7 @@
           console.error(err);
           alert('Problem happened: ' + err.message || err);
         }
-      }
+      };
     }
 
     async function getBip32PublicKey(target, compressed = false) {
@@ -738,7 +816,11 @@
             snapId6.value,
             {
               method: 'getPublicKey',
-              params: { path: ['m', "44'", "0'"], curve: 'secp256k1', compressed },
+              params: {
+                path: ['m', "44'", "0'"],
+                curve: 'secp256k1',
+                compressed,
+              },
             },
           ],
         });
@@ -750,8 +832,8 @@
     }
 
     /**
-    * Update Snap
-    */
+     * Update Snap
+     */
     const snapId7 = document.querySelector('#snapId7');
     snapId7.value = 'npm:@metamask/test-snap-confirm';
 
@@ -814,6 +896,5 @@
         alert('Problem happened: ' + err.message || err);
       }
     }
-
   </script>
 </html>
