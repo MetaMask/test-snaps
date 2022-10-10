@@ -39,7 +39,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       return await getPublicKey(request.params as GetAccountParams);
 
     case 'signMessage': {
-      const { message, ...params } = request.params as SignMessageParams;
+      const { message, curve, ...params } = request.params as SignMessageParams;
 
       if (!message || typeof message !== 'string') {
         throw ethErrors.rpc.invalidParams({
@@ -54,7 +54,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         params: [
           {
             prompt: 'Signature request',
-            textAreaContent: `Do you want to ed25519 sign ${message} with ${add0x(
+            textAreaContent: `Do you want to ${curve} sign ${message} with ${add0x(
               node.publicKey,
             )}?`,
           },

@@ -3,14 +3,14 @@
     "declaration": true,
     "esModuleInterop": true,
     "inlineSources": false,
-    "lib": ["ES2020"],
     "module": "ES6",
     "moduleResolution": "Node",
     "sourceMap": false,
     "strict": true,
     "target": "ES2017",
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "preserve"
   },
   "files": ["./node_modules/@metamask/snap-types/global.d.ts"]
 }

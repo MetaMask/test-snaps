@@ -5,7 +5,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ['*.ts'],
+      files: ['*.ts', '*.tsx'],
       extends: ['@metamask/eslint-config-typescript'],
       rules: {
         '@typescript-eslint/triple-slash-reference': 'off',
@@ -27,5 +27,5 @@ module.exports = {
     },
   ],
 
-  ignorePatterns: ['!.eslintrc.js', 'dist/', 'build'],
+  ignorePatterns: ['!.eslintrc.js', 'dist/', 'build/', 'public/', '.cache/'],
 };
