@@ -32,7 +32,7 @@ jobs:
           echo ::set-output name=NEW_VERSION::${GITHUB_HEAD_REF#"$PREFIX"}
       - uses: MetaMask/action-publish-gh-pages@v2
         with:
-          source-directory: packages/site/dist
+          source-directory: packages/site/public
           destination-directory: ${{ steps.version.outputs.NEW_VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
