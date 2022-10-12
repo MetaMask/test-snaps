@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Result, Snap } from '../../components';
-import { useGetSnapsQuery, useGetStateQuery } from '../../api';
-import { getSnapId } from '../../utils/id';
+import { Tag, useInvokeQuery } from '../../api';
+import { getSnapId, useInstalled } from '../../utils';
 import { SendData } from './SendData';
 import { ClearData } from './ClearData';
 
@@ -14,11 +14,15 @@ export const MANAGE_STATE_ACTUAL_ID = getSnapId(
 );
 
 export const ManageState: FunctionComponent = () => {
-  const { data: snaps } = useGetSnapsQuery();
-  const { data: state } = useGetStateQuery(
-    { snapId: MANAGE_STATE_ACTUAL_ID },
+  const isInstalled = useInstalled(MANAGE_STATE_ACTUAL_ID);
+  const { data: state } = useInvokeQuery(
     {
-      skip: !(snaps && Object.keys(snaps).includes(MANAGE_STATE_ACTUAL_ID)),
+      snapId: MANAGE_STATE_ACTUAL_ID,
+      method: 'retrieveTestData',
+      tags: [Tag.TestState],
+    },
+    {
+      skip: !isInstalled,
     },
   );
 

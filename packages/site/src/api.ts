@@ -45,6 +45,7 @@ export interface InvokeSnapArgs {
   snapId: string;
   method: string;
   params?: JsonRpcParams;
+  tags?: Tag[];
 }
 
 export type InvokeSnapResult = unknown;
@@ -75,20 +76,20 @@ export const baseApi = createApi({
         providesTags: [Tag.InstalledSnaps],
       }),
 
-      getState: build.query<unknown, { snapId: string }>({
-        query: ({ snapId }) => ({
-          method: 'wallet_invokeSnap',
-          params: [snapId, { method: 'retrieveTestData' }],
-        }),
-        providesTags: [Tag.TestState],
-      }),
-
-      invokeSnap: build.mutation<InvokeSnapResult, InvokeSnapArgs>({
+      invokeQuery: build.query<InvokeSnapResult, InvokeSnapArgs>({
         query: ({ snapId, method, params }) => ({
           method: 'wallet_invokeSnap',
           params: [snapId, { method, params }],
         }),
-        invalidatesTags: [Tag.TestState],
+        providesTags: (_, __, { tags = [] }) => tags,
+      }),
+
+      invokeMutation: build.mutation<InvokeSnapResult, InvokeSnapArgs>({
+        query: ({ snapId, method, params }) => ({
+          method: 'wallet_invokeSnap',
+          params: [snapId, { method, params }],
+        }),
+        invalidatesTags: (_, __, { tags = [] }) => tags,
       }),
 
       installSnap: build.mutation<InstallSnapResult, InstallSnapArgs>({
@@ -120,7 +121,7 @@ export const baseApi = createApi({
 
 export const {
   useGetSnapsQuery,
-  useGetStateQuery,
-  useInvokeSnapMutation,
+  useInvokeQueryQuery: useInvokeQuery,
+  useInvokeMutationMutation: useInvokeMutation,
   useInstallSnapMutation,
 } = baseApi;

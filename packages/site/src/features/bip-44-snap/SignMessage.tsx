@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useInvokeSnapMutation } from '../../api';
+import { useInvokeMutation } from '../../api';
 import { Result } from '../../components';
 import { getSnapId } from '../../utils/id';
 import { BIP_44_PORT, BIP_44_SNAP_ID } from './BIP44';
 
 export const SignMessage: FunctionComponent = () => {
   const [message, setMessage] = useState('');
-  const [invokeSnap, { isLoading, data }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading, data }] = useInvokeMutation();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);

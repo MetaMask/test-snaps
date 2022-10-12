@@ -4,7 +4,7 @@ import { Result, Snap } from '../../components';
 import {
   useGetSnapsQuery,
   useInstallSnapMutation,
-  useInvokeSnapMutation,
+  useInvokeMutation,
 } from '../../api';
 
 const UPDATE_SNAP_ID = 'npm:@metamask/test-snap-confirm';
@@ -13,7 +13,7 @@ const UPDATE_SNAP_NEW_VERSION = '2.0.0';
 
 export const Update: FunctionComponent = () => {
   const [installSnap, { isLoading }] = useInstallSnapMutation();
-  const [invokeSnap, { isLoading: isInvokeLoading }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading: isInvokeLoading }] = useInvokeMutation();
   const { data: snaps } = useGetSnapsQuery();
 
   const currentVersion = snaps?.[UPDATE_SNAP_ID]?.version;

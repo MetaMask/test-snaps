@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useInvokeSnapMutation } from '../../api';
+import { useInvokeMutation } from '../../api';
 import { Result } from '../../components';
 import { getSnapId } from '../../utils/id';
 import { BIP_32_PORT, BIP_32_SNAP_ID } from './BIP32';
@@ -11,7 +11,7 @@ export interface SignMessageProps {
 
 export const SignMessage: FunctionComponent<SignMessageProps> = ({ curve }) => {
   const [message, setMessage] = useState('');
-  const [invokeSnap, { isLoading, data }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading, data }] = useInvokeMutation();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
