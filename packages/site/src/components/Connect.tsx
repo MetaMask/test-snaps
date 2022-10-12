@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useInstallSnapMutation } from '../api';
+import { useInstalled } from '../utils';
 import { ButtonSpinner } from './ButtonSpinner';
 
 interface ConnectProps {
@@ -25,6 +26,8 @@ export const Connect: FunctionComponent<ConnectProps> = ({
 }) => {
   const [installSnap, { isLoading }] = useInstallSnapMutation();
   const [snapId, setSnapId] = useState(defaultSnapId);
+  const isInstalled = useInstalled(snapId);
+
   const { site } = useStaticQuery<Query>(graphql`
     query Version {
       site {
@@ -46,6 +49,8 @@ export const Connect: FunctionComponent<ConnectProps> = ({
 
     installSnap({ snapId, version: defaultVersion ?? version });
   };
+
+  const buttonText = isInstalled ? 'Reconnect' : 'Connect';
 
   return (
     <Form onSubmit={handleConnect} className="mb-3">
@@ -70,7 +75,9 @@ export const Connect: FunctionComponent<ConnectProps> = ({
         {isLoading ? (
           <ButtonSpinner>Connecting</ButtonSpinner>
         ) : (
-          <span>Connect to {name}</span>
+          <span>
+            {buttonText} to {name}
+          </span>
         )}
       </Button>
     </Form>
