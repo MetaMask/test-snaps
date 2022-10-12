@@ -14,6 +14,13 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Test Snaps',
+        icon: 'src/assets/icon.svg',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-react-redux',
       options: {
         pathToCreateStoreModule: './src/store.ts',
