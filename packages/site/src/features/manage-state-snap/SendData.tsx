@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Result } from '../../components';
-import { useInvokeSnapMutation } from '../../api';
+import { Tag, useInvokeMutation } from '../../api';
 import { MANAGE_STATE_ACTUAL_ID } from './ManageState';
 
 export const SendData: FunctionComponent = () => {
   const [value, setValue] = useState('');
-  const [invokeSnap, { isLoading, data }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading, data }] = useInvokeMutation();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -18,6 +18,7 @@ export const SendData: FunctionComponent = () => {
       snapId: MANAGE_STATE_ACTUAL_ID,
       method: 'storeTestData',
       params: [value],
+      tags: [Tag.TestState],
     });
   };
 

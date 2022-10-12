@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Result, Snap } from '../../components';
-import { useInvokeSnapMutation } from '../../api';
+import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils/id';
 
 const CONFIRM_SNAP_ID = 'npm:@metamask/test-snap-confirm';
@@ -17,7 +17,7 @@ export const Confirm: FunctionComponent = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [textAreaContent, setTextAreaContent] = useState('');
-  const [invokeSnap, { isLoading, data }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading, data }] = useInvokeMutation();
 
   const handleChange =
     (fn: Dispatch<SetStateAction<string>>) =>

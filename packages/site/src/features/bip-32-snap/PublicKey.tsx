@@ -1,12 +1,12 @@
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { FunctionComponent } from 'react';
 import { Result } from '../../components';
-import { useInvokeSnapMutation } from '../../api';
+import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils';
 import { BIP_32_PORT, BIP_32_SNAP_ID } from './BIP32';
 
 export const PublicKey: FunctionComponent = () => {
-  const [invokeSnap, { isLoading, data }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading, data }] = useInvokeMutation();
 
   const handleClick =
     (method: string, params: Record<string, unknown>) => () => {

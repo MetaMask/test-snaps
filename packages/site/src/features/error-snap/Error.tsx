@@ -1,14 +1,14 @@
 import { FunctionComponent } from 'react';
 import { Button } from 'react-bootstrap';
 import { Result, Snap } from '../../components';
-import { useInvokeSnapMutation } from '../../api';
+import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils/id';
 
 const ERROR_SNAP_ID = 'npm:@metamask/test-snap-error';
 const ERROR_SNAP_PORT = 8002;
 
 export const ErrorSnap: FunctionComponent = () => {
-  const [invokeSnap, { isLoading, data, error }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading, data, error }] = useInvokeMutation();
 
   const handleSubmit = () => {
     invokeSnap({

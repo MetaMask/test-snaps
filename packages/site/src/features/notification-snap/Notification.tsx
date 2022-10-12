@@ -1,14 +1,14 @@
 import { FunctionComponent } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { Snap } from '../../components';
-import { useInvokeSnapMutation } from '../../api';
+import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils/id';
 
 const NOTIFICATION_SNAP_ID = 'npm:@metamask/test-snap-notification';
 const NOTIFICATION_SNAP_PORT = 8005;
 
 export const Notification: FunctionComponent = () => {
-  const [invokeSnap, { isLoading }] = useInvokeSnapMutation();
+  const [invokeSnap, { isLoading }] = useInvokeMutation();
 
   const handleClick = (method: string) => () => {
     invokeSnap({
