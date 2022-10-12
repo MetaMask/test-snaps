@@ -1,13 +1,13 @@
 {
   "version": "3.1.0",
-  "proposedName": "MetaMask Confirm Test Snap",
   "description": "A MetaMask Test Snap that uses the snap_confirm permission",
+  "proposedName": "MetaMask Confirm Test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "6GBDS+Mff7JrnqfEtxN3Po63+Tarw6G6FNDB08RCn4A=",
+    "shasum": "CfHVQoQyoOSmRbceTYj2qR9nwF1i1q+Tnr2fabSRtDE=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
