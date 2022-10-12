@@ -42,6 +42,7 @@
     "eslint-plugin-jsdoc": "^39.2.9",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "gatsby-plugin-manifest": "^4.24.0",
     "jest": "^26.4.2",
     "node-static": "^0.7.11",
     "prettier": "^2.2.1",
@@ -55,7 +56,18 @@
   },
   "lavamoat": {
     "allowScripts": {
-      "@lavamoat/preinstall-always-fail": false
+      "@lavamoat/preinstall-always-fail": false,
+      "gatsby-plugin-manifest>gatsby": false,
+      "gatsby-plugin-manifest>gatsby>@parcel/cache>lmdb": false,
+      "gatsby-plugin-manifest>gatsby>@parcel/core>@parcel/fs>@parcel/watcher": false,
+      "gatsby-plugin-manifest>gatsby>@pmmmwh/react-refresh-webpack-plugin>core-js-pure": false,
+      "gatsby-plugin-manifest>gatsby>core-js": false,
+      "gatsby-plugin-manifest>gatsby>gatsby-cli": false,
+      "gatsby-plugin-manifest>gatsby>gatsby-telemetry": false,
+      "gatsby-plugin-manifest>gatsby>lmdb": false,
+      "gatsby-plugin-manifest>gatsby>lmdb>msgpackr>msgpackr-extract": false,
+      "gatsby-plugin-manifest>gatsby>memoizee>es5-ext": false,
+      "gatsby-plugin-manifest>sharp": true
     }
   }
 }
