@@ -1,5 +1,5 @@
 {
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "An example Snap that derives keys using BIP-32.",
   "proposedName": "@metamask/test-snap-bip32",
   "repository": {
