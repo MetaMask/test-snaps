@@ -39,7 +39,7 @@ export const Confirm: FunctionComponent = () => {
       name="Confirm Snap"
       snapId={CONFIRM_SNAP_ID}
       port={CONFIRM_SNAP_PORT}
-      testId="confirm-snap"
+      testId="ConfirmSnap"
     >
       <Form onSubmit={handleSubmit} className="mb-3">
         <Form.Group>
@@ -74,13 +74,18 @@ export const Confirm: FunctionComponent = () => {
           />
         </Form.Group>
 
-        <Button type="submit" data-testid="submit" disabled={isLoading}>
+        <Button
+          type="submit"
+          id="sendConfirmButton"
+          data-testid="submit"
+          disabled={isLoading}
+        >
           Submit
         </Button>
       </Form>
 
       <Result>
-        <span data-testid="confirm-result">
+        <span id="confirmResult" data-testid="confirm-result">
           {JSON.stringify(data, null, 2)}
         </span>
       </Result>
