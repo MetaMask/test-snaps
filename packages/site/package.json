@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "setup": "yarn install",
-    "start": "gatsby develop",
+    "start": "gatsby develop -p 8080",
     "build": "gatsby build",
     "build:clean": "yarn clean && yarn build",
     "clean": "rimraf '.cache' 'public'",
