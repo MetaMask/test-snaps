@@ -26,10 +26,11 @@ export const BIP44: FunctionComponent = () => {
       name="BIP-44 Snap"
       snapId={BIP_44_SNAP_ID}
       port={BIP_44_PORT}
-      testId="bip-44-snap"
+      testId="Bip44Snap"
     >
       <ButtonGroup className="mb-3">
         <Button
+          id="sendBip44Test"
           data-testid="send-test"
           onClick={handleClick('getAccount', 1)}
           disabled={isLoading}
@@ -38,6 +39,7 @@ export const BIP44: FunctionComponent = () => {
         </Button>
         <Button
           variant="secondary"
+          id="sendInvalidBip44Test"
           data-testid="send-invalid-test"
           onClick={handleClick('getAccount', 3)}
           disabled={isLoading}
@@ -46,7 +48,9 @@ export const BIP44: FunctionComponent = () => {
         </Button>
       </ButtonGroup>
       <Result className="mb-3">
-        <span data-testid="test-result">{JSON.stringify(data, null, 2)}</span>
+        <span id="bip44Result" data-testid="test-result">
+          {JSON.stringify(data, null, 2)}
+        </span>
       </Result>
 
       <SignMessage />
