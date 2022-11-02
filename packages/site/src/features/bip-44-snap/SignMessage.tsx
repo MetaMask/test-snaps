@@ -33,23 +33,15 @@ export const SignMessage: FunctionComponent = () => {
           value={message}
           onChange={handleChange}
           id="bip44Message"
-          data-testid="title"
           className="mb-3"
         />
 
-        <Button
-          type="submit"
-          id="signBip44Message"
-          data-testid="sign-message"
-          disabled={isLoading}
-        >
+        <Button type="submit" id="signBip44Message" disabled={isLoading}>
           Sign Message
         </Button>
       </Form>
       <Result>
-        <span id="bip44SignResult" data-testid="sign-result">
-          {JSON.stringify(data, null, 2)}
-        </span>
+        <span id="bip44SignResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </>
   );

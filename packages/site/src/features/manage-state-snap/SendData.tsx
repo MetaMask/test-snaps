@@ -33,25 +33,17 @@ export const SendData: FunctionComponent = () => {
             value={value}
             onChange={handleChange}
             id="dataManageState"
-            data-testid="send-data"
             className="mb-3"
           />
         </Form.Group>
 
-        <Button
-          type="submit"
-          id="sendManageState"
-          data-testid="send-data-button"
-          disabled={isLoading}
-        >
+        <Button type="submit" id="sendManageState" disabled={isLoading}>
           Send Data
         </Button>
       </Form>
 
       <Result className="mb-3">
-        <span id="sendManageStateResult" data-testid="send-result">
-          {JSON.stringify(data, null, 2)}
-        </span>
+        <span id="sendManageStateResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </>
   );

@@ -49,7 +49,7 @@ export const Confirm: FunctionComponent = () => {
             placeholder="Title"
             value={title}
             onChange={handleChange(setTitle)}
-            data-testid="title"
+            id="msgTitle"
             className="mb-2"
           />
 
@@ -59,7 +59,7 @@ export const Confirm: FunctionComponent = () => {
             placeholder="Description"
             value={description}
             onChange={handleChange(setDescription)}
-            data-testid="description"
+            id="msgDescription"
             className="mb-2"
           />
 
@@ -69,25 +69,18 @@ export const Confirm: FunctionComponent = () => {
             placeholder="Textarea Content"
             value={textAreaContent}
             onChange={handleChange(setTextAreaContent)}
-            data-testid="textarea-content"
+            id="msgTextarea"
             className="mb-3"
           />
         </Form.Group>
 
-        <Button
-          type="submit"
-          id="sendConfirmButton"
-          data-testid="submit"
-          disabled={isLoading}
-        >
+        <Button type="submit" id="sendConfirmButton" disabled={isLoading}>
           Submit
         </Button>
       </Form>
 
       <Result>
-        <span id="confirmResult" data-testid="confirm-result">
-          {JSON.stringify(data, null, 2)}
-        </span>
+        <span id="confirmResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </Snap>
   );

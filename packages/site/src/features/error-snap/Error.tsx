@@ -34,7 +34,7 @@ export const ErrorSnap: FunctionComponent = () => {
         Send Test to Error Snap
       </Button>
       <Result>
-        <span id="errorResult" data-testid="error-result">
+        <span id="errorResult">
           {JSON.stringify(data, null, 2)}
           {JSON.stringify(error, null, 2)}
         </span>

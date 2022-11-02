@@ -34,7 +34,7 @@ export const ManageState: FunctionComponent = () => {
       testId="ManageState"
     >
       <Result className="mb-3">
-        <span id="retrieveManageStateResult" data-testid="current-state">
+        <span id="retrieveManageStateResult">
           {JSON.stringify(state, null, 2)}
         </span>
       </Result>

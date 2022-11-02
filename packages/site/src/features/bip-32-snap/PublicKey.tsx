@@ -22,7 +22,6 @@ export const PublicKey: FunctionComponent = () => {
       <ButtonGroup className="mb-3">
         <Button
           id="bip32GetPublic"
-          data-testid="send-test"
           onClick={handleClick('getPublicKey', {
             path: ['m', "44'", "0'"],
             curve: 'secp256k1',
@@ -35,7 +34,6 @@ export const PublicKey: FunctionComponent = () => {
         <Button
           variant="secondary"
           id="bip32GetCompressedPublic"
-          data-testid="send-invalid-test"
           onClick={handleClick('getPublicKey', {
             path: ['m', "44'", "0'"],
             curve: 'secp256k1',
@@ -48,7 +46,6 @@ export const PublicKey: FunctionComponent = () => {
         <Button
           variant="light"
           id="bip32SendInvalid"
-          data-testid="send-invalid-test"
           onClick={handleClick('getPublicKey', {
             path: ['m', "44'", "1'"],
             curve: 'secp256k1',
@@ -59,9 +56,7 @@ export const PublicKey: FunctionComponent = () => {
         </Button>
       </ButtonGroup>
       <Result className="mb-3">
-        <span id="bip32PublicKeyResult" data-testid="test-result">
-          {JSON.stringify(data, null, 2)}
-        </span>
+        <span id="bip32PublicKeyResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </>
   );
