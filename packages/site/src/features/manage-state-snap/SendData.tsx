@@ -32,6 +32,7 @@ export const SendData: FunctionComponent = () => {
             placeholder="Value"
             value={value}
             onChange={handleChange}
+            id="dataManageState"
             data-testid="send-data"
             className="mb-3"
           />
@@ -39,6 +40,7 @@ export const SendData: FunctionComponent = () => {
 
         <Button
           type="submit"
+          id="sendManageState"
           data-testid="send-data-button"
           disabled={isLoading}
         >
@@ -47,7 +49,9 @@ export const SendData: FunctionComponent = () => {
       </Form>
 
       <Result className="mb-3">
-        <span data-testid="send-result">{JSON.stringify(data, null, 2)}</span>
+        <span id="sendManageStateResult" data-testid="send-result">
+          {JSON.stringify(data, null, 2)}
+        </span>
       </Result>
     </>
   );

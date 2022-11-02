@@ -18,6 +18,7 @@ export const ClearData: FunctionComponent = () => {
   return (
     <>
       <Button
+        id="clearManageState"
         data-testid="clear-data-button"
         onClick={handleClick}
         disabled={isLoading}
@@ -26,7 +27,9 @@ export const ClearData: FunctionComponent = () => {
         Clear Data
       </Button>
       <Result>
-        <span data-testid="clear-result">{JSON.stringify(data, null, 2)}</span>
+        <span id="clearManageStateResult" data-testid="clear-result">
+          {JSON.stringify(data, null, 2)}
+        </span>
       </Result>
     </>
   );
