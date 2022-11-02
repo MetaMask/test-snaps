@@ -40,12 +40,14 @@ export const SignMessage: FunctionComponent<SignMessageProps> = ({ curve }) => {
           placeholder="Message"
           value={message}
           onChange={handleChange}
+          id={`bip32Message-${curve}`}
           data-testid={`${curve}-message`}
           className="mb-3"
         />
 
         <Button
           type="submit"
+          id={`sendBip32-${curve}`}
           data-testid={`${curve}-sign-message`}
           disabled={isLoading}
         >
@@ -53,7 +55,10 @@ export const SignMessage: FunctionComponent<SignMessageProps> = ({ curve }) => {
         </Button>
       </Form>
       <Result className="mb-3">
-        <span data-testid={`${curve}-sign-result`}>
+        <span
+          id={`bip32MessageResult-${curve}`}
+          data-testid={`${curve}-sign-result`}
+        >
           {JSON.stringify(data, null, 2)}
         </span>
       </Result>

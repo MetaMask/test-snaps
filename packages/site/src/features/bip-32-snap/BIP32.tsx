@@ -12,7 +12,7 @@ export const BIP32: FunctionComponent = () => {
       name="BIP-32 Snap"
       snapId={BIP_32_SNAP_ID}
       port={BIP_32_PORT}
-      testId="bip-32-snap"
+      testId="Bip32"
     >
       <PublicKey />
       <SignMessage curve="secp256k1" />
