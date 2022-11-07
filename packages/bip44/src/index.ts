@@ -26,14 +26,16 @@ const getPrivateKey = async (coinType = 1) => {
     },
   })) as JsonBIP44CoinTypeNode;
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return remove0x((
-    await deriveBIP44AddressKey(coinTypeNode, {
-      account: 0,
-      change: 0,
-      address_index: 0,
-    })
-  ).privateKey!);
+  return remove0x(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    (
+      await deriveBIP44AddressKey(coinTypeNode, {
+        account: 0,
+        change: 0,
+        address_index: 0,
+      })
+    ).privateKey!,
+  );
 };
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
