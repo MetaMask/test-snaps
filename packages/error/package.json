@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-error",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "MetaMask Error Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
