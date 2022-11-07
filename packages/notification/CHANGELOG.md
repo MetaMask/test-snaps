@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [3.2.0]
-### Uncategorized
-- Fix key-tree breaking changes and update other dependencies ([#82](https://github.com/MetaMask/test-snaps/pull/82))
+### Changed
+- No changes this release.
 
 ## [3.1.0]
 ### Changed
