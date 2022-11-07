@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.2.0]
+### Changed
+- Update `@metamask/key-tree` and fix breaking changes ([#82](https://github.com/MetaMask/test-snaps/pull/82))
+
 ## [3.1.0]
 ### Changed
 - Rework BIP32 test snap to add message signing ([#73](https://github.com/MetaMask/test-snaps/pull/73))
@@ -23,7 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56), [#57](https://github.com/MetaMask/test-snaps/pull/57), [#64](https://github.com/MetaMask/test-snaps/pull/64))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.1.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/MetaMask/test-snaps/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/MetaMask/test-snaps/compare/v3.0.2...v3.1.0
 [3.0.2]: https://github.com/MetaMask/test-snaps/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/MetaMask/test-snaps/compare/v3.0.0...v3.0.1
