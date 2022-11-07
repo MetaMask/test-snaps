@@ -1,13 +1,13 @@
 {
   "version": "3.1.0",
-  "proposedName": "MetaMask Notification Test Snap",
   "description": "A MetaMask Test Snap that uses the notification permission",
+  "proposedName": "MetaMask Notification Test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "JWORw2IQQXCFpM+/9vS4CCw1P0UYuqFfjxb34DusPfQ=",
+    "shasum": "mNcMS+pn5o99oadDY+1XCllZXU/nfGDmwXGemie+iao=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

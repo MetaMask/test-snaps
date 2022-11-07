@@ -5,7 +5,7 @@ import {
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
-import { bytesToHex } from '@metamask/utils';
+import { bytesToHex, remove0x } from '@metamask/utils';
 
 interface GetAccountParams {
   coinType: number;
@@ -27,13 +27,13 @@ const getPrivateKey = async (coinType = 1) => {
   })) as JsonBIP44CoinTypeNode;
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return (
+  return remove0x((
     await deriveBIP44AddressKey(coinTypeNode, {
       account: 0,
       change: 0,
       address_index: 0,
     })
-  ).privateKeyBuffer!;
+  ).privateKey!);
 };
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {

@@ -2,7 +2,7 @@ import { ethErrors } from 'eth-rpc-errors';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 import { sign } from '@noble/ed25519';
-import { add0x, assert, bytesToHex } from '@metamask/utils';
+import { add0x, assert, bytesToHex, remove0x } from '@metamask/utils';
 
 interface GetAccountParams {
   path: string;
@@ -67,7 +67,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       assert(node.privateKey);
       const signed = await sign(
         new TextEncoder().encode(message),
-        node.privateKey,
+        remove0x(node.privateKey),
       );
       return bytesToHex(signed);
     }
