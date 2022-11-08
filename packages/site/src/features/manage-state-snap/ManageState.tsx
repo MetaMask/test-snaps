@@ -31,10 +31,10 @@ export const ManageState: FunctionComponent = () => {
       name="Manage State Snap"
       snapId={MANAGE_STATE_ID}
       port={MANAGE_STATE_PORT}
-      testId="manage-state-snap"
+      testId="ManageState"
     >
       <Result className="mb-3">
-        <span data-testid="current-state">
+        <span id="retrieveManageStateResult">
           {JSON.stringify(state, null, 2)}
         </span>
       </Result>

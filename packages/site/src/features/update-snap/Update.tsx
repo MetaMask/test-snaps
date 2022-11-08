@@ -38,10 +38,10 @@ export const Update: FunctionComponent = () => {
       name="Update Snap"
       snapId={UPDATE_SNAP_ID}
       version={UPDATE_SNAP_OLD_VERSION}
-      testId="update-snap"
+      testId="Update"
     >
       <Result className="mb-3">
-        <span data-testid="update-version">
+        <span id="updateSnapVersion">
           {JSON.stringify(currentVersion, null, 2)}
         </span>
       </Result>
@@ -51,7 +51,7 @@ export const Update: FunctionComponent = () => {
           variant="primary"
           disabled={isLoading}
           onClick={handleUpdate}
-          data-testid="update-button"
+          id="connectUpdateNew"
         >
           Update Snap
         </Button>

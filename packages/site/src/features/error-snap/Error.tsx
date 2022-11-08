@@ -22,10 +22,11 @@ export const ErrorSnap: FunctionComponent = () => {
       name="Error Snap"
       snapId={ERROR_SNAP_ID}
       port={ERROR_SNAP_PORT}
-      testId="error-snap"
+      testId="ErrorSnap"
     >
       <Button
         variant="primary"
+        id="sendError"
         className="mb-3"
         disabled={isLoading}
         onClick={handleSubmit}
@@ -33,7 +34,7 @@ export const ErrorSnap: FunctionComponent = () => {
         Send Test to Error Snap
       </Button>
       <Result>
-        <span data-testid="error-result">
+        <span id="errorResult">
           {JSON.stringify(data, null, 2)}
           {JSON.stringify(error, null, 2)}
         </span>

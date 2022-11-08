@@ -21,6 +21,7 @@ interface Query {
 
 export const Connect: FunctionComponent<ConnectProps> = ({
   name,
+  testId,
   snapId: defaultSnapId = '',
   version: defaultVersion,
 }) => {
@@ -69,6 +70,7 @@ export const Connect: FunctionComponent<ConnectProps> = ({
       <Button
         variant="primary"
         type="submit"
+        id={`connect${testId}`}
         data-testid="connect-button"
         disabled={isLoading}
       >

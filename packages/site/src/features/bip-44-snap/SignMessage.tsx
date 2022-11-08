@@ -32,16 +32,16 @@ export const SignMessage: FunctionComponent = () => {
           placeholder="Message"
           value={message}
           onChange={handleChange}
-          data-testid="title"
+          id="bip44Message"
           className="mb-3"
         />
 
-        <Button type="submit" data-testid="sign-message" disabled={isLoading}>
+        <Button type="submit" id="signBip44Message" disabled={isLoading}>
           Sign Message
         </Button>
       </Form>
       <Result>
-        <span data-testid="sign-result">{JSON.stringify(data, null, 2)}</span>
+        <span id="bip44SignResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </>
   );

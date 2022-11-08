@@ -6,9 +6,9 @@ export const Snaps: FunctionComponent = () => {
   const { data: installedSnaps } = useGetSnapsQuery();
 
   return (
-    <Snap name="Installed Snaps" testId="installed-snaps" hideConnect={true}>
+    <Snap name="Installed Snaps" testId="InstalledSnaps" hideConnect={true}>
       <Result>
-        <span data-testid="installed-snaps-result">
+        <span id="installedSnapsResult">
           {installedSnaps && Object.keys(installedSnaps).length > 0
             ? Object.keys(installedSnaps).join(', ')
             : 'No Snaps installed.'}

@@ -22,12 +22,12 @@ export const Notification: FunctionComponent = () => {
       name="Notification Snap"
       snapId={NOTIFICATION_SNAP_ID}
       port={NOTIFICATION_SNAP_PORT}
-      testId="notification-snap"
+      testId="Notification"
     >
       <ButtonGroup>
         <Button
           variant="primary"
-          data-testid="in-app-notification"
+          id="sendInAppNotification"
           disabled={isLoading}
           onClick={handleClick('inApp')}
         >
@@ -35,7 +35,7 @@ export const Notification: FunctionComponent = () => {
         </Button>
         <Button
           variant="secondary"
-          data-testid="native-notification"
+          id="sendNativeNotification"
           disabled={isLoading}
           onClick={handleClick('native')}
         >

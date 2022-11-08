@@ -39,7 +39,7 @@ export const Confirm: FunctionComponent = () => {
       name="Confirm Snap"
       snapId={CONFIRM_SNAP_ID}
       port={CONFIRM_SNAP_PORT}
-      testId="confirm-snap"
+      testId="ConfirmSnap"
     >
       <Form onSubmit={handleSubmit} className="mb-3">
         <Form.Group>
@@ -49,7 +49,7 @@ export const Confirm: FunctionComponent = () => {
             placeholder="Title"
             value={title}
             onChange={handleChange(setTitle)}
-            data-testid="title"
+            id="msgTitle"
             className="mb-2"
           />
 
@@ -59,7 +59,7 @@ export const Confirm: FunctionComponent = () => {
             placeholder="Description"
             value={description}
             onChange={handleChange(setDescription)}
-            data-testid="description"
+            id="msgDescription"
             className="mb-2"
           />
 
@@ -69,20 +69,18 @@ export const Confirm: FunctionComponent = () => {
             placeholder="Textarea Content"
             value={textAreaContent}
             onChange={handleChange(setTextAreaContent)}
-            data-testid="textarea-content"
+            id="msgTextarea"
             className="mb-3"
           />
         </Form.Group>
 
-        <Button type="submit" data-testid="submit" disabled={isLoading}>
+        <Button type="submit" id="sendConfirmButton" disabled={isLoading}>
           Submit
         </Button>
       </Form>
 
       <Result>
-        <span data-testid="confirm-result">
-          {JSON.stringify(data, null, 2)}
-        </span>
+        <span id="confirmResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </Snap>
   );

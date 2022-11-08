@@ -52,6 +52,7 @@ export const Snap: FunctionComponent<SnapProps> = ({
         {!hideConnect && (
           <Connect
             name={name}
+            testId={testId}
             snapId={getSnapId(snapId, port)}
             version={version}
           />
