@@ -10,7 +10,7 @@
   "scripts": {
     "setup": "yarn install",
     "start": "gatsby develop -p 8080",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "build:clean": "yarn clean && yarn build",
     "clean": "rimraf '.cache' 'public'",
     "lint:eslint": "eslint . --cache --ext js,ts",

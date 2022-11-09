@@ -6,6 +6,8 @@ const config: GatsbyConfig = {
   // in every file.
   jsxRuntime: 'automatic',
 
+  pathPrefix: `/test-snaps/${packageJson.version}`,
+
   siteMetadata: {
     title: 'Test Snaps',
     version: packageJson.version,
