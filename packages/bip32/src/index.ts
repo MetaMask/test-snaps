@@ -1,8 +1,9 @@
 import { ethErrors } from 'eth-rpc-errors';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
-import { sign } from '@noble/ed25519';
-import { add0x, assert, bytesToHex, remove0x } from '@metamask/utils';
+import { sign as signEd25519 } from '@noble/ed25519';
+import { add0x, assert, bytesToHex, stringToBytes } from '@metamask/utils';
+import { sign as signSecp256k1 } from '@noble/secp256k1';
 
 interface GetAccountParams {
   path: string;
@@ -33,13 +34,14 @@ const getPublicKey = async (params: GetAccountParams): Promise<string> => {
   })) as string;
 };
 
+// eslint-disable-next-line consistent-return
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
     case 'getPublicKey':
       return await getPublicKey(request.params as GetAccountParams);
 
     case 'signMessage': {
-      const { message, ...params } = request.params as SignMessageParams;
+      const { message, curve, ...params } = request.params as SignMessageParams;
 
       if (!message || typeof message !== 'string') {
         throw ethErrors.rpc.invalidParams({
@@ -47,14 +49,17 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         });
       }
 
-      const node = await getSLIP10Node(params);
+      const node = await getSLIP10Node({ ...params, curve });
+
+      assert(node.privateKey);
+      assert(curve === 'ed25519' || curve === 'secp256k1');
 
       const approved = await wallet.request({
         method: 'snap_confirm',
         params: [
           {
             prompt: 'Signature request',
-            textAreaContent: `Do you want to ed25519 sign ${message} with ${add0x(
+            textAreaContent: `Do you want to ${curve} sign ${message} with ${add0x(
               node.publicKey,
             )}?`,
           },
@@ -64,12 +69,24 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       if (!approved) {
         throw ethErrors.provider.userRejectedRequest();
       }
-      assert(node.privateKey);
-      const signed = await sign(
-        new TextEncoder().encode(message),
-        remove0x(node.privateKey),
-      );
-      return bytesToHex(signed);
+
+      if (curve === 'ed25519') {
+        const signed = await signEd25519(
+          stringToBytes(message),
+          node.privateKey,
+        );
+        return bytesToHex(signed);
+      }
+
+      if (curve === 'secp256k1') {
+        const signed = await signSecp256k1(
+          stringToBytes(message),
+          node.privateKey,
+        );
+        return bytesToHex(signed);
+      }
+
+      break;
     }
 
     default:

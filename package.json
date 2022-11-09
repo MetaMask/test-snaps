@@ -15,11 +15,10 @@
     "prepublishOnly": "yarn build && yarn lint && yarn test",
     "publish:all": "./scripts/publish-all.sh",
     "build": "yarn workspaces foreach --parallel --verbose run build",
-    "build:dev": "yarn workspaces foreach --parallel --verbose run build:dev",
     "build:clean": "yarn clean && yarn build",
     "clean": "yarn workspaces foreach --parallel --verbose run clean",
-    "serve": "echo 'Servers starting...' && $(yarn static packages/site/dist & yarn workspace @metamask/test-snap-confirm serve & yarn workspace @metamask/test-snap-error serve & yarn workspace @metamask/test-snap-bip44 serve & yarn workspace @metamask/test-snap-managestate serve & yarn workspace @metamask/test-snap-notification serve & yarn workspace @metamask/test-snap-bip32 serve)",
-    "lint:eslint": "eslint . --cache --ext js,ts",
+    "start": "yarn workspaces foreach --parallel --verbose --interlaced --exclude root --jobs unlimited run start",
+    "lint:eslint": "eslint . --cache --ext js,ts,tsx",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!**/CHANGELOG.md' '**/*.yml' '**/*.html' '!.yarnrc.yml' --ignore-path .prettierignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
@@ -33,6 +32,7 @@
     "@metamask/eslint-config-jest": "^9.0.0",
     "@metamask/eslint-config-nodejs": "^9.0.0",
     "@metamask/eslint-config-typescript": "^9.0.1",
+    "@metamask/snaps-cli": "^0.22.2",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint": "^7.30.0",
@@ -42,6 +42,7 @@
     "eslint-plugin-jsdoc": "^39.2.9",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "gatsby-plugin-manifest": "^4.24.0",
     "jest": "^26.4.2",
     "node-static": "^0.7.11",
     "prettier": "^2.2.1",
@@ -55,7 +56,18 @@
   },
   "lavamoat": {
     "allowScripts": {
-      "@lavamoat/preinstall-always-fail": false
+      "@lavamoat/preinstall-always-fail": false,
+      "gatsby-plugin-manifest>gatsby": false,
+      "gatsby-plugin-manifest>gatsby>@parcel/cache>lmdb": false,
+      "gatsby-plugin-manifest>gatsby>@parcel/core>@parcel/fs>@parcel/watcher": false,
+      "gatsby-plugin-manifest>gatsby>@pmmmwh/react-refresh-webpack-plugin>core-js-pure": false,
+      "gatsby-plugin-manifest>gatsby>core-js": false,
+      "gatsby-plugin-manifest>gatsby>gatsby-cli": false,
+      "gatsby-plugin-manifest>gatsby>gatsby-telemetry": false,
+      "gatsby-plugin-manifest>gatsby>lmdb": false,
+      "gatsby-plugin-manifest>gatsby>lmdb>msgpackr>msgpackr-extract": false,
+      "gatsby-plugin-manifest>gatsby>memoizee>es5-ext": false,
+      "gatsby-plugin-manifest>sharp": true
     }
   }
 }

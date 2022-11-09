@@ -9,10 +9,10 @@
   "private": true,
   "scripts": {
     "setup": "yarn install",
-    "build": "node scripts/build.js prod",
+    "start": "gatsby develop -p 8080",
+    "build": "gatsby build --prefix-paths",
     "build:clean": "yarn clean && yarn build",
-    "build:dev": "node scripts/build.js dev",
-    "clean": "rimraf 'dist/*'",
+    "clean": "rimraf '.cache' 'public'",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --single-quote --ignore-path ../../.prettierignore --no-error-on-unmatched-pattern",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
@@ -26,6 +26,7 @@
     "@metamask/eslint-config-jest": "^6.0.0",
     "@metamask/eslint-config-nodejs": "^6.0.0",
     "@metamask/eslint-config-typescript": "^6.0.0",
+    "@metamask/providers": "^10.0.0",
     "@types/jest": "^26.0.13",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
@@ -35,15 +36,30 @@
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "gatsby": "^4.24.4",
+    "gatsby-plugin-react-redux": "^1.1.0",
+    "gatsby-plugin-sass": "^5.24.0",
     "jest": "^26.4.2",
     "mkdirp": "^1.0.4",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
+    "sass": "^1.55.0",
     "ts-jest": "^26.3.0",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.4.0"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
   },
   "engines": {
     "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@metamask/utils": "^3.2.0",
+    "@reduxjs/toolkit": "^1.8.6",
+    "bootstrap": "^5.2.2",
+    "gl-matrix": "^3.4.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
+    "simplex-noise": "^4.0.0"
   }
 }

@@ -1,6 +1,6 @@
 module.exports = {
   cliOptions: {
-    port: 8081,
+    port: 8001,
     src: './src/index.ts',
     transpilationMode: 'localOnly',
   },
