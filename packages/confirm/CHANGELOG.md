@@ -113,7 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed outDir of typescript to `build`
 - The beginning of time
 
-[unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...HEAD
 [4.0.0]: https://github.com/MetaMask/test-snaps/compare/v3.2.0...v4.0.0
 [3.2.0]: https://github.com/MetaMask/test-snaps/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/MetaMask/test-snaps/compare/v3.0.2...v3.1.0

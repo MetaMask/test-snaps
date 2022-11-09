@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.0.0]
-### changed
+### Changed
 - **BREAKING**: Refactor site to use React ([#79](https://github.com/MetaMask/test-snaps/pull/79))
 
 ## [3.2.0]
