@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.0]
+### Uncategorized
+- Refactor site to use React ([#79](https://github.com/MetaMask/test-snaps/pull/79))
+
 ## [3.2.0]
 ### Changed
 - No changes this release.
@@ -113,7 +117,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added icons
 - The beginning of time
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v3.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/MetaMask/test-snaps/compare/v3.2.0...v4.0.0
 [3.2.0]: https://github.com/MetaMask/test-snaps/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/MetaMask/test-snaps/compare/v3.0.2...v3.1.0
 [3.0.2]: https://github.com/MetaMask/test-snaps/compare/v3.0.1...v3.0.2
