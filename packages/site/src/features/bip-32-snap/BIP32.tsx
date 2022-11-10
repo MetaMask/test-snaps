@@ -3,7 +3,7 @@ import { Snap } from '../../components';
 import { SignMessage } from './SignMessage';
 import { PublicKey } from './PublicKey';
 
-export const BIP_32_SNAP_ID = 'npm:@metamask/test-snap-bip-32';
+export const BIP_32_SNAP_ID = 'npm:@metamask/test-snap-bip32';
 export const BIP_32_PORT = 8006;
 
 export const BIP32: FunctionComponent = () => {
