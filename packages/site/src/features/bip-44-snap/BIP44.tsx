@@ -5,7 +5,7 @@ import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils/id';
 import { SignMessage } from './SignMessage';
 
-export const BIP_44_SNAP_ID = 'npm:@metamask/test-snap-bip-44';
+export const BIP_44_SNAP_ID = 'npm:@metamask/test-snap-bip44';
 export const BIP_44_PORT = 8003;
 
 export const BIP44: FunctionComponent = () => {

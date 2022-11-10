@@ -5,7 +5,7 @@ import { getSnapId, useInstalled } from '../../utils';
 import { SendData } from './SendData';
 import { ClearData } from './ClearData';
 
-export const MANAGE_STATE_ID = 'npm:@metamask/test-snap-manage-state';
+export const MANAGE_STATE_ID = 'npm:@metamask/test-snap-managestate';
 export const MANAGE_STATE_PORT = 8004;
 
 export const MANAGE_STATE_ACTUAL_ID = getSnapId(
