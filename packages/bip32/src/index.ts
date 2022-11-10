@@ -2,7 +2,13 @@ import { ethErrors } from 'eth-rpc-errors';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 import { sign as signEd25519 } from '@noble/ed25519';
-import { add0x, assert, bytesToHex, stringToBytes } from '@metamask/utils';
+import {
+  add0x,
+  assert,
+  bytesToHex,
+  stringToBytes,
+  remove0x,
+} from '@metamask/utils';
 import { sign as signSecp256k1 } from '@noble/secp256k1';
 
 interface GetAccountParams {
@@ -73,7 +79,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       if (curve === 'ed25519') {
         const signed = await signEd25519(
           stringToBytes(message),
-          node.privateKey,
+          remove0x(node.privateKey),
         );
         return bytesToHex(signed);
       }
@@ -81,7 +87,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       if (curve === 'secp256k1') {
         const signed = await signSecp256k1(
           stringToBytes(message),
-          node.privateKey,
+          remove0x(node.privateKey),
         );
         return bytesToHex(signed);
       }
