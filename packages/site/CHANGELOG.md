@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.0.1]
 ### Changed
-- fixed snap names ([#88](https://github.com/MetaMask/test-snaps/pull/88))
+- Fixed snap names ([#88](https://github.com/MetaMask/test-snaps/pull/88))
 
 ## [4.0.0]
 ### Changed
