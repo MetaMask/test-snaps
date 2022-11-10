@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.1]
+### Changed
+- Fixed snap names ([#88](https://github.com/MetaMask/test-snaps/pull/88))
+
 ## [4.0.0]
 ### Changed
 - **BREAKING**: Refactor site to use React ([#79](https://github.com/MetaMask/test-snaps/pull/79))
@@ -115,7 +119,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.0.1...HEAD
+[4.0.1]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/MetaMask/test-snaps/compare/v3.2.0...v4.0.0
 [3.2.0]: https://github.com/MetaMask/test-snaps/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/MetaMask/test-snaps/compare/v3.0.2...v3.1.0
