@@ -8,7 +8,6 @@
   },
   "private": true,
   "scripts": {
-    "setup": "yarn install",
     "start": "gatsby develop -p 8080",
     "build": "gatsby build --prefix-paths",
     "build:clean": "yarn clean && yarn build",
@@ -18,7 +17,7 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "lint:changelog": "yarn auto-changelog validate",
-    "publish": "echo N/A"
+    "publish:package": "echo N/A"
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^2.5.0",
