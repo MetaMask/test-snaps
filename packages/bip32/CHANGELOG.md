@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.0.2]
-### Uncategorized
+### Fixed
 - Fix issue with signing messages using the BIP-32 test snap ([#90](https://github.com/MetaMask/test-snaps/pull/90))
 
 ## [4.0.1]
