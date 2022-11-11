@@ -11,8 +11,6 @@
   },
   "homepage": "https://metamask.github.io/test-snaps/",
   "scripts": {
-    "setup": "yarn install",
-    "prepublishOnly": "yarn build && yarn lint && yarn test",
     "publish:all": "./scripts/publish-all.sh",
     "build": "yarn workspaces foreach --parallel --verbose run build",
     "build:clean": "yarn clean && yarn build",

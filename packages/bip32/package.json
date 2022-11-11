@@ -19,7 +19,6 @@
     "snap.manifest.json"
   ],
   "scripts": {
-    "setup": "yarn install",
     "build": "mm-snap build --eval false",
     "build:clean": "yarn clean && yarn build",
     "build:dev": "yarn build",
@@ -32,8 +31,7 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "lint:changelog": "yarn auto-changelog validate",
-    "prepublishOnly": "yarn build && yarn lint && yarn test",
-    "publish": "../../scripts/publish-package.sh"
+    "publish:package": "../../scripts/publish-package.sh"
   },
   "dependencies": {
     "@metamask/key-tree": "^6.0.0",

@@ -9,12 +9,13 @@ set -o pipefail
 # git working tree remains cleans, then asks for an npm 2FA code and publishes
 # all packages.
 
-yarn setup
+yarn install
 yarn build:clean
 yarn lint
+yarn test
 
 if ! git diff --exit-code; then
-  echo "Working tree dirty after building"
+  echo "Working tree dirty"
   exit 1
 fi
 
@@ -26,4 +27,4 @@ if [[ -z $OTP ]]; then
   exit 1
 fi
 
-yarn workspaces foreach run publish "$OTP"
+yarn workspaces foreach run publish:package "$OTP"
