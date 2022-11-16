@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-confirm",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "MetaMask Confirm Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,6 @@
     "images/icon.svg"
   ],
   "scripts": {
-    "setup": "yarn install",
     "build": "mm-snap build --eval false",
     "build:dev": "yarn build",
     "build:clean": "yarn clean && yarn build",
@@ -31,8 +30,7 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "lint:changelog": "yarn auto-changelog validate",
-    "prepublishOnly": "yarn build && yarn lint && yarn test",
-    "publish": "../../scripts/publish-package.sh"
+    "publish:package": "../../scripts/publish-package.sh"
   },
   "dependencies": {
     "@metamask/snap-types": "^0.23.0"
