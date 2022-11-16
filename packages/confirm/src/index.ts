@@ -7,7 +7,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
     case 'rpc.discover':
       return openrpcDocument;
     case 'confirm':
-      return wallet.request({
+      return snap.request({
         method: 'snap_confirm',
         params: [
           {

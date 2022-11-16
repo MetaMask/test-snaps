@@ -1,37 +1,37 @@
 import { OnRpcRequestHandler } from '@metamask/snap-types';
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
-  let state = (await wallet.request({
+  let state = (await snap.request({
     method: 'snap_manageState',
-    params: ['get'],
+    params: { operation: 'get' },
   })) as { testState: string[] } | null;
 
   if (!state) {
     state = { testState: [] };
     // initialize state if empty and set default data
-    await wallet.request({
+    await snap.request({
       method: 'snap_manageState',
-      params: ['update', state],
+      params: { operation: 'update', newState: state },
     });
   }
 
   switch (request.method) {
     case 'storeTestData':
       state.testState.push((request.params as string[])[0]);
-      await wallet.request({
+      await snap.request({
         method: 'snap_manageState',
-        params: ['update', state],
+        params: { operation: 'update', newState: state },
       });
       return true;
     case 'retrieveTestData':
-      return await wallet.request({
+      return await snap.request({
         method: 'snap_manageState',
-        params: ['get'],
+        params: { operation: 'get' },
       });
     case 'clearTestData':
-      await wallet.request({
+      await snap.request({
         method: 'snap_manageState',
-        params: ['clear'],
+        params: { operation: 'clear' },
       });
       return true;
 
