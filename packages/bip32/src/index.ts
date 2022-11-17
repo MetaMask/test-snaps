@@ -1,6 +1,6 @@
 import { ethErrors } from 'eth-rpc-errors';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { sign as signEd25519 } from '@noble/ed25519';
 import {
   add0x,
@@ -25,7 +25,7 @@ interface SignMessageParams extends GetAccountParams {
 }
 
 const getSLIP10Node = async (params: GetAccountParams): Promise<SLIP10Node> => {
-  const json = (await wallet.request({
+  const json = (await snap.request({
     method: 'snap_getBip32Entropy',
     params,
   })) as JsonSLIP10Node;
@@ -34,7 +34,7 @@ const getSLIP10Node = async (params: GetAccountParams): Promise<SLIP10Node> => {
 };
 
 const getPublicKey = async (params: GetAccountParams): Promise<string> => {
-  return (await wallet.request({
+  return (await snap.request({
     method: 'snap_getBip32PublicKey',
     params,
   })) as string;
@@ -60,7 +60,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       assert(node.privateKey);
       assert(curve === 'ed25519' || curve === 'secp256k1');
 
-      const approved = await wallet.request({
+      const approved = await snap.request({
         method: 'snap_confirm',
         params: [
           {

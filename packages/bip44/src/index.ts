@@ -4,7 +4,7 @@ import {
   deriveBIP44AddressKey,
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { bytesToHex, remove0x } from '@metamask/utils';
 
 interface GetAccountParams {
@@ -19,7 +19,7 @@ interface GetAccountParams {
  * @returns The private key as Uint8Array.
  */
 const getPrivateKey = async (coinType = 1) => {
-  const coinTypeNode = (await wallet.request({
+  const coinTypeNode = (await snap.request({
     method: 'snap_getBip44Entropy',
     params: {
       coinType,
@@ -56,7 +56,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
         });
       }
 
-      const approved = await wallet.request({
+      const approved = await snap.request({
         method: 'snap_confirm',
         params: [
           {

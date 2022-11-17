@@ -1,4 +1,4 @@
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { OnRpcRequestHandler } from '@metamask/snaps-types';
 
 export const onRpcRequest: OnRpcRequestHandler = async () => {
   // eslint-disable-next-line no-new

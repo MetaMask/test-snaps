@@ -1,4 +1,4 @@
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import openrpcDocument from './openrpc.json';
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
@@ -7,7 +7,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
     case 'rpc.discover':
       return openrpcDocument;
     case 'confirm':
-      return wallet.request({
+      return snap.request({
         method: 'snap_confirm',
         params: [
           {
