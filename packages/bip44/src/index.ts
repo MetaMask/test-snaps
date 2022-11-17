@@ -4,7 +4,7 @@ import {
   deriveBIP44AddressKey,
   JsonBIP44CoinTypeNode,
 } from '@metamask/key-tree';
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { bytesToHex, remove0x } from '@metamask/utils';
 
 interface GetAccountParams {

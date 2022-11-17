@@ -1,6 +1,6 @@
 import { ethErrors } from 'eth-rpc-errors';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { sign as signEd25519 } from '@noble/ed25519';
 import {
   add0x,
