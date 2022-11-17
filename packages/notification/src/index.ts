@@ -8,8 +8,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
     case 'inApp':
       return snap.request({
         method: 'snap_notify',
-        params:
-        {
+        params: {
           type: 'inApp',
           message: `TEST INAPP NOTIFICATION`,
         },
@@ -17,8 +16,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
     case 'native':
       return snap.request({
         method: 'snap_notify',
-        params:
-        {
+        params: {
           type: 'native',
           message: `Hello, ${origin}!`,
         },
