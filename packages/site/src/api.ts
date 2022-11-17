@@ -73,7 +73,7 @@ export const baseApi = createApi({
       invokeQuery: build.query<InvokeSnapResult, InvokeSnapArgs>({
         query: ({ snapId, method, params }) => ({
           method: 'wallet_invokeSnap',
-          params: { snapId, request: { method, params } },
+          params: { snapId, request: params ? { method, params } : { method }  },
         }),
         providesTags: (_, __, { tags = [] }) => tags,
       }),
@@ -81,7 +81,7 @@ export const baseApi = createApi({
       invokeMutation: build.mutation<InvokeSnapResult, InvokeSnapArgs>({
         query: ({ snapId, method, params }) => ({
           method: 'wallet_invokeSnap',
-          params: { snapId, request: { method, params } },
+          params: { snapId, request: params ? { method, params } : { method } },
         }),
         invalidatesTags: (_, __, { tags = [] }) => tags,
       }),
