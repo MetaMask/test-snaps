@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.1.0]
-### Uncategorized
-- Bump snaps packages to latest and handle some breaking changes ([#95](https://github.com/MetaMask/test-snaps/pull/95))
-- Update release and package scripts ([#93](https://github.com/MetaMask/test-snaps/pull/93))
+### Changed
+- Handle breaking changes with new version of Snaps Platform ([#95](https://github.com/MetaMask/test-snaps/pull/95))
 
 ## [4.0.2]
 ### Fixed
