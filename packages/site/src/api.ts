@@ -31,7 +31,10 @@ export const request: BaseQueryFn<RequestArguments> = async ({
 
     return { data };
   } catch (error) {
+    // eslint-disable-next-line no-alert
+    alert(error);
     console.error(error);
+
     return { error };
   }
 };
