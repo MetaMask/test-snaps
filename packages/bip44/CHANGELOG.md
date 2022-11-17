@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.0]
+### Uncategorized
+- Bump snaps packages to latest and handle some breaking changes ([#95](https://github.com/MetaMask/test-snaps/pull/95))
+- Update release and package scripts ([#93](https://github.com/MetaMask/test-snaps/pull/93))
+
 ## [4.0.2]
 ### Changed
 - No changes this release.
@@ -77,7 +82,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog ([#24](https://github.com/MetaMask/test-snaps/pull/24))
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.0.2...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/MetaMask/test-snaps/compare/v4.0.2...v4.1.0
 [4.0.2]: https://github.com/MetaMask/test-snaps/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/MetaMask/test-snaps/compare/v3.2.0...v4.0.0
