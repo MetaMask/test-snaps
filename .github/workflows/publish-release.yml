@@ -47,7 +47,6 @@ jobs:
         with:
           path: |
             ./packages/*/dist
-            ./packages/site/public
             ./node_modules/.yarn-state.yml
           key: ${{ github.sha }}
       - name: Dry Run Publish
@@ -69,7 +68,6 @@ jobs:
         with:
           path: |
             ./packages/*/dist
-            ./packages/site/public
             ./node_modules/.yarn-state.yml
           key: ${{ github.sha }}
       - name: Publish
@@ -100,9 +98,19 @@ jobs:
     permissions:
       contents: write
     steps:
-    uses: MetaMask/action-publish-gh-pages@v2
-    with:
-      source-directory: packages/site/public
-      destination-directory: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/cache@v3
+        id: restore-build
+        with:
+          path: |
+            ./packages/site/public
+            ./node_modules/.yarn-state.yml
+          key: ${{ github.sha }}
+      - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/site/public
+          destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
