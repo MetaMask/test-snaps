@@ -109,7 +109,7 @@ jobs:
             ./packages/site/public
             ./node_modules/.yarn-state.yml
           key: ${{ github.sha }}
-      - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
+      - name: Deploy to `${{ needs.get-release-version.outputs.RELEASE_VERSION }}` directory of `gh-pages` branch
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
