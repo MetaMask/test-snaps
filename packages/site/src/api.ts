@@ -30,8 +30,11 @@ export const request: BaseQueryFn<RequestArguments> = async ({
     const data = await window.ethereum.request({ method, params });
 
     return { data };
-  } catch (error) {
+  } catch (error: any) {
+    // eslint-disable-next-line no-alert
+    alert(error.message ?? error.toString());
     console.error(error);
+
     return { error };
   }
 };
