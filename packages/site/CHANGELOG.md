@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.1.2]
-### Uncategorized
+### Changed
 - Show alert on errors ([#99](https://github.com/MetaMask/test-snaps/pull/99))
 
 ## [4.1.1]
