@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.1]
+### Fixed
+- Remove undefined params in `snap_invokeSnap` ([#100](https://github.com/MetaMask/test-snaps/pull/100))
+
 ## [4.1.0]
 ### Changed
 - Handle breaking changes with new version of Snaps Platform ([#95](https://github.com/MetaMask/test-snaps/pull/95))
@@ -128,7 +132,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.1.1...HEAD
+[4.1.1]: https://github.com/MetaMask/test-snaps/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/MetaMask/test-snaps/compare/v4.0.2...v4.1.0
 [4.0.2]: https://github.com/MetaMask/test-snaps/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/MetaMask/test-snaps/compare/v4.0.0...v4.0.1
