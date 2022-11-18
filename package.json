@@ -16,7 +16,7 @@
     "clean": "yarn workspaces foreach --parallel --verbose run clean",
     "start": "yarn workspaces foreach --parallel --verbose --interlaced --exclude root --jobs unlimited run start",
     "lint:eslint": "eslint . --cache --ext js,ts,tsx",
-    "lint:misc": "prettier '**/*.json' '**/*.md' '!**/CHANGELOG.md' '**/*.yml' '**/*.html' '!.yarnrc.yml' --ignore-path .prettierignore",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '!**/CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .prettierignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "lint:changelogs": "yarn workspaces foreach --parallel --verbose run lint:changelog",
