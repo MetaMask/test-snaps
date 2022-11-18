@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.1.1]
-### Uncategorized
-- Set up release automation as per the module template ([#101](https://github.com/MetaMask/test-snaps/pull/101))
-- Remove undefined params ([#100](https://github.com/MetaMask/test-snaps/pull/100))
+### Fixed
+- Remove undefined params in `snap_invokeSnap` ([#100](https://github.com/MetaMask/test-snaps/pull/100))
 
 ## [4.1.0]
 ### Changed
