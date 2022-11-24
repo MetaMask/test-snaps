@@ -10,6 +10,7 @@ import { ManageState } from '../features/manage-state-snap';
 import { Notification } from '../features/notification-snap';
 import { BIP32 } from '../features/bip-32-snap';
 import { Update } from '../features/update-snap';
+import { Rpc } from '../features/rpc-snap';
 
 interface Query {
   site: {
@@ -36,6 +37,7 @@ const Index: FunctionComponent = () => {
         <Notification />
         <BIP32 />
         <Update />
+        <Rpc />
       </Row>
     </Container>
   );
