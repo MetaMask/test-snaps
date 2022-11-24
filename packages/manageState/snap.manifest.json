@@ -18,6 +18,7 @@
     }
   },
   "initialPermissions": {
+    "endowment:rpc": {},
     "snap_manageState": {}
   },
   "manifestVersion": "0.1"

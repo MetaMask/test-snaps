@@ -17,6 +17,7 @@
     }
   },
   "initialPermissions": {
+    "endowment:rpc": {},
     "snap_confirm": {},
     "snap_getBip32Entropy": [
       {
