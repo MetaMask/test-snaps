@@ -18,7 +18,9 @@
     }
   },
   "initialPermissions": {
-    "endowment:rpc": {},
+    "endowment:rpc": {
+      "dapps": true
+    },
     "snap_confirm": {}
   },
   "manifestVersion": "0.1"
