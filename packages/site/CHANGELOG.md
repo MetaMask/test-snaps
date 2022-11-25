@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.2.0]
-### Uncategorized
+### Added
 - Add JSON-RPC endowment test snap ([#105](https://github.com/MetaMask/test-snaps/pull/105))
 
 ## [4.1.2]
