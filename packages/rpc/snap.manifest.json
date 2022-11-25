@@ -1,7 +1,7 @@
 {
   "version": "4.1.2",
-  "description": "An example Snap that derives keys using BIP-32.",
-  "proposedName": "@metamask/test-snap-bip32",
+  "description": "An example snap to test JSON-RPC permissions.",
+  "proposedName": "@metamask/test-snap-rpc",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
