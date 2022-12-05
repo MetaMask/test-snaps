@@ -10,7 +10,9 @@ import { hasProperty, isObject, Json } from '@metamask/utils';
  * @returns The transaction insights.
  */
 export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
-  const insights: { type: string, params?: Json } = { type: 'Unknown Transaction' }; 
+  const insights: { type: string; params?: Json } = {
+    type: 'Unknown Transaction',
+  };
   if (
     !isObject(transaction) ||
     !hasProperty(transaction, 'data') ||
