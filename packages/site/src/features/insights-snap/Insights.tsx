@@ -1,24 +1,16 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { Result, Snap } from '../../components';
-import { useInvokeMutation } from '../../api';
-import { getSnapId } from '../../utils';
+import { Snap } from '../../components';
 
 const INSIGHTS_SNAP_ID = 'npm:@metamask/test-snap-insights';
 const INSIGHTS_SNAP_PORT = 8008;
 
 export const Insights: FunctionComponent = () => {
-  const [invokeSnap, { isLoading, data, error }] = useInvokeMutation();
-
-  const handleSubmit = () => {
-    invokeSnap({
-      snapId: getSnapId(INSIGHTS_SNAP_ID, INSIGHTS_SNAP_PORT),
-      method: 'getInsights',
-    });
-  };
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendIt = async () => {
     try {
+      setIsLoading(true);
       const [from] = (await window.ethereum.request({
         method: 'eth_requestAccounts',
       })) as string[];
@@ -40,6 +32,8 @@ export const Insights: FunctionComponent = () => {
       });
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -52,16 +46,6 @@ export const Insights: FunctionComponent = () => {
     >
       <Button
         variant="primary"
-        id="sendInsightsError"
-        className="mb-3"
-        hidden={true}
-        disabled={true}
-        onClick={handleSubmit}
-      >
-        This button is intentionally hidden
-      </Button>
-      <Button
-        variant="primary"
         id="sendInsights"
         className="mb-3"
         disabled={isLoading}
@@ -69,12 +53,6 @@ export const Insights: FunctionComponent = () => {
       >
         Send Transaction
       </Button>
-      <Result>
-        <span id="insightsResult">
-          {JSON.stringify(data, null, 2)}
-          {JSON.stringify(error, null, 2)}
-        </span>
-      </Result>
     </Snap>
   );
 };
