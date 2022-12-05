@@ -48,7 +48,7 @@ export const Insights: FunctionComponent = () => {
           variant="primary"
           id="getAccounts"
           className="mb-3"
-          disabled={isLoading}
+          disabled={isLoading || accounts?.length}
           onClick={handleGetAccounts}
         >
           Get Accounts
