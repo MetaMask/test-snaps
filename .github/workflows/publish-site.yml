@@ -28,6 +28,8 @@ jobs:
         run: yarn --immutable
       - name: Run build script
         run: yarn workspace website build
+        env:
+          GATSBY_PREFIX: ${{ inputs.destination_dir }}
       - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
