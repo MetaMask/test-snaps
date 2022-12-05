@@ -1,40 +1,39 @@
-import { FunctionComponent, useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { Snap } from '../../components';
+import { FunctionComponent } from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import { assert } from '@metamask/utils';
+import { Snap, Result } from '../../components';
+import { useLazyGetAccountsQuery, useLazyRequestQuery } from '../../api';
 
 const INSIGHTS_SNAP_ID = 'npm:@metamask/test-snap-insights';
 const INSIGHTS_SNAP_PORT = 8008;
 
 export const Insights: FunctionComponent = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [getAccounts, { isLoading: isLoadingAccounts, data: accounts }] =
+    useLazyGetAccountsQuery();
+  const [request, { isLoading: isLoadingRequest, data: transaction, error }] =
+    useLazyRequestQuery();
 
-  const sendIt = async () => {
-    try {
-      setIsLoading(true);
-      const [from] = (await window.ethereum.request({
-        method: 'eth_requestAccounts',
-      })) as string[];
+  const isLoading = isLoadingAccounts || isLoadingRequest;
 
-      if (!from) {
-        throw new Error('Failed to get accounts.');
-      }
+  const handleGetAccounts = () => {
+    getAccounts();
+  };
 
-      await window.ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from,
-            to: '0x08A8fDBddc160A7d5b957256b903dCAb1aE512C5',
-            value: '0x0',
-            data: '0x1',
-          },
-        ],
-      });
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleSendTransaction = () => {
+    assert(accounts?.length);
+
+    const account = accounts[0];
+    request({
+      method: 'eth_sendTransaction',
+      params: [
+        {
+          from: account,
+          to: account,
+          value: '0x0',
+          data: '0x1',
+        },
+      ],
+    });
   };
 
   return (
@@ -44,15 +43,32 @@ export const Insights: FunctionComponent = () => {
       port={INSIGHTS_SNAP_PORT}
       testId="InsightsSnap"
     >
-      <Button
-        variant="primary"
-        id="sendInsights"
-        className="mb-3"
-        disabled={isLoading}
-        onClick={sendIt}
-      >
-        Send Transaction
-      </Button>
+      <ButtonGroup>
+        <Button
+          variant="primary"
+          id="getAccounts"
+          className="mb-3"
+          disabled={isLoading}
+          onClick={handleGetAccounts}
+        >
+          Get Accounts
+        </Button>
+        <Button
+          variant="primary"
+          id="sendInsights"
+          className="mb-3"
+          disabled={isLoading || !accounts?.length}
+          onClick={handleSendTransaction}
+        >
+          Send Transaction
+        </Button>
+      </ButtonGroup>
+      <Result>
+        <span id="insightsResult">
+          {JSON.stringify(transaction, null, 2)}
+          {JSON.stringify(error, null, 2)}
+        </span>
+      </Result>
     </Snap>
   );
 };
