@@ -1,6 +1,5 @@
 import { OnTransactionHandler } from '@metamask/snaps-types';
 import { hasProperty, isObject, Json } from '@metamask/utils';
-// import { getInsights } from './insights';
 
 /**
  * Handle an incoming transaction, and return any insights.
