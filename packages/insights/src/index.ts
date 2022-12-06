@@ -13,6 +13,7 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
   const insights: { type: string; params?: Json } = {
     type: 'Unknown Transaction',
   };
+
   if (
     !isObject(transaction) ||
     !hasProperty(transaction, 'data') ||
@@ -21,5 +22,6 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
     console.warn('Unknown transaction type.');
     return { insights };
   }
+
   return { insights: { Test: 'Successful' } };
 };
