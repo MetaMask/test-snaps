@@ -6,9 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.3.0]
+### Changed
+- No changes this release.
+
 ## [4.2.0]
 ### Added
 - Initial release ([#105](https://github.com/MetaMask/test-snaps/pull/105))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.3.0...HEAD
+[4.3.0]: https://github.com/MetaMask/test-snaps/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/MetaMask/test-snaps/releases/tag/v4.2.0
