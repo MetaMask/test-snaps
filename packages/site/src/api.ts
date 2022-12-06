@@ -10,6 +10,7 @@ declare global {
 }
 
 export enum Tag {
+  Accounts = 'Accounts',
   InstalledSnaps = 'Installed Snaps',
   TestState = 'Test State',
 }
@@ -63,9 +64,16 @@ export type InstallSnapResult = Record<string, { error: JsonRpcError }>;
 export const baseApi = createApi({
   reducerPath: 'base',
   baseQuery: request,
-  tagTypes: [Tag.InstalledSnaps, Tag.TestState],
+  tagTypes: [Tag.Accounts, Tag.InstalledSnaps, Tag.TestState],
   endpoints(build) {
     return {
+      getAccounts: build.query<string[], void>({
+        query: () => ({
+          method: 'eth_requestAccounts',
+        }),
+        providesTags: [Tag.Accounts],
+      }),
+
       getSnaps: build.query<GetSnapsResult, void>({
         query: () => ({
           method: 'wallet_getSnaps',
@@ -79,6 +87,10 @@ export const baseApi = createApi({
           params: { snapId, request: params ? { method, params } : { method } },
         }),
         providesTags: (_, __, { tags = [] }) => tags,
+      }),
+
+      request: build.query<RequestArguments, unknown>({
+        query: (args: RequestArguments) => args,
       }),
 
       invokeMutation: build.mutation<InvokeSnapResult, InvokeSnapArgs>({
@@ -113,8 +125,11 @@ export const baseApi = createApi({
 });
 
 export const {
+  useGetAccountsQuery,
+  useLazyGetAccountsQuery,
   useGetSnapsQuery,
   useInvokeQueryQuery: useInvokeQuery,
+  useLazyRequestQuery,
   useInvokeMutationMutation: useInvokeMutation,
   useInstallSnapMutation,
 } = baseApi;

@@ -11,6 +11,7 @@ import { Notification } from '../features/notification-snap';
 import { BIP32 } from '../features/bip-32-snap';
 import { Update } from '../features/update-snap';
 import { Rpc } from '../features/rpc-snap';
+import { Insights } from '../features/insights-snap';
 
 interface Query {
   site: {
@@ -37,6 +38,7 @@ const Index: FunctionComponent = () => {
         <Notification />
         <BIP32 />
         <Update />
+        <Insights />
         <Rpc />
       </Row>
     </Container>
