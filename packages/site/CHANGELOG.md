@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - No changes this release.
 
-
 ## [4.3.0]
 ### Added
 - Add tx-insights test panel ([#110](https://github.com/MetaMask/test-snaps/pull/110))
