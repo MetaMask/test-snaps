@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.4.1]
+### Changed
+- No changes this release.
+
 ## [4.4.0]
 ### Changed
 - Update transaction insights snap to use custom UI ([#115](https://github.com/MetaMask/test-snaps/pull/115))
