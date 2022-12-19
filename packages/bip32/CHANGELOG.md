@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.4.0]
-### Uncategorized
-- Update tx-insight snap to use custom UI ([#115](https://github.com/MetaMask/test-snaps/pull/115))
+### Changed
+- No changes this release.
 
 ## [4.3.0]
 ### Changed
