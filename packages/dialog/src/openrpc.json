@@ -13,30 +13,23 @@
           "name": "type",
           "required": true,
           "schema": {
-            "type": "string",
-            "enum": ["Alert", "Confirmation", "Prompt"]
+            "type": "string"
           }
         },
         {
-          "name": "title",
+          "name": "content",
           "required": true,
           "description": "dialog window main title",
           "schema": {
-            "type": "string"
+            "type": "object"
           }
         },
         {
-          "name": "description",
-          "description": "Text description for the dialog",
+          "name": "placeholder",
+          "required": true,
+          "description": "dialog window input placeholder",
           "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "textAreaContent",
-          "description": "Main content area with a max height and scrollable",
-          "schema": {
-            "type": "string"
+            "type": "object"
           }
         }
       ],

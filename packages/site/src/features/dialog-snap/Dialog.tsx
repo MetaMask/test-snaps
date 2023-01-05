@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  FunctionComponent,
-  SetStateAction,
-  useState,
-} from 'react';
+import { ChangeEvent, FunctionComponent } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Result, Snap } from '../../components';
 import { useInvokeMutation } from '../../api';
@@ -14,23 +8,29 @@ const DIALOG_SNAP_ID = 'npm:@metamask/test-snap-dialog';
 const DIALOG_SNAP_PORT = 8009;
 
 export const Dialog: FunctionComponent = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [textAreaContent, setTextAreaContent] = useState('');
   const [invokeSnap, { isLoading, data }] = useInvokeMutation();
 
-  const handleChange =
-    (fn: Dispatch<SetStateAction<string>>) =>
-    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      fn(event.target.value);
-    };
-
-  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
+  const handleSubmitAlert = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     invokeSnap({
       snapId: getSnapId(DIALOG_SNAP_ID, DIALOG_SNAP_PORT),
       method: 'dialogAlert',
-      params: [title, description, textAreaContent],
+    });
+  };
+
+  const handleSubmitConf = (event: ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    invokeSnap({
+      snapId: getSnapId(DIALOG_SNAP_ID, DIALOG_SNAP_PORT),
+      method: 'dialogConf',
+    });
+  };
+
+  const handleSubmitPrompt = (event: ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    invokeSnap({
+      snapId: getSnapId(DIALOG_SNAP_ID, DIALOG_SNAP_PORT),
+      method: 'dialogPrompt',
     });
   };
 
@@ -41,41 +41,27 @@ export const Dialog: FunctionComponent = () => {
       port={DIALOG_SNAP_PORT}
       testId="DialogSnap"
     >
-      <Form onSubmit={handleSubmit} className="mb-3">
-        <Form.Group>
-          <Form.Label>Title</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={handleChange(setTitle)}
-            id="msgTitle"
-            className="mb-2"
-          />
-
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Description"
-            value={description}
-            onChange={handleChange(setDescription)}
-            id="msgDescription"
-            className="mb-2"
-          />
-
-          <Form.Label>Textarea Content</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Textarea Content"
-            value={textAreaContent}
-            onChange={handleChange(setTextAreaContent)}
-            id="msgTextarea"
-            className="mb-3"
-          />
-        </Form.Group>
-
-        <Button type="submit" id="sendDialogButton" disabled={isLoading}>
-          Submit
+      <Form className="mb-3">
+        <Button
+          id="sendAlertButton"
+          onClick={handleSubmitAlert}
+          disabled={isLoading}
+        >
+          Alert Dialog
+        </Button>
+        <Button
+          id="sendConfButton"
+          onClick={handleSubmitConf}
+          disabled={isLoading}
+        >
+          Conf Dialog
+        </Button>
+        <Button
+          id="sendPromptButton"
+          onClick={handleSubmitPrompt}
+          disabled={isLoading}
+        >
+          Prompt Dialog
         </Button>
       </Form>
 
