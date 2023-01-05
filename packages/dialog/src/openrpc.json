@@ -13,7 +13,7 @@
           "name": "type",
           "required": true,
           "schema": {
-            "type": "string", 
+            "type": "string",
             "enum": ["Alert", "Confirmation", "Prompt"]
           }
         },
