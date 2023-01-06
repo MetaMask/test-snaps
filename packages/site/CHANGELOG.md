@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.5.0]
-### Uncategorized
+### Added
 - Create test-snap for snap_dialog ([#119](https://github.com/MetaMask/test-snaps/pull/119))
 
 ## [4.4.1]
