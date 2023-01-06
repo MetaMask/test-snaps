@@ -2494,6 +2494,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/snaps-ui@npm:^0.27.1":
+  version: 0.27.1
+  resolution: "@metamask/snaps-ui@npm:0.27.1"
+  dependencies:
+    "@metamask/utils": ^3.3.1
+    superstruct: ^0.16.7
+  checksum: bd068a251f2cecf39bb511c1b5d02e77c7b859f22bfc4b080775e9ecea0d59245c9448bfd17f15d2a801bc349c9b5a9957e4aa6a3b0140e6b27b28ac72f571b4
+  languageName: node
+  linkType: hard
+
 "@metamask/snaps-utils@npm:^0.26.2":
   version: 0.26.2
   resolution: "@metamask/snaps-utils@npm:0.26.2"
@@ -2594,6 +2604,36 @@ __metadata:
     "@metamask/eslint-config-typescript": ^6.0.0
     "@metamask/snaps-cli": ^0.26.2
     "@metamask/snaps-types": ^0.26.2
+    "@types/jest": ^26.0.13
+    "@typescript-eslint/eslint-plugin": ^5.19.0
+    "@typescript-eslint/parser": ^5.19.0
+    eslint: ^7.30.0
+    eslint-config-prettier: ^8.3.0
+    eslint-plugin-import: ^2.23.4
+    eslint-plugin-jest: ^24.4.0
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-prettier: ^3.4.0
+    jest: ^26.4.2
+    prettier: ^2.2.1
+    rimraf: ^3.0.2
+    ts-jest: ^26.3.0
+    ts-node: ^9.0.0
+    typescript: ^4.4.0
+  languageName: unknown
+  linkType: soft
+
+"@metamask/test-snap-dialog@workspace:packages/dialog":
+  version: 0.0.0-use.local
+  resolution: "@metamask/test-snap-dialog@workspace:packages/dialog"
+  dependencies:
+    "@metamask/auto-changelog": ^2.5.0
+    "@metamask/eslint-config": ^6.0.0
+    "@metamask/eslint-config-jest": ^6.0.0
+    "@metamask/eslint-config-nodejs": ^6.0.0
+    "@metamask/eslint-config-typescript": ^6.0.0
+    "@metamask/snaps-cli": ^0.26.2
+    "@metamask/snaps-types": ^0.26.2
+    "@metamask/snaps-ui": ^0.27.1
     "@types/jest": ^26.0.13
     "@typescript-eslint/eslint-plugin": ^5.19.0
     "@typescript-eslint/parser": ^5.19.0
