@@ -1,12 +1,8 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { panel, text, heading } from '@metamask/snaps-ui';
-import openrpcDocument from './openrpc.json';
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
-  // const params = request.params as object;
   switch (request.method) {
-    case 'rpc.discover':
-      return openrpcDocument;
     case 'dialogAlert':
       return snap.request({
         method: 'snap_dialog',
