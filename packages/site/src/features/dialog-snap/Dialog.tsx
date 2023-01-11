@@ -5,7 +5,7 @@ import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils/id';
 
 const DIALOG_SNAP_ID = 'npm:@metamask/test-snap-dialog';
-const DIALOG_SNAP_PORT = 8009;
+const DIALOG_SNAP_PORT = 8001;
 
 export const Dialog: FunctionComponent = () => {
   const [invokeSnap, { isLoading, data }] = useInvokeMutation();
