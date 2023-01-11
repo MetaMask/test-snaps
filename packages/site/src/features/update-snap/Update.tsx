@@ -1,10 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { Result, Snap } from '../../components';
-import {
-  useGetSnapsQuery,
-  useInstallSnapMutation,
-} from '../../api';
+import { useGetSnapsQuery, useInstallSnapMutation } from '../../api';
 
 const UPDATE_SNAP_ID = 'npm:@metamask/test-snap-bip32';
 const UPDATE_SNAP_OLD_VERSION = '4.0.1';
