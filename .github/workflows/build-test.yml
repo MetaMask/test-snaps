@@ -9,6 +9,7 @@ jobs:
   prepare:
     name: Prepare
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -22,9 +23,11 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     needs:
       - prepare
     strategy:
+      fail-fast: false
       matrix:
         node-version: [16.x, 18.x, 19.x]
     steps:
@@ -47,6 +50,7 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     needs:
       - prepare
     strategy:
@@ -78,6 +82,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     needs:
       - prepare
     strategy:
@@ -91,7 +96,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn --immutable --immutable-cache
-      - run: yarn test
+      - run: yarn build:snap
+      - run: xvfb-run --auto-servernum --server-args="-screen 0, 1920x1080x8" yarn test
       - name: Require clean working directory
         shell: bash
         run: |
@@ -103,6 +109,7 @@ jobs:
   check-workflows:
     name: Check workflows
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v3
       - name: Download actionlint
@@ -116,6 +123,7 @@ jobs:
   all-jobs-pass:
     name: All jobs pass
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     needs:
       - build
       - lint
@@ -132,6 +140,7 @@ jobs:
     outputs:
       IS_RELEASE: ${{ steps.is-release.outputs.IS_RELEASE }}
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - uses: MetaMask/action-is-release@v1
         id: is-release

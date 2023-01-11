@@ -1,0 +1,24 @@
+{
+  "version": "4.5.0",
+  "description": "An example transaction insights Snap.",
+  "proposedName": "TxInsightsTest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "I/lWhF5YgOm1X+Y5Vpicj9U47hgY+wozJGXaHFdrnJg=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "@metamask/test-snap-insights",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:transaction-insight": {},
+    "endowment:network-access": {}
+  },
+  "manifestVersion": "0.1"
+}

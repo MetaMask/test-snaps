@@ -1,0 +1,14 @@
+name: Publish main branch site to GitHub Pages
+
+on:
+  push:
+    branches: main
+
+jobs:
+  publish-to-gh-pages:
+    name: Publish site to `staging` directory of `gh-pages` branch
+    permissions:
+      contents: write
+    uses: ./.github/workflows/publish-site.yml
+    with:
+      destination_dir: staging

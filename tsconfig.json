@@ -5,7 +5,7 @@
     "inlineSources": false,
     "module": "ES6",
     "moduleResolution": "Node",
-    "sourceMap": false,
+    "sourceMap": true,
     "strict": true,
     "target": "ES2017",
     "resolveJsonModule": true,

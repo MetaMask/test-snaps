@@ -4,6 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import { Logo } from '../components';
 import { Snaps } from '../features/installed-snaps';
 import { Confirm } from '../features/confirm-snap';
+import { Dialog } from '../features/dialog-snap';
 import { ErrorSnap } from '../features/error-snap';
 import { BIP44 } from '../features/bip-44-snap';
 import { ManageState } from '../features/manage-state-snap';
@@ -11,6 +12,7 @@ import { Notification } from '../features/notification-snap';
 import { BIP32 } from '../features/bip-32-snap';
 import { Update } from '../features/update-snap';
 import { Rpc } from '../features/rpc-snap';
+import { Insights } from '../features/insights-snap';
 
 interface Query {
   site: {
@@ -32,11 +34,13 @@ const Index: FunctionComponent = () => {
         {/* Snap test UI */}
         <ErrorSnap />
         <Confirm />
+        <Dialog />
         <BIP44 />
         <ManageState />
         <Notification />
         <BIP32 />
         <Update />
+        <Insights />
         <Rpc />
       </Row>
     </Container>

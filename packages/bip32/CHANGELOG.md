@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.5.0]
+### Changed
+- No changes this release.
+
+## [4.4.1]
+### Changed
+- No changes this release.
+
+## [4.4.0]
+### Changed
+- No changes this release.
+
+## [4.3.0]
+### Changed
+- No changes this release.
+
 ## [4.2.0]
 ### Added
 - Add `endowment:rpc` permission ([#105](https://github.com/MetaMask/test-snaps/pull/105))
@@ -55,7 +71,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56), [#57](https://github.com/MetaMask/test-snaps/pull/57), [#64](https://github.com/MetaMask/test-snaps/pull/64))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...HEAD
+[4.5.0]: https://github.com/MetaMask/test-snaps/compare/v4.4.1...v4.5.0
+[4.4.1]: https://github.com/MetaMask/test-snaps/compare/v4.4.0...v4.4.1
+[4.4.0]: https://github.com/MetaMask/test-snaps/compare/v4.3.0...v4.4.0
+[4.3.0]: https://github.com/MetaMask/test-snaps/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/MetaMask/test-snaps/compare/v4.1.2...v4.2.0
 [4.1.2]: https://github.com/MetaMask/test-snaps/compare/v4.1.1...v4.1.2
 [4.1.1]: https://github.com/MetaMask/test-snaps/compare/v4.1.0...v4.1.1
