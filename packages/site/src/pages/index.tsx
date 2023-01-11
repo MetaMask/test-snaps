@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Container, Row } from 'react-bootstrap';
 import { Logo } from '../components';
 import { Snaps } from '../features/installed-snaps';
-import { Confirm } from '../features/confirm-snap';
 import { Dialog } from '../features/dialog-snap';
 import { ErrorSnap } from '../features/error-snap';
 import { BIP44 } from '../features/bip-44-snap';
@@ -33,7 +32,6 @@ const Index: FunctionComponent = () => {
 
         {/* Snap test UI */}
         <ErrorSnap />
-        <Confirm />
         <Dialog />
         <BIP44 />
         <ManageState />
