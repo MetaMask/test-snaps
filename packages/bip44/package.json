@@ -35,6 +35,7 @@
   "dependencies": {
     "@metamask/key-tree": "^6.0.0",
     "@metamask/snaps-types": "^0.26.2",
+    "@metamask/snaps-ui": "^0.27.1",
     "@metamask/utils": "^3.3.0",
     "@noble/bls12-381": "^1.2.0",
     "eth-rpc-errors": "^4.0.3"

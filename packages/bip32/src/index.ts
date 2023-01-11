@@ -1,4 +1,5 @@
 import { ethErrors } from 'eth-rpc-errors';
+import { panel, text, heading, copyable } from '@metamask/snaps-ui';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { sign as signEd25519 } from '@noble/ed25519';
@@ -61,15 +62,15 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       assert(curve === 'ed25519' || curve === 'secp256k1');
 
       const approved = await snap.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: 'Signature request',
-            textAreaContent: `Do you want to ${curve} sign ${message} with ${add0x(
-              node.publicKey,
-            )}?`,
-          },
-        ],
+        method: 'snap_dialog',
+        params: {
+          type: 'Confirmation',
+          content: panel([
+            heading('Signature request'),
+            text(`Do you want to ${curve} sign ${message} with :`),
+            copyable(`${add0x(node.publicKey)}?`),
+          ]),
+        },
       });
 
       if (!approved) {

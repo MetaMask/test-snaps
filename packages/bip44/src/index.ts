@@ -1,4 +1,5 @@
 import { ethErrors } from 'eth-rpc-errors';
+import { panel, text, heading, copyable } from '@metamask/snaps-ui';
 import { getPublicKey, sign } from '@noble/bls12-381';
 import {
   deriveBIP44AddressKey,
@@ -57,15 +58,15 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       }
 
       const approved = await snap.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: 'BLS signature request',
-            textAreaContent: `Do you want to BLS sign ${data} with ${bytesToHex(
-              pubKey,
-            )}?`,
-          },
-        ],
+        method: 'snap_dialog',
+        params: {
+          type: 'Confirmation',
+          content: panel([
+            heading('Signature request'),
+            text(`Do you want to BLS sign ${data} with :`),
+            copyable(`${bytesToHex(pubKey)}?`),
+          ]),
+        },
       });
       if (!approved) {
         throw ethErrors.provider.userRejectedRequest();
