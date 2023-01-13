@@ -17,8 +17,7 @@
     }
   },
   "initialPermissions": {
-    "endowment:transaction-insight": {},
-    "endowment:network-access": {}
+    "endowment:transaction-insight": {}
   },
   "manifestVersion": "0.1"
 }
