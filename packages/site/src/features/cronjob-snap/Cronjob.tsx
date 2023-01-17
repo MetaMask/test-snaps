@@ -17,13 +17,6 @@ export const Cronjob: FunctionComponent = () => {
     });
   };
 
-  const handleFireDialog = () => {
-    invokeSnap({
-      snapId: getSnapId(CRONJOB_SNAP_ID, CRONJOB_SNAP_PORT),
-      method: 'fireDialog',
-    });
-  };
-
   return (
     <Snap
       name="Cronjob Snap"
@@ -39,15 +32,6 @@ export const Cronjob: FunctionComponent = () => {
         onClick={handleFireCronjob}
       >
         Fire Cronjob
-      </Button>
-      <Button
-        variant="secondary"
-        id="fireDialog"
-        className="mb-3"
-        disabled={isLoading}
-        onClick={handleFireDialog}
-      >
-        Test Dialog
       </Button>
       <Result>
         <span id="errorResult">

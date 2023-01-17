@@ -23,13 +23,10 @@
         {
           "expression": "* * * * *",
           "request": {
-            "method": "snap_dialog"
+            "method": "fireCronjob"
           }
         }
       ]
-    },
-    "endowment:rpc": {
-      "dapps": true
     },
     "snap_dialog": {}
   },
