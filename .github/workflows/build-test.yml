@@ -9,7 +9,6 @@ jobs:
   prepare:
     name: Prepare
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -23,7 +22,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     needs:
       - prepare
     strategy:
@@ -50,7 +48,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     needs:
       - prepare
     strategy:
@@ -82,7 +79,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     needs:
       - prepare
     strategy:
@@ -96,8 +92,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn --immutable --immutable-cache
+      - name: Cache Metamask
+        id: cache-metamask
+        uses: actions/cache@v3
+        with:
+          path: node_modules/@chainsafe/dappeteer/.metamask
+          key: metamask-extension
       - run: yarn build:snap
-      - run: xvfb-run --auto-servernum --server-args="-screen 0, 1920x1080x8" yarn test
+      - run: yarn test
       - name: Require clean working directory
         shell: bash
         run: |
@@ -109,7 +111,6 @@ jobs:
   check-workflows:
     name: Check workflows
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v3
       - name: Download actionlint
@@ -123,7 +124,6 @@ jobs:
   all-jobs-pass:
     name: All jobs pass
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     needs:
       - build
       - lint
@@ -140,7 +140,6 @@ jobs:
     outputs:
       IS_RELEASE: ${{ steps.is-release.outputs.IS_RELEASE }}
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     steps:
       - uses: MetaMask/action-is-release@v1
         id: is-release

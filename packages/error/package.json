@@ -38,7 +38,7 @@
     "@metamask/snaps-types": "^0.26.2"
   },
   "devDependencies": {
-    "@chainsafe/dappeteer": "^4.0.3-rc.1",
+    "@chainsafe/dappeteer": "^4.1.1",
     "@metamask/auto-changelog": "^2.5.0",
     "@metamask/eslint-config": "^6.0.0",
     "@metamask/eslint-config-jest": "^6.0.0",
