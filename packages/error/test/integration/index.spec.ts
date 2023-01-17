@@ -18,7 +18,7 @@ describe('error snap', function () {
       browser: 'chrome',
       snapIdOrLocation: path.resolve(__dirname, '../..'),
       installationSnapUrl: 'https://google.com',
-      headless: true
+      headless: true,
     }));
     connectedPage = await metaMask.page.browser().newPage();
     await connectedPage.goto('https://google.com');
