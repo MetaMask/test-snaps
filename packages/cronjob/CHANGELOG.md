@@ -6,4 +6,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/
