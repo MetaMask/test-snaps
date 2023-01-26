@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.6.0]
+### Changed
+- No changes this release.
+
 ## [4.5.0]
 ### Changed
 - No changes this release.
@@ -109,7 +113,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog ([#24](https://github.com/MetaMask/test-snaps/pull/24))
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...HEAD
+[4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/MetaMask/test-snaps/compare/v4.4.1...v4.5.0
 [4.4.1]: https://github.com/MetaMask/test-snaps/compare/v4.4.0...v4.4.1
 [4.4.0]: https://github.com/MetaMask/test-snaps/compare/v4.3.0...v4.4.0

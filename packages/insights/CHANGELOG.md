@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.0]
-### Uncategorized
+### Changed
 - Remove network-access endowment from tx-insight test ([#123](https://github.com/MetaMask/test-snaps/pull/123))
 
 ## [4.5.0]

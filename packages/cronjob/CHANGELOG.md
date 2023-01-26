@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.0]
-### Uncategorized
+### Added
 - Create test-snap for cronjob ([#125](https://github.com/MetaMask/test-snaps/pull/125))
 
 [Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...HEAD
