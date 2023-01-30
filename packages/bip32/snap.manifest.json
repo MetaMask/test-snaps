@@ -18,7 +18,8 @@
   },
   "initialPermissions": {
     "endowment:rpc": {
-      "dapps": true
+      "dapps": true,
+      "snaps": true
     },
     "snap_confirm": {},
     "snap_getBip32Entropy": [
