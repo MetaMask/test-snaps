@@ -1,7 +1,6 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 
-// const OTHER_SNAP_ID = 'npm:@metamask/test-snap-bip32';
-const OTHER_SNAP_ID = 'local:http://localhost:8006';
+const OTHER_SNAP_ID = 'npm:@metamask/test-snap-bip32';
 
 /**
  * Request access to {@link OTHER_SNAP_ID} if it is not already connected.
