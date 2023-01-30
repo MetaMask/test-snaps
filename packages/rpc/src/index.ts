@@ -1,6 +1,7 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 
-const OTHER_SNAP_ID = 'npm:@metamask/test-snap-bip32';
+// const OTHER_SNAP_ID = 'npm:@metamask/test-snap-bip32';
+const OTHER_SNAP_ID = 'local:http://localhost:8006';
 
 /**
  * Request access to {@link OTHER_SNAP_ID} if it is not already connected.
@@ -32,6 +33,11 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
           snapId: OTHER_SNAP_ID,
           request: {
             method: 'getPublicKey',
+            params: {
+              path: ['m', "44'", "0'"],
+              curve: 'secp256k1',
+              compressed: true,
+            },
           },
         },
       });
