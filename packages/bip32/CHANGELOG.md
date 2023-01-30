@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.6.1]
+### Uncategorized
+- Fixes for RPC endowment test-snap ([#130](https://github.com/MetaMask/test-snaps/pull/130))
+
 ## [4.6.0]
 ### Changed
 - No changes this release.
@@ -75,7 +79,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56), [#57](https://github.com/MetaMask/test-snaps/pull/57), [#64](https://github.com/MetaMask/test-snaps/pull/64))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.1...HEAD
+[4.6.1]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/MetaMask/test-snaps/compare/v4.4.1...v4.5.0
 [4.4.1]: https://github.com/MetaMask/test-snaps/compare/v4.4.0...v4.4.1
