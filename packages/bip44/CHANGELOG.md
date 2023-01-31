@@ -118,8 +118,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
 [Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.1...HEAD
-[4.6.1]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0
-[4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...v4.6.1
+[4.6.1]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...v4.6.1
+[4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/MetaMask/test-snaps/compare/v4.4.1...v4.5.0
 [4.4.1]: https://github.com/MetaMask/test-snaps/compare/v4.4.0...v4.4.1
 [4.4.0]: https://github.com/MetaMask/test-snaps/compare/v4.3.0...v4.4.0
