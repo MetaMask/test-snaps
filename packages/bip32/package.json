@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-bip32",
-  "version": "4.6.1",
+  "version": "4.6.2",
   "description": "MetaMask BIP-32 Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
