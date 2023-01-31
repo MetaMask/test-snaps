@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.1]
-### Uncategorized
-- Fixes for RPC endowment test-snap ([#130](https://github.com/MetaMask/test-snaps/pull/130))
+### Changed
+- Added RPC endowment for snaps ([#130](https://github.com/MetaMask/test-snaps/pull/130))
 
 ## [4.6.0]
 ### Changed
