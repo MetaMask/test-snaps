@@ -1,5 +1,5 @@
 {
-  "version": "4.6.2",
+  "version": "4.6.3",
   "description": "An example transaction insights Snap.",
   "proposedName": "TxInsightsTest",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "8k1c/uHS7w8A/9OX1VZPDQuKApeHUwYrSId97BGN1Xg=",
+    "shasum": "YadqlvvyhTH8vS99IfmSNWg0wONzBOS9rWazlSHJOfo=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.6.3]
+### Changed
+- No changes this release.
+
 ## [4.6.2]
 ### Changed
 - fixed package.json ([#132](https://github.com/MetaMask/test-snaps/pull/132))
@@ -168,7 +172,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.3...HEAD
+[4.6.3]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...v4.6.3
 [4.6.2]: https://github.com/MetaMask/test-snaps/compare/v4.6.1...v4.6.2
 [4.6.1]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0
