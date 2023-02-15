@@ -65,7 +65,9 @@
       "gatsby-plugin-manifest>gatsby>lmdb": false,
       "gatsby-plugin-manifest>gatsby>lmdb>msgpackr>msgpackr-extract": false,
       "gatsby-plugin-manifest>gatsby>memoizee>es5-ext": false,
-      "gatsby-plugin-manifest>sharp": true
+      "gatsby-plugin-manifest>sharp": true,
+      "@metamask/snaps-cli>@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
+      "@metamask/snaps-cli>@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false
     }
   }
 }
