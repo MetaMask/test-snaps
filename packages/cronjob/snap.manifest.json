@@ -1,0 +1,34 @@
+{
+  "version": "4.6.2",
+  "description": "A MetaMask Test Snap that uses the cronjob endowment",
+  "proposedName": "MetaMask Cronjob Test Snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "rm5ikQwMp2Gdk0bzmUVo+PVe+FhHyBPLNKtWwg716FQ=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "@metamask/test-snap-cronjob",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:cronjob": {
+      "jobs": [
+        {
+          "expression": "* * * * *",
+          "request": {
+            "method": "fireCronjob"
+          }
+        }
+      ]
+    },
+    "snap_dialog": {}
+  },
+  "manifestVersion": "0.1"
+}

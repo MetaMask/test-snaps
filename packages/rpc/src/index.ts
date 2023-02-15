@@ -32,6 +32,11 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
           snapId: OTHER_SNAP_ID,
           request: {
             method: 'getPublicKey',
+            params: {
+              path: ['m', "44'", "0'"],
+              curve: 'secp256k1',
+              compressed: true,
+            },
           },
         },
       });

@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.6.2]
+### Changed
+- fixed package.json ([#132](https://github.com/MetaMask/test-snaps/pull/132))
+
+## [4.6.1]
+### Changed
+- No changes this release.
+
+## [4.6.0]
+### Added
+- Create test-snap for cronjob ([#125](https://github.com/MetaMask/test-snaps/pull/125))
+
 ## [4.5.0]
 ### Added
 - Create test-snap for snap_dialog ([#119](https://github.com/MetaMask/test-snaps/pull/119))
@@ -156,7 +168,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...HEAD
+[4.6.2]: https://github.com/MetaMask/test-snaps/compare/v4.6.1...v4.6.2
+[4.6.1]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...v4.6.1
+[4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/MetaMask/test-snaps/compare/v4.4.1...v4.5.0
 [4.4.1]: https://github.com/MetaMask/test-snaps/compare/v4.4.0...v4.4.1
 [4.4.0]: https://github.com/MetaMask/test-snaps/compare/v4.3.0...v4.4.0

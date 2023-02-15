@@ -4,6 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import { Logo } from '../components';
 import { Snaps } from '../features/installed-snaps';
 import { Confirm } from '../features/confirm-snap';
+import { Cronjob } from '../features/cronjob-snap';
 import { Dialog } from '../features/dialog-snap';
 import { ErrorSnap } from '../features/error-snap';
 import { BIP44 } from '../features/bip-44-snap';
@@ -42,6 +43,7 @@ const Index: FunctionComponent = () => {
         <Update />
         <Insights />
         <Rpc />
+        <Cronjob />
       </Row>
     </Container>
   );
