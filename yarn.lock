@@ -1497,23 +1497,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chainsafe/dappeteer@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@chainsafe/dappeteer@npm:4.1.1"
+"@chainsafe/dappeteer@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@chainsafe/dappeteer@npm:5.0.0"
   dependencies:
     "@metamask/providers": ^9.1.0
+    fs-extra: ^11.1.0
     node-stream-zip: ^1.13.0
     serve-handler: 5.0.8
     strict-event-emitter: ^0.2.8
   peerDependencies:
     playwright: ">=1"
-    puppeteer: ">13"
+    puppeteer: ">19"
   peerDependenciesMeta:
     playwright:
       optional: true
-    soy-puppeteer:
+    puppeteer:
       optional: true
-  checksum: ec8106de58b4320d35e200f987b88c30263a04b47c73261c14be99ab7032834f1a2010558004d7033787830578a8c19b29392bd1f10cc9b0bf26ce38bf08fb4b
+  bin:
+    mmd: bin/metamask_downloader.js
+  checksum: 4027b89970e817b5692ba4577bea1c3e24a55f6b61c52c24c8f881cb022c3f11175df25d5287279379d9e91173cdc2f4f5041a5ffe6e7b29130fbf22cc487b1a
   languageName: node
   linkType: hard
 
@@ -2589,7 +2592,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@metamask/test-snap-bip32@workspace:packages/bip32"
   dependencies:
-    "@chainsafe/dappeteer": ^4.1.1
+    "@chainsafe/dappeteer": ^5.0.0
     "@metamask/auto-changelog": ^2.5.0
     "@metamask/eslint-config": ^6.0.0
     "@metamask/eslint-config-jest": ^6.0.0
@@ -2624,7 +2627,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@metamask/test-snap-bip44@workspace:packages/bip44"
   dependencies:
-    "@chainsafe/dappeteer": ^4.1.1
+    "@chainsafe/dappeteer": ^5.0.0
     "@metamask/auto-changelog": ^2.5.0
     "@metamask/eslint-config": ^6.0.0
     "@metamask/eslint-config-jest": ^6.0.0
@@ -2658,7 +2661,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@metamask/test-snap-confirm@workspace:packages/confirm"
   dependencies:
-    "@chainsafe/dappeteer": ^4.1.1
+    "@chainsafe/dappeteer": ^5.0.0
     "@metamask/auto-changelog": ^2.5.0
     "@metamask/eslint-config": ^6.0.0
     "@metamask/eslint-config-jest": ^6.0.0
@@ -2718,7 +2721,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@metamask/test-snap-error@workspace:packages/error"
   dependencies:
-    "@chainsafe/dappeteer": ^4.1.1
+    "@chainsafe/dappeteer": ^5.0.0
     "@metamask/auto-changelog": ^2.5.0
     "@metamask/eslint-config": ^6.0.0
     "@metamask/eslint-config-jest": ^6.0.0
@@ -2781,7 +2784,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@metamask/test-snap-managestate@workspace:packages/manageState"
   dependencies:
-    "@chainsafe/dappeteer": ^4.1.1
+    "@chainsafe/dappeteer": ^5.0.0
     "@metamask/auto-changelog": ^2.5.0
     "@metamask/eslint-config": ^6.0.0
     "@metamask/eslint-config-jest": ^6.0.0
@@ -2811,7 +2814,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@metamask/test-snap-notification@workspace:packages/notification"
   dependencies:
-    "@chainsafe/dappeteer": ^4.1.1
+    "@chainsafe/dappeteer": ^5.0.0
     "@metamask/auto-changelog": ^2.5.0
     "@metamask/eslint-config": ^6.0.0
     "@metamask/eslint-config-jest": ^6.0.0
@@ -9512,6 +9515,17 @@ __metadata:
     jsonfile: ^6.0.1
     universalify: ^2.0.0
   checksum: dc94ab37096f813cc3ca12f0f1b5ad6744dfed9ed21e953d72530d103cea193c2f81584a39e9dee1bea36de5ee66805678c0dddc048e8af1427ac19c00fffc50
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "fs-extra@npm:11.1.0"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: 5ca476103fa1f5ff4a9b3c4f331548f8a3c1881edaae323a4415d3153b5dc11dc6a981c8d1dd93eec8367ceee27b53f8bd27eecbbf66ffcdd04927510c171e7f
   languageName: node
   linkType: hard
 
