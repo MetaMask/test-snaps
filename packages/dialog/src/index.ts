@@ -1,4 +1,3 @@
-import { DialogType } from '@metamask/rpc-methods';
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { panel, text, heading } from '@metamask/snaps-ui';
 
@@ -8,7 +7,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       return snap.request({
         method: 'snap_dialog',
         params: {
-          type: DialogType.Alert,
+          type: 'Alert',
           content: panel([heading('Alert Dialog'), text('Text here')]),
         },
       });
@@ -16,7 +15,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       return snap.request({
         method: 'snap_dialog',
         params: {
-          type: DialogType.Confirmation,
+          type: 'Confirmation',
           content: panel([heading('Confirmation Dialog'), text('Text here')]),
         },
       });
@@ -24,7 +23,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       return snap.request({
         method: 'snap_dialog',
         params: {
-          type: DialogType.Prompt,
+          type: 'Prompt',
           content: panel([heading('Prompt Dialog'), text('Text here')]),
           placeholder: 'placeholder',
         },
