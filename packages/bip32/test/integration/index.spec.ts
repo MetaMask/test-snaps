@@ -16,7 +16,6 @@ describe('bip32 snap', function () {
   beforeAll(async function () {
     ({ metaMask, snapId, browser } = await initSnapEnv({
       automation: 'playwright',
-      browser: 'chrome',
       snapIdOrLocation: path.resolve(__dirname, '../..'),
       installationSnapUrl: 'https://google.com',
       headless: true,
@@ -59,7 +58,7 @@ describe('bip32 snap', function () {
       },
     );
     await metaMask.page.waitForTimeout(1000);
-    await metaMask.snaps.acceptDialog();
+    await metaMask.snaps.dialog.accept();
     const result = await resultPromise;
     expect(result).toBe(
       '0x304402200c13a1d4611bcdfa7b83e574f2d10da6ab54b39e66385c34c6eb1d355e720c9b02206096ef06b9d7a73b4d19f1d848ad03e7f8410853a3453f0b89a2e4212eee8aa8',
@@ -79,7 +78,7 @@ describe('bip32 snap', function () {
       },
     );
     await metaMask.page.waitForTimeout(1000);
-    await metaMask.snaps.acceptDialog();
+    await metaMask.snaps.dialog.accept();
     const result = await resultPromise;
     expect(result).toBe(
       '0xa35273737d6b7b481babdafe98d31aa0428030967a07850656488783bfcf46ca318bc413f117f06d0633bb64e53cf973eb1c91d0dc2a9f03cc731e80b2959700',
@@ -95,7 +94,7 @@ describe('bip32 snap', function () {
         message: 'Message that test will not accept',
       });
       await metaMask.page.waitForTimeout(1000);
-      await metaMask.snaps.rejectDialog();
+      await metaMask.snaps.dialog.reject();
     } catch (e) {
       const error = ethErrors.provider.userRejectedRequest();
       expect(e).toStrictEqual(error);
