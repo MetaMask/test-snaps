@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.4]
-### Uncategorized
+### Fixed
 - Fix dialog snap & site code ([#138](https://github.com/MetaMask/test-snaps/pull/138))
 
 ## [4.6.3]

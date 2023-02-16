@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.3]
+
+## [4.6.4]
+### Changed
+- No changes this release.
 ### Changed
 - Update snaps-cli, snap shasums ([#136](https://github.com/MetaMask/test-snaps/pull/136))
 
