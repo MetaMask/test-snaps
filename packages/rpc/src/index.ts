@@ -1,4 +1,5 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
+import packageJson from '../package.json';
 
 const OTHER_SNAP_ID = 'npm:@metamask/test-snap-bip32';
 
@@ -15,7 +16,9 @@ const requestSnap = async () => {
     await snap.request({
       method: 'wallet_requestSnaps',
       params: {
-        [OTHER_SNAP_ID]: {},
+        [OTHER_SNAP_ID]: {
+          version: packageJson.version,
+        },
       },
     });
   }
