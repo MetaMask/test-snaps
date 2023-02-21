@@ -32,9 +32,9 @@
     "lint:changelog": "yarn auto-changelog validate"
   },
   "dependencies": {
-    "@metamask/rpc-methods": "0.29.0",
-    "@metamask/snaps-types": "^0.26.2",
-    "@metamask/snaps-ui": "^0.27.1"
+    "@metamask/rpc-methods": "0.30.0",
+    "@metamask/snaps-types": "^0.30.0",
+    "@metamask/snaps-ui": "^0.30.0"
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^2.5.0",
@@ -42,7 +42,7 @@
     "@metamask/eslint-config-jest": "^6.0.0",
     "@metamask/eslint-config-nodejs": "^6.0.0",
     "@metamask/eslint-config-typescript": "^6.0.0",
-    "@metamask/snaps-cli": "^0.29.0",
+    "@metamask/snaps-cli": "^0.30.0",
     "@types/jest": "^26.0.13",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
