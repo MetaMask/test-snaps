@@ -1,3 +1,4 @@
+import { DialogType } from '@metamask/rpc-methods';
 import { ethErrors } from 'eth-rpc-errors';
 import { panel, text, heading, copyable } from '@metamask/snaps-ui';
 import { getPublicKey, sign } from '@noble/bls12-381';
@@ -60,7 +61,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       const approved = await snap.request({
         method: 'snap_dialog',
         params: {
-          type: 'Confirmation',
+          type: DialogType.Confirmation,
           content: panel([
             heading('Signature request'),
             text(`Do you want to BLS sign ${data} with :`),
