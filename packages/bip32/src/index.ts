@@ -28,11 +28,7 @@ interface GetBip32PublicKeyParams {
 
 type GetAccountParams = GetBip32EntropyParams | GetBip32PublicKeyParams;
 
-type SignMessageParams = GetAccountParams & {
-  message: string;
-
-  [key: string]: unknown;
-};
+type SignMessageParams = GetAccountParams & { message: string };
 
 const getSLIP10Node = async (
   params: GetBip32EntropyParams,
