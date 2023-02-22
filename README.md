@@ -1,5 +1,7 @@
 # Test Snap Repo
 
+https://metamask.github.io/test-snaps/latest/
+
 A monorepo for Snaps used for QA and end-to-end tests, with an accompanying GitHub Pages website.
 Like [MetaMask/test-dapp](https://github.com/MetaMask/test-dapp), but for Snaps.
 
@@ -7,7 +9,7 @@ Like [MetaMask/test-dapp](https://github.com/MetaMask/test-dapp), but for Snaps.
 
 Run `yarn start` to serve the Snaps and the website.
 
-Go to <http://localhost:8000> to see the test app.
+Go to <http://localhost:8080> to see the test app.
 
 ## Contributing
 

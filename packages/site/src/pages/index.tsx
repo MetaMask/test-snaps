@@ -40,6 +40,7 @@ const Index: FunctionComponent = () => {
         <Update />
         <Insights />
         <Rpc />
+        <Cronjob />
       </Row>
     </Container>
   );
