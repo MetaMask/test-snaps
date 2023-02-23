@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.1]
+### Changed
+- No changes this release.
+
 ## [5.0.0]
 ### Changed
 - Update snaps packages ([#141](https://github.com/MetaMask/test-snaps/pull/141))
