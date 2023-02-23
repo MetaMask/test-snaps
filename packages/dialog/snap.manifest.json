@@ -1,5 +1,5 @@
 {
-  "version": "4.6.4",
+  "version": "4.6.5",
   "description": "A MetaMask Test Snap that uses the snap_dialog permission",
   "proposedName": "MetaMask Dialog Test Snap",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "8ygHXOajF7IDnaR6bxSykI0ju0p7dgmoLkRTcyGhzAQ=",
+    "shasum": "Utq+cmlOJxQremlSOj1D2qtpeczRDb1c8yoot8VMfwY=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
