@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.0]
+### Changed
+- Update snaps packages ([#141](https://github.com/MetaMask/test-snaps/pull/141))
+
+### Removed
+- **BREAKING:** Remove all usage of `snap_confirm` ([#122](https://github.com/MetaMask/test-snaps/pull/122))
+    - `snap_confirm` usage was replaced with `snap_dialog`
+
 ## [4.6.4]
 ### Changed
 - No changes this release.
@@ -91,7 +99,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add BIP-32 test snap ([#56](https://github.com/MetaMask/test-snaps/pull/56), [#57](https://github.com/MetaMask/test-snaps/pull/57), [#64](https://github.com/MetaMask/test-snaps/pull/64))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.4...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/MetaMask/test-snaps/compare/v4.6.4...v5.0.0
 [4.6.4]: https://github.com/MetaMask/test-snaps/compare/v4.6.3...v4.6.4
 [4.6.3]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...v4.6.3
 [4.6.2]: https://github.com/MetaMask/test-snaps/compare/v4.6.1...v4.6.2
