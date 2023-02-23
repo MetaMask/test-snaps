@@ -1,4 +1,6 @@
+import { DialogType } from '@metamask/rpc-methods';
 import { ethErrors } from 'eth-rpc-errors';
+import { panel, text, heading, copyable } from '@metamask/snaps-ui';
 import { JsonSLIP10Node, SLIP10Node } from '@metamask/key-tree';
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { sign as signEd25519 } from '@noble/ed25519';
@@ -11,20 +13,26 @@ import {
 } from '@metamask/utils';
 import { sign as signSecp256k1 } from '@noble/secp256k1';
 
-interface GetAccountParams {
-  path: string;
-  curve?: 'secp256k1' | 'ed25519';
-
+interface GetBip32EntropyParams {
+  path: string[];
+  curve: 'secp256k1' | 'ed25519';
   [key: string]: unknown;
 }
 
-interface SignMessageParams extends GetAccountParams {
-  message: string;
-
+interface GetBip32PublicKeyParams {
+  path: ['m', ...(`${number}` | `${number}'`)[]];
+  curve: 'secp256k1' | 'ed25519';
+  compressed?: boolean | undefined;
   [key: string]: unknown;
 }
 
-const getSLIP10Node = async (params: GetAccountParams): Promise<SLIP10Node> => {
+type GetAccountParams = GetBip32EntropyParams | GetBip32PublicKeyParams;
+
+type SignMessageParams = GetAccountParams & { message: string };
+
+const getSLIP10Node = async (
+  params: GetBip32EntropyParams,
+): Promise<SLIP10Node> => {
   const json = (await snap.request({
     method: 'snap_getBip32Entropy',
     params,
@@ -33,7 +41,9 @@ const getSLIP10Node = async (params: GetAccountParams): Promise<SLIP10Node> => {
   return SLIP10Node.fromJSON(json);
 };
 
-const getPublicKey = async (params: GetAccountParams): Promise<string> => {
+const getPublicKey = async (
+  params: GetBip32PublicKeyParams,
+): Promise<string> => {
   return (await snap.request({
     method: 'snap_getBip32PublicKey',
     params,
@@ -44,7 +54,9 @@ const getPublicKey = async (params: GetAccountParams): Promise<string> => {
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
     case 'getPublicKey':
-      return await getPublicKey(request.params as GetAccountParams);
+      return await getPublicKey(
+        request.params as unknown as GetBip32PublicKeyParams,
+      );
 
     case 'signMessage': {
       const { message, curve, ...params } = request.params as SignMessageParams;
@@ -61,15 +73,15 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
       assert(curve === 'ed25519' || curve === 'secp256k1');
 
       const approved = await snap.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: 'Signature request',
-            textAreaContent: `Do you want to ${curve} sign ${message} with ${add0x(
-              node.publicKey,
-            )}?`,
-          },
-        ],
+        method: 'snap_dialog',
+        params: {
+          type: DialogType.Confirmation,
+          content: panel([
+            heading('Signature request'),
+            text(`Do you want to ${curve} sign ${message} with :`),
+            copyable(`${add0x(node.publicKey)}?`),
+          ]),
+        },
       });
 
       if (!approved) {

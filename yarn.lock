@@ -2609,17 +2609,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/snaps-types@npm:^0.26.2":
-  version: 0.26.2
-  resolution: "@metamask/snaps-types@npm:0.26.2"
-  dependencies:
-    "@metamask/providers": ^10.2.0
-    "@metamask/snaps-utils": ^0.26.2
-    "@metamask/types": ^1.1.0
-  checksum: 0f2fb945290ee53b308f02472bb79995ad95cd6a5d6a2efcfaf7941d8c75d6bbc8530b6ed0bd3899147a709509da397403807a942a877ca159e79b784cd95b96
-  languageName: node
-  linkType: hard
-
 "@metamask/snaps-types@npm:^0.30.0":
   version: 0.30.0
   resolution: "@metamask/snaps-types@npm:0.30.0"
@@ -2639,28 +2628,6 @@ __metadata:
     "@metamask/utils": ^3.4.1
     superstruct: ^1.0.3
   checksum: a4612e08e830542b094bf995023221a24dfa45861d3ca919c1c11ae1bd3d6933789d40c667780145bcd3ff3053d0593e654ae1812ea9f3c7cc973d500cfb0a96
-  languageName: node
-  linkType: hard
-
-"@metamask/snaps-utils@npm:^0.26.2":
-  version: 0.26.2
-  resolution: "@metamask/snaps-utils@npm:0.26.2"
-  dependencies:
-    "@babel/core": ^7.18.6
-    "@babel/types": ^7.18.7
-    "@metamask/snaps-types": ^0.26.2
-    "@metamask/utils": ^3.3.1
-    "@noble/hashes": ^1.1.3
-    "@scure/base": ^1.1.1
-    cron-parser: ^4.5.0
-    eth-rpc-errors: ^4.0.3
-    fast-deep-equal: ^3.1.3
-    rfdc: ^1.3.0
-    semver: ^7.3.7
-    ses: ^0.17.0
-    superstruct: ^0.16.7
-    validate-npm-package-name: ^5.0.0
-  checksum: 1d87b5174d0a1f9d47abb450c164981bc0386bea2f41de54a3ae137d91acd1ba4e3a1eacc84d94c835e0cf80cbb8d668f5470bc4256b24b10d0ab80127e9096e
   languageName: node
   linkType: hard
 
@@ -2700,8 +2667,10 @@ __metadata:
     "@metamask/eslint-config-nodejs": ^6.0.0
     "@metamask/eslint-config-typescript": ^6.0.0
     "@metamask/key-tree": ^6.0.0
+    "@metamask/rpc-methods": ^0.30.0
     "@metamask/snaps-cli": ^0.30.0
-    "@metamask/snaps-types": ^0.26.2
+    "@metamask/snaps-types": ^0.30.0
+    "@metamask/snaps-ui": ^0.30.0
     "@metamask/utils": ^3.3.0
     "@noble/ed25519": ^1.7.1
     "@noble/secp256k1": ^1.7.0
@@ -2734,8 +2703,10 @@ __metadata:
     "@metamask/eslint-config-nodejs": ^6.0.0
     "@metamask/eslint-config-typescript": ^6.0.0
     "@metamask/key-tree": ^6.0.0
+    "@metamask/rpc-methods": ^0.30.0
     "@metamask/snaps-cli": ^0.30.0
     "@metamask/snaps-types": ^0.30.0
+    "@metamask/snaps-ui": ^0.30.0
     "@metamask/utils": ^3.3.0
     "@noble/bls12-381": ^1.2.0
     "@types/jest": ^26.0.13
@@ -2748,35 +2719,6 @@ __metadata:
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^3.4.0
     eth-rpc-errors: ^4.0.3
-    jest: ^26.4.2
-    prettier: ^2.2.1
-    rimraf: ^3.0.2
-    ts-jest: ^26.3.0
-    ts-node: ^9.0.0
-    typescript: ^4.4.0
-  languageName: unknown
-  linkType: soft
-
-"@metamask/test-snap-confirm@workspace:packages/confirm":
-  version: 0.0.0-use.local
-  resolution: "@metamask/test-snap-confirm@workspace:packages/confirm"
-  dependencies:
-    "@metamask/auto-changelog": ^2.5.0
-    "@metamask/eslint-config": ^6.0.0
-    "@metamask/eslint-config-jest": ^6.0.0
-    "@metamask/eslint-config-nodejs": ^6.0.0
-    "@metamask/eslint-config-typescript": ^6.0.0
-    "@metamask/snaps-cli": ^0.30.0
-    "@metamask/snaps-types": ^0.30.0
-    "@types/jest": ^26.0.13
-    "@typescript-eslint/eslint-plugin": ^5.19.0
-    "@typescript-eslint/parser": ^5.19.0
-    eslint: ^7.30.0
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-import: ^2.23.4
-    eslint-plugin-jest: ^24.4.0
-    eslint-plugin-node: ^11.1.0
-    eslint-plugin-prettier: ^3.4.0
     jest: ^26.4.2
     prettier: ^2.2.1
     rimraf: ^3.0.2
@@ -16808,13 +16750,6 @@ __metadata:
     parseurl: ~1.3.3
     send: 0.18.0
   checksum: af57fc13be40d90a12562e98c0b7855cf6e8bd4c107fe9a45c212bf023058d54a1871b1c89511c3958f70626fff47faeb795f5d83f8cf88514dbaeb2b724464d
-  languageName: node
-  linkType: hard
-
-"ses@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "ses@npm:0.17.0"
-  checksum: c4c668de819b5366da7a9797d4ab0ec9c3efe4904ea64453cad5a48b659c77b817d589584019f5f7ca42802f640dcc706241543c1df00282473320a77397b641
   languageName: node
   linkType: hard
 
