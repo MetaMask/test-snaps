@@ -1,5 +1,5 @@
 {
-  "version": "4.6.5",
+  "version": "5.0.0",
   "description": "A MetaMask Test Snap that uses the cronjob endowment",
   "proposedName": "MetaMask Cronjob Test Snap",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "ZWvcv8N8JyDY1ok3x6J9Ym9T5uDcM0esNFVLf5n04KQ=",
+    "shasum": "ofxPmCtixj+I8EZwH8lQiiW7kvdJJicdC5jSTKE3FxI=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [4.6.5]
+## [5.0.0]
 ### Removed
 - **BREAKING:** Remove all usage of `snap_confirm` ([#122](https://github.com/MetaMask/test-snaps/pull/122))
 
