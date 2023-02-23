@@ -51,7 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release ([#105](https://github.com/MetaMask/test-snaps/pull/105))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.1...HEAD
+[5.0.1]: https://github.com/MetaMask/test-snaps/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/MetaMask/test-snaps/compare/v4.6.4...v5.0.0
 [4.6.4]: https://github.com/MetaMask/test-snaps/compare/v4.6.3...v4.6.4
 [4.6.3]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...v4.6.3
