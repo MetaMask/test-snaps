@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-rpc",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "MetaMask JSON-RPC Permissions Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
