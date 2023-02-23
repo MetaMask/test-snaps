@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.5]
-### Uncategorized
+### Changed
 - Update snaps packages ([#141](https://github.com/MetaMask/test-snaps/pull/141))
 - Use package.json version for installing snap ([#140](https://github.com/MetaMask/test-snaps/pull/140))
 

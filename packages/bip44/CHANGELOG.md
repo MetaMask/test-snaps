@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.5]
-### Uncategorized
-- Remove all usage of `snap_confirm` ([#122](https://github.com/MetaMask/test-snaps/pull/122))
+### Changed
 - Update snaps packages ([#141](https://github.com/MetaMask/test-snaps/pull/141))
+
+### Removed
+- Remove all usage of `snap_confirm` ([#122](https://github.com/MetaMask/test-snaps/pull/122))
+    - `snap_confirm` usage was replaced with `snap_dialog`
 
 ## [4.6.4]
 ### Changed
