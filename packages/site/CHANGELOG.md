@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [5.0.1]
-### Changed
+### Fixed
 - Bump versions used in the update test ([#142](https://github.com/MetaMask/test-snaps/pull/142))
   - Previous versions pointed to broken versions of the test snap
 
