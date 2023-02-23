@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [4.6.5]
-### Uncategorized
+### Removed
 - Remove all usage of `snap_confirm` ([#122](https://github.com/MetaMask/test-snaps/pull/122))
 
 ## [4.6.4]
