@@ -1,5 +1,5 @@
 {
-  "version": "4.6.4",
+  "version": "5.0.0",
   "description": "An example Snap that derives keys using BIP-32.",
   "proposedName": "@metamask/test-snap-bip32",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "m12d+Sg1BJ89SObSI7vQB7UHHXt5TDArwV0UCDjEvAk=",
+    "shasum": "cNousJLmNiFwN5WhRhNIAcM3a1S64MFS2tI3ooOPKCk=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
