@@ -4,8 +4,8 @@ import { Result, Snap } from '../../components';
 import { useGetSnapsQuery, useInstallSnapMutation } from '../../api';
 
 const UPDATE_SNAP_ID = 'npm:@metamask/test-snap-bip32';
-const UPDATE_SNAP_OLD_VERSION = '4.6.4';
-const UPDATE_SNAP_NEW_VERSION = '4.6.5';
+const UPDATE_SNAP_OLD_VERSION = '4.6.5';
+const UPDATE_SNAP_NEW_VERSION = '4.6.6';
 
 export const Update: FunctionComponent = () => {
   const [installSnap, { isLoading }] = useInstallSnapMutation();
