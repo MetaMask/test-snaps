@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [5.0.2]
-### Uncategorized
+### Changed
 - Stop transpiling BIP-44 snap dependencies ([#145](https://github.com/MetaMask/test-snaps/pull/145))
 
 ## [5.0.1]
