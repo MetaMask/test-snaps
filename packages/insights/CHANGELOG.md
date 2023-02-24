@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.2]
+### Changed
+- No changes this release.
+
 ## [5.0.1]
 ### Changed
 - No changes this release.
@@ -50,7 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add tx-insights test panel ([#110](https://github.com/MetaMask/test-snaps/pull/110))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.1...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...HEAD
+[5.0.2]: https://github.com/MetaMask/test-snaps/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/MetaMask/test-snaps/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/MetaMask/test-snaps/compare/v4.6.4...v5.0.0
 [4.6.4]: https://github.com/MetaMask/test-snaps/compare/v4.6.3...v4.6.4

@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-insights",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "MetaMask Insights Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
