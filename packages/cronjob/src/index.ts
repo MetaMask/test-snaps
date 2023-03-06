@@ -7,7 +7,7 @@ export const onCronjob: OnCronjobHandler = async ({ request }) => {
       return snap.request({
         method: 'snap_dialog',
         params: {
-          type: 'Alert',
+          type: 'alert',
           content: panel([heading('Cronjob'), text('fired')]),
         },
       });
