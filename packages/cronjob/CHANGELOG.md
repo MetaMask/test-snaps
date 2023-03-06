@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.3]
+### Fixed
+- Fix dialog type for cronjob snap ([#150](https://github.com/MetaMask/test-snaps/pull/150))
+
 ## [5.0.2]
 ### Changed
 - No changes this release.
@@ -38,7 +42,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Create test-snap for cronjob ([#125](https://github.com/MetaMask/test-snaps/pull/125))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.0.3...HEAD
+[5.0.3]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...v5.0.3
 [5.0.2]: https://github.com/MetaMask/test-snaps/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/MetaMask/test-snaps/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/MetaMask/test-snaps/compare/v4.6.4...v5.0.0
