@@ -3,7 +3,6 @@ import { OnRpcRequestHandler } from '@metamask/snaps-types';
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
     case 'send': {
-
       return snap.request({
         method: 'wallet_invokeSnap',
         params: {
