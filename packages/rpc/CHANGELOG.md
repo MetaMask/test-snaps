@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [5.1.0]
-### Uncategorized
+### Changed
 - Stop using `wallet_requestSnaps` inside snaps ([#152](https://github.com/MetaMask/test-snaps/pull/152))
 
 ## [5.0.3]
