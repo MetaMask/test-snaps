@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.1.1]
+### Uncategorized
+- Patch luxon to fix LavaMoat issue ([#154](https://github.com/MetaMask/test-snaps/pull/154))
+
 ## [5.1.0]
 ### Changed
 - No changes this release.
@@ -50,7 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Create test-snap for snap_dialog ([#119](https://github.com/MetaMask/test-snaps/pull/119))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.1.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.1.1...HEAD
+[5.1.1]: https://github.com/MetaMask/test-snaps/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/MetaMask/test-snaps/compare/v5.0.3...v5.1.0
 [5.0.3]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...v5.0.3
 [5.0.2]: https://github.com/MetaMask/test-snaps/compare/v5.0.1...v5.0.2
