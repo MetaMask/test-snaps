@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.1.2]
+### Changed
+- Change version of update snap from `5.0.0 -> 5.0.1` to `5.1.1 -> 5.1.2` ([#156](https://github.com/MetaMask/test-snaps/pull/156))
+
 ## [5.1.1]
 ### Changed
 - No changes this release.
@@ -201,7 +205,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.1.1...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.1.2...HEAD
+[5.1.2]: https://github.com/MetaMask/test-snaps/compare/v5.1.1...v5.1.2
 [5.1.1]: https://github.com/MetaMask/test-snaps/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/MetaMask/test-snaps/compare/v5.0.3...v5.1.0
 [5.0.3]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...v5.0.3

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.1.2]
+### Changed
+- No changes this release.
+
 ## [5.1.1]
 ### Fixed
 - Patch `luxon` to fix LavaMoat incompatibility ([#154](https://github.com/MetaMask/test-snaps/pull/154))
@@ -157,7 +161,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog ([#24](https://github.com/MetaMask/test-snaps/pull/24))
 - BIP44 snap for testing ([#20](https://github.com/MetaMask/test-snaps/pull/20))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.1.1...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.1.2...HEAD
+[5.1.2]: https://github.com/MetaMask/test-snaps/compare/v5.1.1...v5.1.2
 [5.1.1]: https://github.com/MetaMask/test-snaps/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/MetaMask/test-snaps/compare/v5.0.3...v5.1.0
 [5.0.3]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...v5.0.3
