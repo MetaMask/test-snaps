@@ -1,5 +1,5 @@
 {
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "A MetaMask Test Snap that uses the manageState permission",
   "proposedName": "MetaMask manageState Test Snap",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "sDZ/e4MjqDxm7zB9xpi0M/X3TlhdzhzxGk355mBLjN4=",
+    "shasum": "v8EsbALy6LQMEtV5qtsdmB02pNVov2KTFniwPhHEY2A=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
