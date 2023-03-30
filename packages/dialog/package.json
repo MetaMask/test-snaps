@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-dialog",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "MetaMask Dialog Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

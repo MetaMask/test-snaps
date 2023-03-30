@@ -1,5 +1,5 @@
 {
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "A MetaMask Test Snap that throws an error",
   "proposedName": "MetaMask Error Test Snap",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "OYc9QBPLnzi0vgGkZ3xyQnf6eRxCXXbUxM5fhDFGW0I=",
+    "shasum": "fgqWl0UdxlxFkmMgFpRbMSE5wdKJHiVSuPF5ejZ4UVk=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

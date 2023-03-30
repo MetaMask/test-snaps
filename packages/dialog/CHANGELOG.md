@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.1.2]
+### Changed
+- No changes this release.
+
 ## [5.1.1]
 ### Fixed
 - Patch `luxon` to fix LavaMoat incompatibility ([#154](https://github.com/MetaMask/test-snaps/pull/154))
