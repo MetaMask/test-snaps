@@ -1,27 +1,28 @@
 {
   "version": "5.1.2",
-  "description": "A MetaMask Test Snap that uses the snap_dialog permission",
-  "proposedName": "MetaMask Dialog Test Snap",
+  "description": "A MetaMask Test Snap that uses the WebAssembly endowment",
+  "proposedName": "MetaMask WebAssembly Test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "4HD3+bByjeN5cJy3mBEmuuK4JQfLdOzTS8t3FLXYHSo=",
+    "shasum": "Q6imYTU9g5Hb/zkh1sfSYBXAApXmOcVAbQ55IqtuX1k=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@metamask/test-snap-dialog",
+        "packageName": "@metamask/test-snap-wasm",
         "registry": "https://registry.npmjs.org/"
       }
     }
   },
   "initialPermissions": {
     "endowment:rpc": {
-      "dapps": true
+      "dapps": true,
+      "snaps": true
     },
-    "snap_dialog": {}
+    "endowment:webassembly": {}
   },
   "manifestVersion": "0.1"
 }
