@@ -12,14 +12,14 @@ module.exports = {
     bundler.transform(function () {
       let data = '';
       return through(
-        function (buf, _enc, cb) {
-          data += buf;
-          cb();
+        function (buffer, _encoding, callback) {
+          data += buffer;
+          callback();
         },
-        function (cb) {
+        function (callback) {
           this.push("globalThis.Buffer = require('buffer/').Buffer;");
           this.push(data);
-          cb();
+          callback();
         },
       );
     });

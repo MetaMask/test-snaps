@@ -1,7 +1,7 @@
-// Due to a bug of how brfs interacts with babel, we need to use require() syntax instead of import pattern
-// https://github.com/browserify/brfs/issues/39
 import { rpcErrors } from '@metamask/rpc-errors';
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
+// Due to a bug of how brfs interacts with babel, we need to use require() syntax instead of import pattern
+// https://github.com/browserify/brfs/issues/39
 // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
 const fs = require('fs');
 

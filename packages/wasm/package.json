@@ -24,7 +24,7 @@
     "build:clean": "yarn clean && yarn build",
     "build:wasm": "asc assembly/program.ts -o build/program.wasm",
     "clean": "rimraf 'dist/*'",
-    "start": "mm-snap watch",
+    "start": "yarn run prebuild && mm-snap watch",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "lint:eslint": "eslint . --cache --ext js,ts",
