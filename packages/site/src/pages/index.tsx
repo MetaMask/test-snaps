@@ -13,6 +13,7 @@ import { BIP32 } from '../features/bip-32-snap';
 import { Update } from '../features/update-snap';
 import { Rpc } from '../features/rpc-snap';
 import { Insights } from '../features/insights-snap';
+import { WebAssembly } from '../features/wasm-snap';
 
 interface Query {
   site: {
@@ -42,6 +43,7 @@ const Index: FunctionComponent = () => {
         <Insights />
         <Rpc />
         <Cronjob />
+        <WebAssembly />
       </Row>
     </Container>
   );
