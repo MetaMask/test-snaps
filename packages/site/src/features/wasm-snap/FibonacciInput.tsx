@@ -32,16 +32,16 @@ export const FibonacciInput: FunctionComponent = () => {
           placeholder="Input"
           value={message}
           onChange={handleChange}
-          id="input"
+          id="wasmInput"
           className="mb-3"
         />
 
-        <Button type="submit" id="signBip44Message" disabled={isLoading}>
+        <Button type="submit" id="sendWasmMessage" disabled={isLoading}>
           Send
         </Button>
       </Form>
       <Result>
-        <span id="bip44SignResult">{JSON.stringify(data, null, 2)}</span>
+        <span id="wasmResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </>
   );
