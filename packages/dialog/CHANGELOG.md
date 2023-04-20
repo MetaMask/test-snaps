@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [5.2.0]
-### Uncategorized
-- Add WASM test-snap ([#158](https://github.com/MetaMask/test-snaps/pull/158))
+### Changed
+- No changes this release.
 
 ## [5.1.2]
 ### Changed
