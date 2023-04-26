@@ -29,7 +29,7 @@ export const GetEntropy: FunctionComponent = () => {
         <Button
           id="sendGetEntropyTest"
           data-testid="send-test"
-          onClick={handleClick('getEntropyOutput', 1)}
+          onClick={handleClick('getEntropyOutput')}
           disabled={isLoading}
         >
           Send Test

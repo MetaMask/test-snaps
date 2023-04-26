@@ -1,25 +1,21 @@
-// import { DialogType } from '@metamask/rpc-methods';
 import { ethErrors } from 'eth-rpc-errors';
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
-// import { panel, text, heading, copyable } from '@metamask/snaps-ui';
-// import { getPublicKey, sign } from '@noble/bls12-381';
 import { remove0x } from '@metamask/utils';
-// import { deriveBIP44AddressKey } from '@metamask/key-tree';
 
-const getPrivateKey = async () => {
-  const coinTypeNode = await snap.request({
+const getEntropy = async () => {
+  const entropy = await snap.request({
     method: 'snap_getEntropy',
     params: {
       version: 1,
     },
   });
-  return remove0x(coinTypeNode);
+  return remove0x(entropy);
 };
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
     case 'getEntropyOutput': {
-      return getPrivateKey();
+      return getEntropy();
     }
 
     default:
