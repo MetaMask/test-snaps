@@ -1,1 +1,1 @@
-export * from './Getentropy';
+export * from './GetEntropy';
