@@ -18,7 +18,7 @@
   },
   "initialPermissions": {
     "endowment:rpc": {
-      "dapps": true
+      "dapps": false
     },
     "snap_dialog": {},
     "snap_getBip44Entropy": [

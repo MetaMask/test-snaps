@@ -3,7 +3,6 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import { Result, Snap } from '../../components';
 import { useInvokeMutation } from '../../api';
 import { getSnapId } from '../../utils/id';
-// import { SignMessage } from './SignMessage';
 
 export const GETENTROPY_SNAP_ID = 'npm:@metamask/test-snap-getentropy';
 export const GETENTROPY_PORT = 8011;
