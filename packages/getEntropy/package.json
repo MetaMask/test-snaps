@@ -33,9 +33,12 @@
     "lint:changelog": "yarn auto-changelog validate"
   },
   "dependencies": {
+    "@metamask/rpc-methods": "^0.30.0",
     "@metamask/snaps-types": "^0.30.0",
+    "@metamask/snaps-ui": "^0.30.0",
     "@metamask/utils": "^3.3.0",
-    "eth-rpc-errors": "^4.0.3"
+    "eth-rpc-errors": "^4.0.3",
+    "@noble/bls12-381": "^1.2.0"
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^2.5.0",
