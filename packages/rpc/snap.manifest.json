@@ -21,16 +21,9 @@
       "dapps": true
     },
     "wallet_snap": {
-      "caveats": [
-        {
-          "type": "snapIds",
-          "value": {
-            "npm:@metamask/test-snap-bip32": {
-              "version": "5.1.0"
-            }
-          }
-        }
-      ]
+      "npm:@metamask/test-snap-bip32": {
+        "version": "5.1.0"
+      }
     }
   },
   "manifestVersion": "0.1"
