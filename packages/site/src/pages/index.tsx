@@ -14,6 +14,7 @@ import { Update } from '../features/update-snap';
 import { Rpc } from '../features/rpc-snap';
 import { Insights } from '../features/insights-snap';
 import { WebAssembly } from '../features/wasm-snap';
+import { GetEntropy } from '../features/getentropy-snap';
 
 interface Query {
   site: {
@@ -44,6 +45,7 @@ const Index: FunctionComponent = () => {
         <Rpc />
         <Cronjob />
         <WebAssembly />
+        <GetEntropy />
       </Row>
     </Container>
   );
