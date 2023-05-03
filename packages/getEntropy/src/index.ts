@@ -17,10 +17,6 @@ const getEntropy = async () => {
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
-    case 'getEntropyOutput': {
-      return getEntropy();
-    }
-
     case 'signMessage': {
       const privateKey = await getEntropy();
       const data = (request.params as string[])[0];
