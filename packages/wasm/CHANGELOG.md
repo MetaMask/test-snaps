@@ -6,9 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.3.0]
+### Changed
+- No changes this release.
+
 ## [5.2.0]
 ### Added
 - Add WASM test snap ([#158](https://github.com/MetaMask/test-snaps/pull/158))
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.3.0...HEAD
+[5.3.0]: https://github.com/MetaMask/test-snaps/compare/v5.2.0...v5.3.0
 [5.2.0]: https://github.com/MetaMask/test-snaps/releases/tag/v5.2.0
