@@ -1,5 +1,5 @@
 {
-  "version": "5.2.0",
+  "version": "5.3.0",
   "description": "An example snap to test JSON-RPC permissions.",
   "proposedName": "@metamask/test-snap-rpc",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "vffk+BUyfgtIwt/IG+dZ2epCuiE7Qye3bhmLmAI+6u8=",
+    "shasum": "pGJBfgjTXKVclSdSDztMIbFLo87ZO8GT6velu2jExys=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
