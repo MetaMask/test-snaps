@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.3.0]
 ### Changed
-- Update RPC snap manifest ([#163](https://github.com/MetaMask/test-snaps/pull/163))
+- Update RPC snap manifest to match new format ([#163](https://github.com/MetaMask/test-snaps/pull/163))
 
 ## [5.2.0]
 ### Changed
