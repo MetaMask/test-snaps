@@ -1,0 +1,28 @@
+{
+  "version": "5.3.0",
+  "description": "An example snap to test network-accesss endowment.",
+  "proposedName": "@metamask/test-snap-networkaccess",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "gfFsdp2+1eNPyAIk4DkVluBFGLwgttZO6QylSUWgbTs=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "@metamask/test-snap-networkaccess",
+        "registry": "https://registry.npmjs.org"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "endowment:network-access": {}
+  },
+  "manifestVersion": "0.1"
+}
