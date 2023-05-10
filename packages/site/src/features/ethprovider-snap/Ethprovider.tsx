@@ -31,7 +31,7 @@ export const Ethprovider: FunctionComponent = () => {
         disabled={isLoading}
         onClick={handleSubmit}
       >
-        Send Test to Error Snap
+        Send Test to ethereum-provider Snap
       </Button>
       <Result>
         <span id="ethproviderResult">
