@@ -1,3 +1,3 @@
-# JSON-RPC Permissions Test Snap
+# ethereum-provider endowment Test Snap
 
-This Snap is used to test the JSON-RPC permission.
+This Snap is used to test the ethereum-provider endowment.

@@ -1,6 +1,8 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 
-// eslint-disable-next-line jsdoc/require-jsdoc
+/**
+ * Fetches the gas price with ethereum.request.
+ */
 async function getGas() {
   const gasPriceHex = await ethereum.request({ method: 'eth_gasPrice' });
   const gasPrice = parseInt(gasPriceHex, 16);
