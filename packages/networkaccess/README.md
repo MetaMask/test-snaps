@@ -1,3 +1,3 @@
-# JSON-RPC Permissions Test Snap
+# network-access Endowment Test Snap
 
-This Snap is used to test the JSON-RPC permission.
+This Snap is used to test the network-access Endowment.

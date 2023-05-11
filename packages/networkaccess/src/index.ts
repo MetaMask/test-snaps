@@ -4,7 +4,7 @@ import { panel, text } from '@metamask/snaps-ui';
 // eslint-disable-next-line jsdoc/require-jsdoc
 async function getPage() {
   const response = await fetch(
-    'https://metamask.github.io/test-snaps/index.html',
+    'https://acl.execution.metamask.io/latest/registry.json',
   );
   return response.text();
 }
