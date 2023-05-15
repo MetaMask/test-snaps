@@ -1,10 +1,14 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { panel, text } from '@metamask/snaps-ui';
 
-// eslint-disable-next-line jsdoc/require-jsdoc
+/**
+ * Retrieves test web page content.
+ *
+ * @returns Response data of a fetched web page in text format.
+ */
 async function getPage() {
   const response = await fetch(
-    'https://acl.execution.metamask.io/latest/registry.json',
+    'https://metamask.github.io/test-snaps/latest/test-data.json',
   );
   return response.text();
 }
