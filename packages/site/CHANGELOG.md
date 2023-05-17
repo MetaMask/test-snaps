@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [5.4.0]
-### Uncategorized
+### Added
 - Create a static test-data.json file for network access test ([#171](https://github.com/MetaMask/test-snaps/pull/171))
 - Create test snap for ethereum-provider endowment ([#169](https://github.com/MetaMask/test-snaps/pull/169))
 
