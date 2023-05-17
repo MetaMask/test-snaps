@@ -1,5 +1,5 @@
 {
-  "version": "5.3.0",
+  "version": "5.4.0",
   "description": "An example Snap that requests entropy.",
   "proposedName": "@metamask/test-snap-getentropy",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "3GVRjNg0Vt0KbKDHKCzR3//GRkAfgegWFInnrCVVNJM=",
+    "shasum": "Q+GNd1bPDyUgv8cGYmLkZ7oJqgb8s1Pul+I9+7gjnzQ=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

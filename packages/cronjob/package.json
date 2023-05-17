@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-cronjob",
-  "version": "5.3.0",
+  "version": "5.4.0",
   "description": "MetaMask Cronjob Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
