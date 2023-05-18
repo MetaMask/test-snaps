@@ -15,7 +15,7 @@ async function getPage() {
 
 export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
   switch (request.method) {
-    case 'networkAccessTest':
+    case 'networkAccessTest': {
       const page = await getPage();
       return snap.request({
         method: 'snap_dialog',
@@ -24,6 +24,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ request }) => {
           content: panel([text(`${page}`)]),
         },
       });
+    }
     default:
       throw new Error('Method not found.');
   }
