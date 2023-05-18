@@ -1,5 +1,5 @@
 {
-  "version": "5.3.0",
+  "version": "5.4.0",
   "description": "An example snap to test network-accesss endowment.",
   "proposedName": "@metamask/test-snap-networkaccess",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "PMnwwBTmqr8iwynIuxMTvv7eq+j5FK6dxohFbbNV9o0=",
+    "shasum": "esmtzYthuKZl7WWkazcDS4C4gX36JGxClHbh8Rst41c=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
