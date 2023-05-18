@@ -18,7 +18,6 @@ import { GetEntropy } from '../features/getentropy-snap';
 import { NetworkAccess } from '../features/networkaccess-snap';
 import { Ethprovider } from '../features/ethprovider-snap';
 
-
 interface Query {
   site: {
     siteMetadata: {
