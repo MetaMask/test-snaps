@@ -1,7 +1,7 @@
 {
-  "name": "@metamask/test-snap-getentropy",
+  "name": "@metamask/test-snap-ethprovider",
   "version": "5.4.0",
-  "description": "MetaMask getEntropy Test Snap",
+  "description": "MetaMask ethereum-provider Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -33,12 +33,8 @@
     "lint:changelog": "yarn auto-changelog validate"
   },
   "dependencies": {
-    "@metamask/rpc-methods": "^0.30.0",
     "@metamask/snaps-types": "^0.30.0",
-    "@metamask/snaps-ui": "^0.30.0",
-    "@metamask/utils": "^3.3.0",
-    "@noble/bls12-381": "^1.2.0",
-    "eth-rpc-errors": "^4.0.3"
+    "@metamask/snaps-ui": "^0.32.2"
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^2.5.0",

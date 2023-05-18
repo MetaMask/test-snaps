@@ -16,6 +16,8 @@ import { Insights } from '../features/insights-snap';
 import { WebAssembly } from '../features/wasm-snap';
 import { GetEntropy } from '../features/getentropy-snap';
 import { NetworkAccess } from '../features/networkaccess-snap';
+import { Ethprovider } from '../features/ethprovider-snap';
+
 
 interface Query {
   site: {
@@ -48,6 +50,7 @@ const Index: FunctionComponent = () => {
         <WebAssembly />
         <GetEntropy />
         <NetworkAccess />
+        <Ethprovider />
       </Row>
     </Container>
   );

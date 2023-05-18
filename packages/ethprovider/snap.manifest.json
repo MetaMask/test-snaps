@@ -1,27 +1,28 @@
 {
   "version": "5.4.0",
-  "description": "A MetaMask Test Snap that uses the snap_dialog permission",
-  "proposedName": "MetaMask Dialog Test Snap",
+  "description": "A MetaMask Test Snap for ethereum-provider endowment.",
+  "proposedName": "ethereum-provider test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "+aQRyjdd+j/747YfvMOM1KAeGtJtRz2u+cXFX7uZ+Dg=",
+    "shasum": "7VcHcvloQHEANbvqtg+AiSPFZz5vL11VQrrc5VceId4=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@metamask/test-snap-dialog",
+        "packageName": "@metamask/test-snap-ethprovider",
         "registry": "https://registry.npmjs.org/"
       }
     }
   },
   "initialPermissions": {
     "endowment:rpc": {
-      "dapps": true
+      "dapps": true,
+      "snaps": false
     },
-    "snap_dialog": {}
+    "endowment:ethereum-provider": {}
   },
   "manifestVersion": "0.1"
 }
