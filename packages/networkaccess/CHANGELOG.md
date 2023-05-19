@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [5.5.0]
-### Uncategorized
+### Added
 - Create networkAccess snap ([#168](https://github.com/MetaMask/test-snaps/pull/168))
 
 [Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.5.0...HEAD

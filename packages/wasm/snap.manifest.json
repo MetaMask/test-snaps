@@ -1,5 +1,5 @@
 {
-  "version": "5.4.0",
+  "version": "5.5.0",
   "description": "A MetaMask Test Snap that uses the WebAssembly endowment",
   "proposedName": "MetaMask WebAssembly Test Snap",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "qcM2eWo7rNXu+VOINya7pTNp5HcX822nRyvTsczV0GY=",
+    "shasum": "9Az0d8njfnX//3VmN3mLVjAMBEA0hn3lWnTr+MCLdLs=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
