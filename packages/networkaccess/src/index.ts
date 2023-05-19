@@ -1,5 +1,6 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { panel, text } from '@metamask/snaps-ui';
+import packageJson from '../package.json';
 
 /**
  * Retrieves test web page content.
@@ -8,7 +9,7 @@ import { panel, text } from '@metamask/snaps-ui';
  */
 async function getPage() {
   const response = await fetch(
-    'https://metamask.github.io/test-snaps/5.4.0/test-data.json',
+    `https://metamask.github.io/test-snaps/${packageJson.version}/test-data.json`,
   );
   return response.text();
 }
