@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-networkaccess",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "description": "MetaMask network-access Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
