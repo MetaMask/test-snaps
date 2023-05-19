@@ -5,7 +5,7 @@ import packageJson from '../package.json';
 /**
  * Retrieves test web page content.
  *
- * @returns Response data of a fetched web page in text format.
+ * @returns Response data of a fetched web page in json format.
  */
 async function getJson() {
   const response = await fetch(
