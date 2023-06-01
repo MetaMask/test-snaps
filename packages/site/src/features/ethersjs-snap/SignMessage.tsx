@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useInvokeMutation } from '../../api';
 import { Result } from '../../components';
 import { getSnapId } from '../../utils/id';
-import { GETENTROPY_SNAP_ID, GETENTROPY_PORT } from './GetEntropy';
+import { ETHERSJS_SNAP_ID, ETHERSJS_PORT } from './GetEntropy';
 
 export const SignMessage: FunctionComponent = () => {
   const [message, setMessage] = useState('');
@@ -17,7 +17,7 @@ export const SignMessage: FunctionComponent = () => {
     event.preventDefault();
 
     invokeSnap({
-      snapId: getSnapId(GETENTROPY_SNAP_ID, GETENTROPY_PORT),
+      snapId: getSnapId(ETHERSJS_SNAP_ID, ETHERSJS_PORT),
       method: 'signMessage',
       params: [message],
     });
