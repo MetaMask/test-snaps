@@ -1,3 +1,3 @@
-# ethereum-provider endowment Test Snap
+# ethereum-provider Endowment Test Snap
 
-This Snap is used to test the ethereum-provider endowment.
+A MetaMask Test Snap for ethereum-provider endowment.

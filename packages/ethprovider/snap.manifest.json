@@ -1,7 +1,7 @@
 {
   "version": "5.5.0",
   "description": "A MetaMask Test Snap for ethereum-provider endowment.",
-  "proposedName": "ethereum-provider test Snap",
+  "proposedName": "MetaMask ethereum-provider Test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
