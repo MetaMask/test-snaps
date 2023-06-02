@@ -1,7 +1,7 @@
 {
-  "name": "@metamask/test-snap-confirm",
-  "version": "4.6.2",
-  "description": "MetaMask Confirm Test Snap",
+  "name": "@metamask/test-snap-ethprovider",
+  "version": "5.5.0",
+  "description": "MetaMask ethereum-provider Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -12,18 +12,19 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "license": "ISC",
   "files": [
     "dist/",
-    "snap.manifest.json",
-    "images/icon.svg"
+    "images/icon.svg",
+    "snap.manifest.json"
   ],
   "scripts": {
     "build": "mm-snap build --eval false",
-    "build:dev": "yarn build",
     "build:clean": "yarn clean && yarn build",
+    "build:dev": "yarn build",
     "clean": "rimraf 'dist/*'",
     "start": "mm-snap watch",
-    "test": "jest --silent --runInBand",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' --single-quote --ignore-path ../../.prettierignore --no-error-on-unmatched-pattern",
@@ -32,16 +33,16 @@
     "lint:changelog": "yarn auto-changelog validate"
   },
   "dependencies": {
-    "@metamask/snaps-types": "^0.26.2"
+    "@metamask/snaps-types": "^0.30.0",
+    "@metamask/snaps-ui": "^0.32.2"
   },
   "devDependencies": {
-    "@chainsafe/dappeteer": "^5.0.0",
     "@metamask/auto-changelog": "^2.5.0",
     "@metamask/eslint-config": "^6.0.0",
     "@metamask/eslint-config-jest": "^6.0.0",
     "@metamask/eslint-config-nodejs": "^6.0.0",
     "@metamask/eslint-config-typescript": "^6.0.0",
-    "@metamask/snaps-cli": "^0.29.0",
+    "@metamask/snaps-cli": "^0.30.0",
     "@types/jest": "^26.0.13",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",

@@ -6,6 +6,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.5.0]
+### Added
+- Create networkAccess snap ([#168](https://github.com/MetaMask/test-snaps/pull/168))
+
+## [5.4.0]
+### Added
+- Create a static test-data.json file for network access test ([#171](https://github.com/MetaMask/test-snaps/pull/171))
+- Create test snap for ethereum-provider endowment ([#169](https://github.com/MetaMask/test-snaps/pull/169))
+
+## [5.3.0]
+### Added
+- Create getEntropy test snap ([#162](https://github.com/MetaMask/test-snaps/pull/162))
+
+## [5.2.0]
+### Added
+- Add WASM test snap ([#158](https://github.com/MetaMask/test-snaps/pull/158))
+
+## [5.1.2]
+### Changed
+- Change version of update snap from `5.0.0 -> 5.0.1` to `5.1.1 -> 5.1.2` ([#156](https://github.com/MetaMask/test-snaps/pull/156))
+
+## [5.1.1]
+### Changed
+- No changes this release.
+
+## [5.1.0]
+### Changed
+- No changes this release.
+
+## [5.0.3]
+### Changed
+- No changes this release.
+
+## [5.0.2]
+### Changed
+- No changes this release.
+
+## [5.0.1]
+### Fixed
+- Bump versions used in the update test ([#142](https://github.com/MetaMask/test-snaps/pull/142))
+  - Previous versions pointed to broken versions of the test snap
+
+## [5.0.0]
+### Removed
+- **BREAKING:** Remove all usage of `snap_confirm` ([#122](https://github.com/MetaMask/test-snaps/pull/122))
+
+## [4.6.4]
+### Fixed
+- Fix dialog snap & site code ([#138](https://github.com/MetaMask/test-snaps/pull/138))
+
+## [4.6.3]
+### Changed
+- No changes this release.
+
 ## [4.6.2]
 ### Changed
 - fixed package.json ([#132](https://github.com/MetaMask/test-snaps/pull/132))
@@ -168,7 +222,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Error to index.html
 - Added proper serve command
 
-[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...HEAD
+[Unreleased]: https://github.com/MetaMask/test-snaps/compare/v5.5.0...HEAD
+[5.5.0]: https://github.com/MetaMask/test-snaps/compare/v5.4.0...v5.5.0
+[5.4.0]: https://github.com/MetaMask/test-snaps/compare/v5.3.0...v5.4.0
+[5.3.0]: https://github.com/MetaMask/test-snaps/compare/v5.2.0...v5.3.0
+[5.2.0]: https://github.com/MetaMask/test-snaps/compare/v5.1.2...v5.2.0
+[5.1.2]: https://github.com/MetaMask/test-snaps/compare/v5.1.1...v5.1.2
+[5.1.1]: https://github.com/MetaMask/test-snaps/compare/v5.1.0...v5.1.1
+[5.1.0]: https://github.com/MetaMask/test-snaps/compare/v5.0.3...v5.1.0
+[5.0.3]: https://github.com/MetaMask/test-snaps/compare/v5.0.2...v5.0.3
+[5.0.2]: https://github.com/MetaMask/test-snaps/compare/v5.0.1...v5.0.2
+[5.0.1]: https://github.com/MetaMask/test-snaps/compare/v5.0.0...v5.0.1
+[5.0.0]: https://github.com/MetaMask/test-snaps/compare/v4.6.4...v5.0.0
+[4.6.4]: https://github.com/MetaMask/test-snaps/compare/v4.6.3...v4.6.4
+[4.6.3]: https://github.com/MetaMask/test-snaps/compare/v4.6.2...v4.6.3
 [4.6.2]: https://github.com/MetaMask/test-snaps/compare/v4.6.1...v4.6.2
 [4.6.1]: https://github.com/MetaMask/test-snaps/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/MetaMask/test-snaps/compare/v4.5.0...v4.6.0

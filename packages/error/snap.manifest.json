@@ -1,5 +1,5 @@
 {
-  "version": "4.6.2",
+  "version": "5.5.0",
   "description": "A MetaMask Test Snap that throws an error",
   "proposedName": "MetaMask Error Test Snap",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "w4SHUvROGgx0io4+wzaEJ507tBmg7ksh+ipBI+BYMJ8=",
+    "shasum": "h0b4cYvi57avil1T9WVyo1FM2c690Jo2QPhN6GmjtDg=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -20,8 +20,7 @@
   "initialPermissions": {
     "endowment:rpc": {
       "dapps": true
-    },
-    "snap_confirm": {}
+    }
   },
   "manifestVersion": "0.1"
 }

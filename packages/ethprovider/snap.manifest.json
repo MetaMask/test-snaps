@@ -1,0 +1,28 @@
+{
+  "version": "5.5.0",
+  "description": "A MetaMask Test Snap for ethereum-provider endowment.",
+  "proposedName": "ethereum-provider test Snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "h4cNxC9n0YgJ14aZfso4T8/rHJoDPhSRz16KAi3sdVs=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "@metamask/test-snap-ethprovider",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "endowment:ethereum-provider": {}
+  },
+  "manifestVersion": "0.1"
+}

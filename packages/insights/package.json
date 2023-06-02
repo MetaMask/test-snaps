@@ -1,6 +1,6 @@
 {
   "name": "@metamask/test-snap-insights",
-  "version": "4.6.2",
+  "version": "5.5.0",
   "description": "MetaMask Insights Test Snap",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,8 +32,8 @@
     "lint:changelog": "yarn auto-changelog validate"
   },
   "dependencies": {
-    "@metamask/snaps-types": "^0.26.2",
-    "@metamask/snaps-ui": "^0.26.2"
+    "@metamask/snaps-types": "^0.30.0",
+    "@metamask/snaps-ui": "^0.30.0"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
@@ -43,7 +43,7 @@
     "@metamask/eslint-config-jest": "^6.0.0",
     "@metamask/eslint-config-nodejs": "^6.0.0",
     "@metamask/eslint-config-typescript": "^6.0.0",
-    "@metamask/snaps-cli": "^0.29.0",
+    "@metamask/snaps-cli": "^0.30.0",
     "@metamask/utils": "^3.3.1",
     "@types/jest": "^26.0.13",
     "@typescript-eslint/eslint-plugin": "^5.19.0",

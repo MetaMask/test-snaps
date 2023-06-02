@@ -1,27 +1,28 @@
 {
-  "version": "4.6.2",
-  "description": "A MetaMask Test Snap that uses the snap_confirm permission",
-  "proposedName": "MetaMask Confirm Test Snap",
+  "version": "5.5.0",
+  "description": "A MetaMask Test Snap that uses the WebAssembly endowment",
+  "proposedName": "MetaMask WebAssembly Test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "IF+QqRBvRRF5O7g/ExXdYz4524Q+65vJKhUQbBn69ZE=",
+    "shasum": "9Az0d8njfnX//3VmN3mLVjAMBEA0hn3lWnTr+MCLdLs=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@metamask/test-snap-confirm",
+        "packageName": "@metamask/test-snap-wasm",
         "registry": "https://registry.npmjs.org/"
       }
     }
   },
   "initialPermissions": {
     "endowment:rpc": {
-      "dapps": true
+      "dapps": true,
+      "snaps": true
     },
-    "snap_confirm": {}
+    "endowment:webassembly": {}
   },
   "manifestVersion": "0.1"
 }

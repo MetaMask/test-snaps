@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Container, Row } from 'react-bootstrap';
 import { Logo } from '../components';
 import { Snaps } from '../features/installed-snaps';
-import { Confirm } from '../features/confirm-snap';
 import { Cronjob } from '../features/cronjob-snap';
 import { Dialog } from '../features/dialog-snap';
 import { ErrorSnap } from '../features/error-snap';
@@ -14,6 +13,10 @@ import { BIP32 } from '../features/bip-32-snap';
 import { Update } from '../features/update-snap';
 import { Rpc } from '../features/rpc-snap';
 import { Insights } from '../features/insights-snap';
+import { WebAssembly } from '../features/wasm-snap';
+import { GetEntropy } from '../features/getentropy-snap';
+import { NetworkAccess } from '../features/networkaccess-snap';
+import { Ethprovider } from '../features/ethprovider-snap';
 
 interface Query {
   site: {
@@ -34,7 +37,6 @@ const Index: FunctionComponent = () => {
 
         {/* Snap test UI */}
         <ErrorSnap />
-        <Confirm />
         <Dialog />
         <BIP44 />
         <ManageState />
@@ -44,6 +46,10 @@ const Index: FunctionComponent = () => {
         <Insights />
         <Rpc />
         <Cronjob />
+        <WebAssembly />
+        <GetEntropy />
+        <NetworkAccess />
+        <Ethprovider />
       </Row>
     </Container>
   );
