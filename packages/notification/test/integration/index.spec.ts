@@ -17,7 +17,7 @@ describe('notification snap', function () {
       automation: 'playwright',
       snapIdOrLocation: path.resolve(__dirname, '../..'),
       installationSnapUrl: 'https://google.com',
-      headless: true,
+      metaMaskLocation: path.resolve('../../node_modules/.cache/.metamask'),
     }));
     connectedPage = await metaMask.page.browser().newPage();
     await connectedPage.goto('https://google.com');
