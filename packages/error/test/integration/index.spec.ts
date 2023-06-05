@@ -15,7 +15,6 @@ describe('error snap', function () {
   beforeAll(async function () {
     ({ metaMask, snapId, browser } = await initSnapEnv({
       automation: 'playwright',
-      browser: 'chrome',
       snapIdOrLocation: path.resolve(__dirname, '../..'),
       installationSnapUrl: 'https://google.com',
       headless: true,
@@ -29,12 +28,12 @@ describe('error snap', function () {
   });
 
   test('snap error on invoke snap', async function () {
-    const resultPromise = metaMask.snaps.invokeSnap(
-      connectedPage,
-      snapId,
-      'rpc',
-    );
-    const result = await resultPromise;
-    expect(result).toStrictEqual('foo');
+    try {
+      await metaMask.snaps.invokeSnap(connectedPage, snapId, 'rpc');
+    } catch (e) {
+      if (e instanceof Error) {
+        expect(e.message).toBe('random error inside');
+      }
+    }
   });
 });

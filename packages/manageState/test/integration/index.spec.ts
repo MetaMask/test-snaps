@@ -15,7 +15,6 @@ describe('manage state snap', function () {
   beforeAll(async function () {
     ({ metaMask, snapId, browser } = await initSnapEnv({
       automation: 'playwright',
-      browser: 'chrome',
       snapIdOrLocation: path.resolve(__dirname, '../..'),
       installationSnapUrl: 'https://google.com',
       headless: true,

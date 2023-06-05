@@ -16,7 +16,6 @@ describe('bip44 snap', function () {
   beforeAll(async function () {
     ({ metaMask, snapId, browser } = await initSnapEnv({
       automation: 'playwright',
-      browser: 'chrome',
       snapIdOrLocation: path.resolve(__dirname, '../..'),
       installationSnapUrl: 'https://google.com',
       headless: true,
@@ -52,7 +51,7 @@ describe('bip44 snap', function () {
       ['Sign this message'],
     );
     await metaMask.page.waitForTimeout(1000);
-    await metaMask.snaps.acceptDialog();
+    await metaMask.snaps.dialog.accept();
     const result = await resultPromise;
     expect(result).toBe(
       '0xb95a3d5977531a500076b4a878d2f5bf330342312f65fdbb1652aff008e977727749f9aa69e3cee70f89043c2c0739e701c852c3e711c98d96f4493cd5602dd91daec30be9bddc4f18eddbc76909cfa761caefffa30bc536ac4c004526b53748',
@@ -65,7 +64,7 @@ describe('bip44 snap', function () {
         'Do not sign this message',
       ]);
       await metaMask.page.waitForTimeout(1000);
-      await metaMask.snaps.rejectDialog();
+      await metaMask.snaps.dialog.reject();
     } catch (e) {
       const error = ethErrors.provider.userRejectedRequest();
       expect(e).toStrictEqual(error);
