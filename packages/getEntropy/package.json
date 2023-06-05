@@ -41,7 +41,7 @@
     "eth-rpc-errors": "^4.0.3"
   },
   "devDependencies": {
-    "@chainsafe/dappeteer": "^5.0.0",
+    "@chainsafe/dappeteer": "^5.2.0",
     "@metamask/auto-changelog": "^2.5.0",
     "@metamask/eslint-config": "^6.0.0",
     "@metamask/eslint-config-jest": "^6.0.0",
