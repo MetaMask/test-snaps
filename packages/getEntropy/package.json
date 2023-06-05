@@ -24,7 +24,7 @@
     "build:dev": "yarn build",
     "clean": "rimraf 'dist/*'",
     "start": "mm-snap watch",
-    "test": "jest --silent --runInBand",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' --single-quote --ignore-path ../../.prettierignore --no-error-on-unmatched-pattern",
