@@ -1,3 +1,3 @@
-# BIP-32 example snap
+# BIP-32 Test Snap
 
-This Snap demonstrates how to derive BIP-32 private keys.
+This Snap tests deriving BIP-32 keys and signing transactions.

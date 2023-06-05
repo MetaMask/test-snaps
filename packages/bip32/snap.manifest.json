@@ -1,13 +1,13 @@
 {
   "version": "5.5.0",
-  "description": "An example Snap that derives keys using BIP-32.",
-  "proposedName": "@metamask/test-snap-bip32",
+  "description": "This Snap tests deriving BIP-32 keys and signing transactions.",
+  "proposedName": "MetaMask BIP-32 Test Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/test-snaps.git"
   },
   "source": {
-    "shasum": "m/R16drceW5wME+FrWSRxLX00PtPg50yX1Y+pnRiHms=",
+    "shasum": "tACe2OVw37WPR9Iis1AIHWd2ovqW5FVlnWvx3jRnQSg=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
