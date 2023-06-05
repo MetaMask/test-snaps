@@ -1,3 +1,3 @@
-# BLS Signer Example Snap
+# BIP-44 Test Snap
 
-This Snap demonstrates how BLS signing libraries can be used in Snaps.
+This Snap tests deriving BIP-44 keys and signing transactions.
