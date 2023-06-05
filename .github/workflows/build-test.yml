@@ -94,9 +94,9 @@ jobs:
       - name: Install deps
         run: yarn --immutable
       - name: Download metamask
-        run: mmd
+        run: npx mmd
       - name: Download metamask Flask
-        run: mmd --flask
+        run: npx mmd --flask
       - uses: actions/cache/save@v3
         with:
           path: ${{env.METAMASK_CACHE_PATH}}
