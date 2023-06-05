@@ -28,6 +28,13 @@ describe('error snap', function () {
   });
 
   test('snap error on invoke snap', async function () {
+    const resultPromise = metaMask.snaps.invokeSnap(
+      connectedPage,
+      snapId,
+      'rpc',
+    );
+    const result = await resultPromise;
+    expect(result).toStrictEqual('foo');
     try {
       await metaMask.snaps.invokeSnap(connectedPage, snapId, 'rpc');
     } catch (e) {

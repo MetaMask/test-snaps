@@ -2,7 +2,7 @@ import { OnRpcRequestHandler } from '@metamask/snaps-types';
 
 export const onRpcRequest: OnRpcRequestHandler = async () => {
   // eslint-disable-next-line no-new
-  await new Promise((resolve) => {
+  new Promise((resolve) => {
     let num = 0;
     while (num < 100) {
       // eslint-disable-next-line no-plusplus
