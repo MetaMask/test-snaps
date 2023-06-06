@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useInvokeMutation } from '../../api';
 import { Result } from '../../components';
 import { getSnapId } from '../../utils/id';
-import { ETHERSJS_SNAP_ID, ETHERSJS_PORT } from './GetEntropy';
+import { ETHERSJS_SNAP_ID, ETHERSJS_PORT } from './Ethersjs';
 
 export const SignMessage: FunctionComponent = () => {
   const [message, setMessage] = useState('');
@@ -32,16 +32,16 @@ export const SignMessage: FunctionComponent = () => {
           placeholder="Message"
           value={message}
           onChange={handleChange}
-          id="entropyMessage"
+          id="ethersjsMessage"
           className="mb-3"
         />
 
-        <Button type="submit" id="signEntropyMessage" disabled={isLoading}>
+        <Button type="submit" id="signEthersjsMessage" disabled={isLoading}>
           Sign Message
         </Button>
       </Form>
       <Result>
-        <span id="entropySignResult">{JSON.stringify(data, null, 2)}</span>
+        <span id="ethersjsSignResult">{JSON.stringify(data, null, 2)}</span>
       </Result>
     </>
   );
