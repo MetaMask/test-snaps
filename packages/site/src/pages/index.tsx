@@ -17,7 +17,7 @@ import { WebAssembly } from '../features/wasm-snap';
 import { GetEntropy } from '../features/getentropy-snap';
 import { NetworkAccess } from '../features/networkaccess-snap';
 import { Ethprovider } from '../features/ethprovider-snap';
-import { Ethersjs } from '../features/ethersjs-snap/GetEntropy';
+import { Ethersjs } from '../features/ethersjs-snap';
 
 interface Query {
   site: {
