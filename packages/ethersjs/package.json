@@ -19,7 +19,7 @@
     "snap.manifest.json"
   ],
   "scripts": {
-    "build": "mm-snap build --eval false",
+    "build": "mm-snap build",
     "build:clean": "yarn clean && yarn build",
     "build:dev": "yarn build",
     "clean": "rimraf 'dist/*'",
