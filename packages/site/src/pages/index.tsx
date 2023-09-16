@@ -18,6 +18,7 @@ import { GetEntropy } from '../features/getentropy-snap';
 import { NetworkAccess } from '../features/networkaccess-snap';
 import { Ethprovider } from '../features/ethprovider-snap';
 import { Ethersjs } from '../features/ethersjs-snap';
+import { NameLookup } from '../features/name-lookup-snap';
 
 interface Query {
   site: {
@@ -52,6 +53,7 @@ const Index: FunctionComponent = () => {
         <NetworkAccess />
         <Ethprovider />
         <Ethersjs />
+        <NameLookup />
       </Row>
     </Container>
   );

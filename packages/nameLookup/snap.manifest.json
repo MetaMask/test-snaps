@@ -1,0 +1,26 @@
+{
+  "version": "5.5.0",
+  "description": "A MetaMask Test Snap that resolves domains and Ethereum addresses",
+  "proposedName": "MetaMask Name Lookup Test Snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/test-snaps.git"
+  },
+  "source": {
+    "shasum": "Q6lfN8ESsP2MBAFWrbu50w9VDZokE0TsyTizHjV5u9Q=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "@metamask/test-snap-name-lookup",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:name-lookup": [
+      "eip155:1"
+    ]
+  },
+  "manifestVersion": "0.1"
+}
