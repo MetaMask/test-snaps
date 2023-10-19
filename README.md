@@ -1,5 +1,9 @@
 # Test Snap Repo
 
+## Deprecated
+
+The contents of this repository have been moved to the [MetaMask/snaps](https://github.com/MetaMask/snaps/tree/main/packages/test-snaps) repository. This repository is no longer maintained.
+
 https://metamask.github.io/test-snaps/latest/
 
 A monorepo for Snaps used for QA and end-to-end tests, with an accompanying GitHub Pages website.
