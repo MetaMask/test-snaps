@@ -4,7 +4,7 @@ coverage/
 build/
 .cache/
 public/
-
+.idea*
 # Logs
 logs
 *.log
